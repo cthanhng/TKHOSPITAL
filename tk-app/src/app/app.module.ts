@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomepageComponent } from './homepage/homepage.component'
+import { HomepageComponent } from './homepage/homepage.component';
+import { BasicComponent } from './basic/basic.component'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HomepageComponent } from './homepage/homepage.component'
     RoutingComponents,
     HeaderComponent,
     FooterComponent,
-    HomepageComponent
+    HomepageComponent,
+    BasicComponent
   ],
   imports: [
     BrowserModule,
