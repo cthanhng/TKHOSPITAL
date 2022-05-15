@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ExampleService } from '../services.service';
 
 @Component({
   selector: 'app-basic',
@@ -10,8 +11,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class BasicComponent implements OnInit {
 
   regForm: any;
-
-  constructor(private _formBuilder: FormBuilder) { }
+  patient_schedule: any;
+  errorMessage: string ='';
+  constructor(private _formBuilder: FormBuilder, private _service: ExampleService) { }
 
   /* public regForm = this._formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
@@ -27,6 +29,12 @@ export class BasicComponent implements OnInit {
       phone: ['', [Validators.required, Validators.minLength(11)]],
       date: [''],
     })
+
+    this._service.getPatient_schedule().subscribe({
+      next: data => this.patient_schedule = data,
+      error: err => this.errorMessage = err,
+    })
+
   }
   get name(){
     return this.regForm.controls['name']

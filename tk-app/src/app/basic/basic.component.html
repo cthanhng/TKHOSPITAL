@@ -42,6 +42,11 @@
         <div class="mb-3 text-center">
             <button class="btn btn-secondary">Register for VIP Service</button>
         </div>
+        <div class="mb-3">
+            <ul *ngFor="let p of patient_schedule">
+                <li>{{p.PatientName}} - {{p.Address}}</li>
+            </ul>
+        </div>
     </div>
 </body>
 <h2 class="text-center bg-dark text-light lh-lg">Footer</h2>
