@@ -1,0 +1,54 @@
+<form>
+    <div class="product__page">
+        <div class="product__form-container">
+            <div class="product__form-title">REGISTER FOR HOMECARE</div>
+            <div class="product__form-content">
+                <form>
+                    <div class="product__user-details">
+                        <div class="product__input-box">
+                            <span class="product__details">Full Name</span>
+                            <input class="product__form-input" type="text" placeholder="Type your name"  name="fullname">
+                        </div>
+                        <div class="product__input-box">
+                            <span class="product__details">Date of Birth</span>
+                            <input class="product__form-input" type="text" placeholder="Type your birthday" name="dob">
+                        </div>
+                        <div class="product__input-box">
+                            <span class="product__details">Email</span>
+                            <input class="product__form-input" type="text" placeholder="example@example.com"  name="email">
+                        </div>
+                        <div class="product__input-box">
+                            <span class="product__details">Phone</span>
+                            <input class="product__form-input" type="text" placeholder="Type your phone number" name="phone">
+                        </div>
+                        <div class="product__input-box">
+                            <span class="product__details">Address</span>
+                            <input class="product__form-input" type="text" placeholder="Type your address"  name="address">
+                        </div>
+                    </div>
+                    <div class=" product__input-box product__choose-doctor" ng-controller="DoctorController">
+                        <span class="product__details">Choose available doctor</span>
+                        <select name="doctorSelect" id="" ng-options="d.DoctorName for d in doctors">
+                        </select>
+                    </div>
+                    <div class="product__user-details">
+                        <div class="product__input-box">
+                            <span class="product__details">Date your want to test</span>
+                            <input id="datetimepicker" class="product__form-input" type="date" placeholder="Nhập ngày bạn muốn khám"
+                                required name="date">
+                        </div>
+                        <div class="product__input-box">
+                            <span class="product__details">Select available time</span>
+                            <input class="product__form-input" type="time" placeholder="--:--"
+                            min="08:00" max="20:00" required onchange="show2();" name="time">
+                        </div>
+                    </div>
+                    <div class="product__form-button">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+

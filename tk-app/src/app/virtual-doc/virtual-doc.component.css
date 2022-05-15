@@ -1,0 +1,197 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: url(../Images/virtual-bg.png); */
+    background-size: 1600px 100vh;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+}
+form{
+    height: 50em;
+}
+.form--container{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+.form--container2{
+    margin-top: 20px;
+}
+.form--container2>div>h3,
+.form--container2
+{
+    margin: auto;            
+}
+.form--container2>div>h3{
+    margin-top: 10px;
+}
+/* logo */
+.form--container2>.form--row>h3{
+    font-size: xx-large;
+    color: rgb(6, 95, 115);
+    font-weight: bold;
+}
+/* sologan */
+.form--container2>div>p{
+    font-weight: bold;
+    text-align: center;
+    width: 50%;
+    margin: 10px auto 30px auto;
+}
+/* form2 */
+.form--container2{
+    background-color: rgba(209, 202, 202, 0.3);
+    width: 50%;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.form--row , .radio--row{
+    display: flex;
+}
+/* label */
+.form--row>label:first-child{
+    min-width: 50%;
+}
+
+label{
+    line-height: 70px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.form--row span{
+    line-height: 70px;
+    margin-right: 50px;
+    margin-left: 10px;
+
+}
+/* 2 input: username and password */
+.form--input{
+    width: 80%;
+    height: 50px;
+    padding: 5px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+}
+
+input[type="radio"]{
+    line-height: 70px;
+    margin-top: 15px;
+}
+input[type="date"] ,input[type="time"],input[type="radio"] {
+    height: 40px;
+}
+input[type="time"]{
+    width: 20%;
+}
+#vd_note{
+    font-size: x-small;
+}
+
+
+/* Radius input */
+input , .form--container2{
+    border-radius: 5px;
+}
+
+
+/* 2 buttons */
+.form--button{
+    line-height: 40px;
+    border-radius: 10px;
+}
+.form--row .form--button{
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    border: none;
+    background-color: rgb(6, 95, 115);
+}
+.form--row a{
+    margin: auto;
+    text-decoration: none;
+}
+
+/* #nexttopayment{
+    background-color: rgb(6, 95, 115);
+} */
+hr{
+    margin: 20px 10px;
+}
+@media only screen and (max-width: 1024px){
+    body{
+        background-size: 1200px 100vh;
+    }
+    .form--row{
+        display: inherit;
+    }
+    .form--container2, .form--container2>div>p{
+        width: 96%;
+    }
+    .form--container2>div>h3{
+        text-align: center;
+        margin: 10px auto;
+        padding-top: 20px ;
+    }
+    .form--row>select, .form--row>input , input[type="date"], input[type="time"] {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .form--row>label{
+        margin-top: 10px;
+    }
+    .form--input {
+        width: 96%;
+    }
+    input[type="date"]{
+        width: 933px;
+    }
+    #nexttopayment{
+        margin: 10px auto;
+    }
+    .form--row:last-child{
+        text-align: center;
+    }
+    form{
+        height: 80em;
+    }
+}
+@media only screen and (max-width: 376px){
+    body{
+        background-size: 500px 100vh;
+    }
+    .form--row>.form--button{
+        width: 96%;
+    }
+    input[type="date"], input[type="time"]{
+        width: 335px;
+    }
+    #vd_note{
+        line-height: 20px;
+        margin-left: 10px;
+    }
+    #book_time2{
+        margin-bottom: 8px;
+    }
+    hr{
+        margin-top: 20px;
+    }
+    form{
+        height: 90em;
+    }
+}
+
+
