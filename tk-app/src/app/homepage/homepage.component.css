@@ -1,7 +1,7 @@
 body,html{
     margin: 0;
     padding: 0;
-    background-image: url(../Images/background.png);
+    /* background-image: url(../Images/background.png); */
     font-family: 'Lato', sans-serif;
 }
 .bodyContainer{
@@ -14,7 +14,7 @@ body,html{
     display: none;
 }
 #home__background-1{
-    background-image: linear-gradient(rgba(152, 206, 226, 1),rgba(152, 206, 226, 0.5)), url(../IMAGES/BKG_right.jpg);
+    /* background-image: linear-gradient(rgba(152, 206, 226, 1),rgba(152, 206, 226, 0.5)), url(../IMAGES/BKG_right.jpg); */
     background-repeat: no-repeat;
     /* background-size: 100%; */
     width: 70vw;

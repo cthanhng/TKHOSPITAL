@@ -20,7 +20,9 @@ import { ForgotPassword1Component } from './forgot-password1/forgot-password1.co
 import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
 import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component'
 import { VirtualDocComponent } from './virtual-doc/virtual-doc.component';
-import { HomeDocComponent } from './home-doc/home-doc.component'
+import { HomeDocComponent } from './home-doc/home-doc.component';
+import { PatientPortalComponent } from './patient-portal/patient-portal.component';
+import { PatientRecordComponent } from './patient-record/patient-record.component'
 
 @NgModule({
   declarations: [
@@ -32,17 +34,19 @@ import { HomeDocComponent } from './home-doc/home-doc.component'
     ServicePageComponent,
     ServiceListComponent,
     ServiceDetailComponent,
-    ServiceAfterHourComponent
+    ServiceAfterHourComponent,
     BasicComponent,
-    VipComponent
+    VipComponent,
     LoginComponent,
     SignUpComponent,
     EditInformationComponent,
     ForgotPassword1Component,
     ForgotPassword2Component,
-    ForgotPassword3Component
+    ForgotPassword3Component,
     VirtualDocComponent,
-    HomeDocComponent
+    HomeDocComponent,
+    PatientPortalComponent,
+    PatientRecordComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,6 @@ import { HomeDocComponent } from './home-doc/home-doc.component'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
-    ReactiveFormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

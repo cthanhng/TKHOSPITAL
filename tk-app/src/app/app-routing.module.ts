@@ -4,11 +4,31 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServicePageComponent } from './service-page/service-page.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { BasicComponent } from './basic/basic.component';
+import { HomeDocComponent } from './home-doc/home-doc.component';
+import { VirtualDocComponent } from './virtual-doc/virtual-doc.component';
 
 const routes: Routes = [
   {
     path: "service",component: ServicePageComponent
   }, 
+  {
+    path: "**",component: HomepageComponent
+  }, 
+  {
+    path: "/basic-schedule",component: BasicComponent
+  }, 
+  {
+    path: "/home-doctor",component: HomeDocComponent
+  }, 
+  {
+    path: "/virtual-doctor",component: VirtualDocComponent
+  }, 
+  {
+    path: "**",component: HomepageComponent
+  }, 
+
   {
     path: "service/service-list",component: ServiceListComponent
   },
