@@ -13,6 +13,12 @@ import { ServiceDetailComponent } from './service-detail/service-detail.componen
 import { ServiceAfterHourComponent } from './service-after-hour/service-after-hour.component'
 import { BasicComponent } from './basic/basic.component';
 import { VipComponent } from './vip/vip.component'
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { EditInformationComponent } from './edit-information/edit-information.component';
+import { ForgotPassword1Component } from './forgot-password1/forgot-password1.component';
+import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
+import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component'
 
 @NgModule({
   declarations: [
@@ -27,6 +33,12 @@ import { VipComponent } from './vip/vip.component'
     ServiceAfterHourComponent
     BasicComponent,
     VipComponent
+    LoginComponent,
+    SignUpComponent,
+    EditInformationComponent,
+    ForgotPassword1Component,
+    ForgotPassword2Component,
+    ForgotPassword3Component
   ],
   imports: [
     BrowserModule,
