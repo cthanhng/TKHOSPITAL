@@ -19,6 +19,8 @@ import { EditInformationComponent } from './edit-information/edit-information.co
 import { ForgotPassword1Component } from './forgot-password1/forgot-password1.component';
 import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
 import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component'
+import { VirtualDocComponent } from './virtual-doc/virtual-doc.component';
+import { HomeDocComponent } from './home-doc/home-doc.component'
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ForgotPassword3Component } from './forgot-password3/forgot-password3.co
     ForgotPassword1Component,
     ForgotPassword2Component,
     ForgotPassword3Component
+    VirtualDocComponent,
+    HomeDocComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,7 @@ import { ForgotPassword3Component } from './forgot-password3/forgot-password3.co
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
+    ReactiveFormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,224 @@
+body{
+    background-color: white;
+  
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product__page{
+    /* background-image: url(../Images/homecare.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 50px 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.product__form-container{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.2);
+    max-width: 900px;
+    padding: 25px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    margin: 0px auto;
+}
+.product__form-title{
+    text-transform: uppercase;
+    color: #065F73;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 50px;
+}
+.product__form-content .product__user-details{
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px 50px 12px 80px;
+}
+.product__user-details .product__input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+.product__input-box .product__details{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.product__form-input{
+    width: 100%;
+    height: 50px;
+    margin-top: 7px;
+}
+.product__user-details .product__input-box .product__form-input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    
+}
+.product__user-details .product__input-box .product__form-input:focus,
+.product__user-details .product__form-input:valid{
+  border-color: #0A3D48;
+}
+.product__gender-details{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 80px;
+}
+.product__gender-title{
+    font-size: 25px;
+}
+.product__category{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.product__choose-doctor{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 80px;
+    font-size: 25px;
+    margin-top: 20px;
+}
+.product__choose-doctor>select{
+    font-size: 20px;
+    margin-top: 10px;
+    height: 40px;
+    width: 600px;
+}
+.product__choose-doctor>select>option{
+    font-size: 20px;
+}
+.product__choose-doctor>select:hover{
+    border-color: #0A3D48;
+}
+.product__form-button{
+    height: 45px;
+    margin: 35px 0;
+    text-align: center;
+    font-size: 25px;
+
+}
+.product__form-button>button{
+    margin:  0px 10px;
+    height: 40px;
+    width: 50px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 22px;
+}
+.product__form-button input{
+   height: 100%;
+   width: 400px;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   border-radius: 15px;
+   background: linear-gradient(125deg,#5ab1bb, #0A3D48);
+}
+.product__form-button input:hover{
+    background: linear-gradient(-125deg,#5ab1bb,#0A3D48);
+}
+.footer{
+    background-color: rgba(6, 95, 115, 1);
+}
+.footer-bar{
+    display: flex;
+}
+.footer-mar{
+    margin: 30px;
+    flex: 1;
+}
+.footer-logo img{
+    margin-top: 30px;
+}
+.title-inf{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.lienhe>p , .diachi>p{
+    font-size: 18px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.copyright{
+    background-color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+}
+@media screen and (max-width:380px) {
+    .product__form-container{
+        padding: 5px 8px;
+    }
+    .product__form-title{
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .product__form-content .product__user-details{
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        margin: 5px;
+    }
+    .product__user-details .product__input-box .product__form-input{
+        height: 25px;
+        font-size: 13px;
+        border-radius: 5px;
+        padding-left: 5px;
+        border-bottom-width: 2px;
+
+
+    }
+    .product__user-details{
+        width: 100%;
+    }
+    .product__choose-doctor{
+        font-size: 13px;
+        margin: 5px;
+    }
+    .product__choose-doctor>select{
+        font-size: 13px;
+        margin-top: 5px;
+        height: 20px;
+     width: 100%;
+    }
+    .product__form-button input{
+        height: 20px;
+        width: 200px;
+        border-radius: 5px;
+        font-size: 13px;
+        border-radius: 10px;
+        
+     }
+     .product__form-button{
+         margin: 5px;
+     }
+     .product__form-button{
+font-size: 13px;
+     }
+     .product__form-button>button{
+        margin:  0px 5px;
+        height: 25px;
+        width: 50px;
+        border-radius: 8px;
+        font-size: 13px;
+     }
+}
