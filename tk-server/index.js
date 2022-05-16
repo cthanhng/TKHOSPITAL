@@ -11,14 +11,13 @@ app.use(cors());
 const db = require('./config/db');
 db.connect();
 
-Patient_schedule.find({}, (error, data)=>{
-    if(error){
-        res.json({"Error": error.message})
-    }else{
-        res.json(data)
-    }
-})
+
+const ServiceRouter = require('./routes/services.routes.js');
+app.use("/",ServiceRouter)
+
+const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
+app.use("/",PatientScheduleRouter)
 
 app.listen(port, ()=>{
-    console.log('My server listening on port ${port}')
+    console.log(`My server listening on port ${port}`)
 })

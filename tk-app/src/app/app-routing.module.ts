@@ -1,3 +1,5 @@
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { PatientRecordComponent } from './patient-record/patient-record.component';
 import { ServiceAfterHourComponent } from './service-after-hour/service-after-hour.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -8,25 +10,48 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { BasicComponent } from './basic/basic.component';
 import { HomeDocComponent } from './home-doc/home-doc.component';
 import { VirtualDocComponent } from './virtual-doc/virtual-doc.component';
+import { LoginComponent } from './login/login.component';
+import { EditInformationComponent } from './edit-information/edit-information.component';
+import { PatientPortalComponent } from './patient-portal/patient-portal.component';
+import { VipComponent } from './vip/vip.component';
 
 const routes: Routes = [
   {
     path: "service",component: ServicePageComponent
   }, 
   {
-    path: "**",component: HomepageComponent
+    path: "homepage",component: HomepageComponent
   }, 
   {
-    path: "/basic-schedule",component: BasicComponent
+    path: "",redirectTo:'homepage', pathMatch:'full'
+  }, 
+
+  {
+    path: "basic-schedule",component: BasicComponent
   }, 
   {
-    path: "/home-doctor",component: HomeDocComponent
+    path: "basic-schedule/vip",component: VipComponent
   }, 
   {
-    path: "/virtual-doctor",component: VirtualDocComponent
+    path: "home-doctor",component: HomeDocComponent
   }, 
   {
-    path: "**",component: HomepageComponent
+    path: "virtual-doctor",component: VirtualDocComponent
+  }, 
+  {
+    path: "login",component: LoginComponent
+  }, 
+  {
+    path: "signup",component: SignUpComponent
+  }, 
+  {
+    path: "edit-information",component: EditInformationComponent
+  }, 
+  {
+    path: "patient-portal",component: PatientPortalComponent
+  }, 
+  {
+    path: "patient-record",component: PatientRecordComponent
   }, 
 
   {
@@ -45,4 +70,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent]
+export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent]
