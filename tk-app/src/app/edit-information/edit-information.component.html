@@ -1,0 +1,153 @@
+<div class="header">
+    <!-- navigation bar of desktop -->
+    <div class="nav-desktop">
+        <div class="container--1">
+            <div>
+                <a href="" class="box-icon"><i class="fa fa-phone-square"></i></a>
+                <a href="">Contact us</a>
+            </div>
+            <div class="option">
+                <div><a class="link" target="_parent" href="Homepage.html">Home</a></div>
+                <div><a class="link" target="_parent" href="About_Us.html">About Us</a></div>
+                <div><a class="link" target="_parent" href="Service.html">Services</a></div>
+                <div><a class="link" target="_parent" href="Our_Doctors.html">Our Doctor</a></div>
+                <div><a class="link" target="_parent" href="blog.html">Blog</a></div>
+                <div class="login_user">
+                    <div class="dropdown">
+                        <div class="login_user--title"><i class="fa fa-user-circle"></i></div>
+                        <div class="dropdown-content">
+                            <p><a class="item-user" onclick="patientPortal()"><i class="fa fa-window-restore">&nbsp
+                                        &nbsp</i> Patient Portal</a></p>
+                            <p><a class="item-user" onclick="medicalRecord()"><i class="fa fa-book">&nbsp &nbsp</i>
+                                    Medical record</a></p>
+                            <p><a href="Homepage.html"><i class="fa fa-user-shield">&nbsp &nbsp</i> Log out</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container--2">
+            <div class="name__menu">
+
+                <div class="name">
+                    <img src="../Images/ngoinha-icon.png" alt="">
+                    <span class="logo_title">TK</span> Hospital
+                </div>
+            </div>
+            <div class="function">
+                <input class="button-function" type="submit" value="Virtual Doctor" onclick="virtualSchedule()">
+                <input class="button-function" type="submit" value="Homecare" onclick="homecareSchedule()">
+                <input class="button-function function--3" type="submit" value="Schedule Appointment"
+                    onclick="basicSchedule()">
+            </div>
+        </div>
+    </div>
+    <!-- navagation bar of ipad and phone -->
+    <div class="nav-mobile">
+        <div class="logo">
+            <img src="../Images/ngoinha-icon.png" alt="">
+            <span>TK</span> Hospital
+        </div>
+        <div class="nav-right">
+            <div class="dropdown">
+                <div class="nav-right__icon"><i class="fa fa-bars"></i></div>
+                <div class="dropdown-content">
+                    <p><a href="Homepage.html"><i class="fa fa-home">&nbsp &nbsp</i>Home</a></p>
+                    <p><a href="About_Us.html"><i class="fa fa-book"> &nbsp &nbsp </i>About us</a></p>
+                    <p><a href="Services.html"><i class="fa fa-cogs"> &nbsp &nbsp </i>Service</a></p>
+                    <p><a href="Our_Doctors.html"><i class="fa fa-user-md"> &nbsp &nbsp </i>Our doctor</a></p>
+                    <p><a href="blog.html"><i class="fa fa-book">&nbsp &nbsp</i>Blog</a></p>
+                    <p><a href="Schedule_Virtual.html"><i class="fa fa-bed">&nbsp &nbsp</i>Virtual Doctor</a></p>
+                    <p><a href="Schedule_Homecare.html"><i class="fa fa-home">&nbsp &nbsp</i>Homecare</a></p>
+                    <p><a href="Schedule_Basic.html"><i class="fa fa-calendar">&nbsp &nbsp</i>Schedule
+                            Appointment</a></p>
+                    <p><a href="Patient_Portal.html"><i class="fa fa-window-restore">&nbsp
+                                &nbsp</i>Patient_Portal</a></p>
+                    <p><a href="Patient_Record.html"><i class="fa fa-clipboard">&nbsp &nbsp</i>Medical Record</a>
+                    </p>
+                    <p><a href="Homepage.html"><i class="fa fa-user-shield">&nbsp &nbsp</i>Log Out</a></p>
+                    <p><a href=""><i class="fa fa-envelope">&nbsp &nbsp</i>Contact</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="edit-main">
+    <form action="">
+        <div class="edit-title">
+            <i class="fa fa-edit"></i>
+            <span>Update patient information</span><br>
+            <hr>
+        </div>
+        <div class="edit-form">
+            <div>Name <span>*</span></div>
+            <div>Date of Birth <span>*</span></div>
+            <div><input ng-model="patientInfor.Name" type="text" placeholder="type your name here"></div>
+            <div><input ng-model="patientInfor.DateOfBirth" type="text" name="date" id="datetimepicker" placeholder="type your date of birth here"></div>
+            <div class="edit-sextitle">Sex <span>*</span></div>
+            <div><input type="radio" ng-checked="patientInfor.Gender"  ng-true-value="Nam" ng-false-value="Nữ" name="sex" id="sex" >
+            <label for="">Female</label> 
+            </div>
+            <div><input type="radio" ng-checked="patientInfor.Gender" ng-true-value="Nữ" ng-false-value="Nam" ng-model="patientInfor.Gender" name="sex" id="sex">
+            <label for="">Male</label>
+            </div>
+            <div>Phone number <span>*</span></div>
+            <div>ID number <span>*</span></div>
+            <div><input ng-model="patientInfor.Phone" type="text" name="number" id="number"></div>
+            <div><input type="text" ng-model="patientInfor.IDNumber"></div>
+            <div class="edit-emailtitle">Email <span>*</span></div>
+            <div class="edit-emailbutton"><input  class="edit-input--email" ng-model="patientInfor.Email" type="email"></div>
+            <div>Nationality <span>*</span></div>
+            <div>religion <span>*</span></div>
+            <div>
+                <select name="nationality" id="nationality" ng-model="patientInfor.Nationality"> 
+                    <option ng-selected="patientInfor.Nationality" value="vietnam">Viet Nam</option>
+                    <option value="china">china</option>
+                    <option value="Korea">Korea</option>
+                    <option value="japan">Japan</option>
+                    <option value="india">India</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" ng-model="patientInfor.Religion">
+            </div>
+            <div>Province/City <span>*</span></div>
+            <div>Ward/Commune <span>*</span></div>
+            <div>
+                <select name="province" id="province" ng-model="patientInfor.City">
+                    <option value="hatinh">Hà Tĩnh</option>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="saigon" ng-selected="patientInfor.City">TP HCM</option>
+                    <option value="dalat">Đà Lạt</option>
+                </select>
+            </div>
+            <div>
+                <select name="commune" id="commune" ng-model="patientInfor.Ward">
+                    <option value="A" ng-selected="patientInfor.Ward">Phường A</option>
+                    <option value="B">Phường B</option>
+                    <option value="C">Phường C</option>
+                    <option value="D">Phường D</option>
+                    <option value="E">Phường E</option>
+
+                </select>
+            </div>
+            <div>Street <span>*</span></div>
+            <div>Job</div>
+            <div><input ng-model="patientInfor.Street" type="text"></div>
+            <div><input type="text" ng-model="patientInfor.Job"></div>
+            <div class="edit-healthtitle">Health insuarance card number <span>*</span></div>
+            <div class="healthnumber"><input class="edit-input--health" ng-model="patientInfor.HealthInsuaranceCardNumber" type="text"></div>
+            <div>Height</div>
+            <div>Weight</div>
+            <div><input type="text" ng-model="patientInfor.Height"></div>
+            <div><input ng-model="patientInfor.Weight" type="text" ></div>
+        
+        </div><br>
+        <div class="edit-footer">
+            
+            <div><input class="input__close" onclick="close()" type="button" value="Close"></div>
+            <div><input class="input__confirm" type="button" value="Confirm"></div>
+        
+        </div>
+    </form>
+</div>
