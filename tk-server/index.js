@@ -1,28 +1,24 @@
 const express = require('express');
-const app= express();
-const port=3000;
+const app = express();
+const port = 3000;
 
-
-//Http request logger
-const morgan = require('morgan');
-app.use(morgan('combined'));
-
-const bodyParser= require('body-parser');
+const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-
-//Enable CORS 
 const cors = require('cors');
-app.use(cors()); //enable all cors
+app.use(cors());
 
-//Connect db 
-const db= require('./config/db')
+const db = require('./config/db');
 db.connect();
 
-const serviceRouter = require('./routes/services.routes.js');
-app.use("/",serviceRouter)
+Patient_schedule.find({}, (error, data)=>{
+    if(error){
+        res.json({"Error": error.message})
+    }else{
+        res.json(data)
+    }
+})
 
-
-app.listen(port,()=>{
-    console.log(`My server is listening on port ${port}`)
+app.listen(port, ()=>{
+    console.log('My server listening on port ${port}')
 })

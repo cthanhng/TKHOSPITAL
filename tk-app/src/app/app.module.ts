@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -11,6 +11,8 @@ import { ServicePageComponent } from './service-page/service-page.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { ServiceAfterHourComponent } from './service-after-hour/service-after-hour.component'
+import { BasicComponent } from './basic/basic.component';
+import { VipComponent } from './vip/vip.component'
 
 @NgModule({
   declarations: [
@@ -23,12 +25,15 @@ import { ServiceAfterHourComponent } from './service-after-hour/service-after-ho
     ServiceListComponent,
     ServiceDetailComponent,
     ServiceAfterHourComponent
+    BasicComponent,
+    VipComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
