@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { EditInformationComponent } from './edit-information/edit-information.component';
 import { PatientPortalComponent } from './patient-portal/patient-portal.component';
 import { VipComponent } from './vip/vip.component';
+import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 
 const routes: Routes = [
   {

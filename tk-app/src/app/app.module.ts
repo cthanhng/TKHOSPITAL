@@ -7,13 +7,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
     HeaderComponent,
     FooterComponent,
-    HomepageComponent
+    HomepageComponent,
+    AdminDoctorListComponent
   ],
   imports: [
     BrowserModule,
