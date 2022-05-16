@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ExampleService } from '../services.service';
+import { BasicScheduleService } from '../services/basic-schedule.service';
 
 @Component({
   selector: 'app-basic',
@@ -13,7 +13,7 @@ export class BasicComponent implements OnInit {
   regForm: any;
   patient_schedule: any;
   errorMessage: string ='';
-  constructor(private _formBuilder: FormBuilder, private _service: ExampleService) { }
+  constructor(private _formBuilder: FormBuilder, private _service: BasicScheduleService) { }
 
   /* public regForm = this._formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3)]],

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { BasicScheduleService } from '../services/basic-schedule.service';
 
 @Component({
   selector: 'app-vip',
@@ -10,7 +11,7 @@ export class VipComponent implements OnInit {
 
   regForm: any;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private _service:BasicScheduleService) { }
 
   ngOnInit(): void {
     this.regForm = this._formBuilder.group({
