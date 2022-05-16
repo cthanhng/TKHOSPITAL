@@ -1,3 +1,8 @@
+const mongoose = require('mongoose');
+require('dotenv/config')
+
+
+module.exports = {connect}
 const cors = require('cors')
 require('dotenv/config');
 
