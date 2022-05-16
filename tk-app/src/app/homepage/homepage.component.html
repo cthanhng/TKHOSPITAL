@@ -7,16 +7,16 @@
                     <a href="">Contact us</a>
                 </div>
                 <div class="option">
-                    <div><a class="link" target="_parent" href="Homepage.html">Home</a></div>
-                    <div><a class="link" target="_parent" href="About_Us.html">About Us</a></div>
-                    <div><a class="link" target="_parent" href="Service.html">Services</a></div>
-                    <div><a class="link" target="_parent" href="Our_Doctors.html">Our Doctor</a></div>
-                    <div><a class="link" target="_parent" href="Blog.html">Blog</a></div>
+                    <div><a class="link" target="_parent" routerLink="/" routerLinkActive="active">Home</a></div>
+                    <div><a class="link" target="_parent" href="l">About Us</a></div>
+                    <div><a class="link" target="_parent" routerLink="/service" routerLinkActive="active">Services</a></div>
+                    <div><a class="link" target="_parent" href="">Our Doctor</a></div>
+                    <div><a class="link" target="_parent" href="">Blog</a></div>
                     <!-- <div class="header-search">
                 <input type="text" placeholder="Search">
                 <a href=""><img src="../Images/search-icon.png" alt=""></a>
             </div> -->
-                    <form action="./Login.html" target="_parent">
+                    <form action="./login"  routerLink="/login" routerLinkActive="active" target="_parent">
                         <button class="login-btn" type="submit">Log In</button>
                     </form>
                 </div>
@@ -29,10 +29,10 @@
                     </div>
                 </div>
                 <div class="function">
-                    <input class="button-function" type="submit" value="Virtual Doctor" onclick="virtualSchedule()">
-                    <input class="button-function" type="submit" value="Homecare" onclick="homecareSchedule()">
+                    <input class="button-function" type="submit" value="Virtual Doctor" routerLink="/virtual-doctor" routerLinkActive="active">
+                    <input class="button-function" type="submit" value="Homecare" routerLink="/home-doctor" routerLinkActive="active">
                     <input class="button-function function--3" type="submit" value="Schedule Appointment"
-                        onclick="basicSchedule()">
+                    routerLink="/basic-schedule" routerLinkActive="active">
                 </div>
             </div>
         </div>
@@ -47,16 +47,16 @@
             <div class="dropdown">
                 <div class="nav-right__icon"><i class="fa fa-bars"></i></div>
                 <div class="dropdown-content">
-                    <p><a href="Homepage.html"><i class="fa fa-home">&nbsp &nbsp</i>Home</a></p>
-                    <p><a href="About_Us.html"><i class="fa fa-book"> &nbsp &nbsp </i>About us</a></p>
-                    <p><a href="Services.html"><i class="fa fa-cogs"> &nbsp &nbsp </i>Service</a></p>
-                    <p><a href="Our_Doctors.html"><i class="fa fa-user-md"> &nbsp &nbsp </i>Our doctor</a></p>
-                    <p><a href="blog.html"><i class="fa fa-book">&nbsp &nbsp</i>Blog</a></p>
-                    <p><a href="Schedule_Virtual.html"><i class="fa fa-bed">&nbsp &nbsp</i>Virtual Doctor</a></p>
-                    <p><a href="Schedule_Homecare.html"><i class="fa fa-home">&nbsp &nbsp</i>Homecare</a></p>
-                    <p><a href="Schedule_Basic.html"><i class="fa fa-calendar">&nbsp &nbsp</i>Schedule Appointment</a>
+                    <p><a routerLink="/" routerLinkActive="active"><i class="fa fa-home">&nbsp &nbsp</i>Home</a></p>
+                    <p><a href=""><i class="fa fa-book"> &nbsp &nbsp </i>About us</a></p>
+                    <p><a routerLink="/service" routerLinkActive="active">><i class="fa fa-cogs"> &nbsp &nbsp </i>Service</a></p>
+                    <p><a href=""><i class="fa fa-user-md"> &nbsp &nbsp </i>Our doctor</a></p>
+                    <p><a href=""><i class="fa fa-book">&nbsp &nbsp</i>Blog</a></p>
+                    <p><a routerLink="/virtual-doctor" routerLinkActive="active"><i class="fa fa-bed">&nbsp &nbsp</i>Virtual Doctor</a></p>
+                    <p><a routerLink="/home-doctor" routerLinkActive="active"><i class="fa fa-home">&nbsp &nbsp</i>Homecare</a></p>
+                    <p><a routerLink="/basic-schedule" routerLinkActive="active"><i class="fa fa-calendar">&nbsp &nbsp</i>Schedule Appointment</a>
                     </p>
-                    <p><a href="Login.html"><i class="fa fa-user-shield">&nbsp &nbsp</i>Log In</a></p>
+                    <p><a routerLink="/login" routerLinkActive="active"><i class="fa fa-user-shield">&nbsp &nbsp</i>Log In</a></p>
                     <p><a href=""><i class="fa fa-envelope">&nbsp &nbsp</i>Contact</a></p>
                 </div>
             </div>
@@ -206,3 +206,4 @@
     </div>
     <!-- <iframe id="footer" src="./footer.html" frameborder="0" name="footer" ></iframe> --> -->
 
+    <router-outlet></router-outlet>
