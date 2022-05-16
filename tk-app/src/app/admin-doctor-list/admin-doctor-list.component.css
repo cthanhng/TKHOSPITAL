@@ -139,6 +139,9 @@ a.article:hover {
 .btn-align{
     text-align: right;
 }
+.btn{
+    background-color: #065F73;
+}
 
 @media (max-width: 768px) {
     #sidebar {
