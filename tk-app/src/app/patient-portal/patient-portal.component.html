@@ -1,15 +1,17 @@
+
+
 <div class="container">
     <!-- header cho patient-portal  -->
       <div class="pt-header-3" >
           <div class="pt-header-3__image">
               <img src="../IMAGES/avatar1.png" alt="Không thể tải hình">
           </div>
-          <div class="pt-header-3__content" >
-              <div>Hello,<b>Tên </b> </div>
+          <div class="pt-header-3__content"  >
+              <div>Hello,<b>{{userInfor?.Name}} </b> </div>
               <hr>
-              <div>Street,Ward, City</div>
-              <div><span>Phone number:</span>.Phone</div>
-              <div><span>Gender: .Gender </span></div>
+              <div>{{userInfor?.Street}},{{userInfor?.Ward}},{{userInfor?.City}}</div>
+              <div><span>Phone number:</span>{{userInfor?.Phone}}</div>
+              <div><span>Gender: {{userInfor?.Street}}</span></div>
           </div>
       </div>
       <div class="pt1-nav">
@@ -29,18 +31,18 @@
               <div class="pt1-main1__box pt1-main1__box1">
                   <div><img src="../IMAGES/avatar1.png" alt="Avatar"></div>
                   <br>
-                  <div><b>.Name</b></div>
-                  <div>DateOfBirth</div>
-                  <div>.Email</div>
+                  <div><b>{{userInfor?.Name}}</b></div>
+                  <div>{{userInfor?.DateOfBirth}}</div>
+                  <div>{{userInfor?.Email}}</div>
               </div>
               <div class="pt1-main1__box pt1-main1__box2">
                   <div><span> Adress </span><br>
-                   Street, Ward,City</div>
-                  <div><span>City</span><br>.City </div>
-                  <div><span>Nation</span><br>.Nationality </div>
-                  <div><span>Job</span><br>.Job</div>
-                  <div><span>Health Insuarance Number</span><br>.HealthInsuaranceCardNumber</div>
-                  <div><span>ID number</span><br>.IDNumber</div>
+                    {{userInfor?.Street}}, {{userInfor?.Ward}}, {{userInfor?.City}}</div>
+                  <div><span>City</span><br>{{userInfor?.City}} </div>
+                  <div><span>Nation</span><br>{{userInfor?.Nationality}}</div>
+                  <div><span>Job</span><br>{{userInfor?.Job}}</div>
+                  <div><span>Health Insuarance Number</span><br>{{userInfor?.HealthInsuranceCardNumber}}</div>
+                  <div><span>ID number</span><br>{{userInfor?.IDNumber}}</div>
               </div>
              </div> 
               <div class="pt1-main__table">

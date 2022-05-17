@@ -12,11 +12,14 @@ const db = require('./config/db');
 db.connect();
 
 
-const ServiceRouter = require('./routes/services.routes.js');
-app.use("/",ServiceRouter)
+// const ServiceRouter = require('./routes/services.routes.js');
+// app.use("/",ServiceRouter)
 
-const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
-app.use("/",PatientScheduleRouter)
+// const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
+// app.use("/",PatientScheduleRouter)
+
+const UserInfoRouter = require('./routes/user-information');
+app.use("/",UserInfoRouter)
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)

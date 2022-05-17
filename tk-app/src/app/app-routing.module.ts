@@ -14,11 +14,14 @@ import { LoginComponent } from './login/login.component';
 import { EditInformationComponent } from './edit-information/edit-information.component';
 import { PatientPortalComponent } from './patient-portal/patient-portal.component';
 import { VipComponent } from './vip/vip.component';
-
+import{HeaderComponent} from './header/header.component';
 const routes: Routes = [
   {
     path: "service",component: ServicePageComponent
   }, 
+  {
+    path: "header",component: HeaderComponent
+  },
   {
     path: "homepage",component: HomepageComponent
   }, 
@@ -70,4 +73,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent]
+export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent, HeaderComponent]
