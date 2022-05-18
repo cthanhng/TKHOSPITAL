@@ -6,7 +6,7 @@ const router = express.Router();
 const PatientSchedule = require('../models/Patient_schedule.js')
 
 router.get('/',function (req, res) {
-    res.send("Em ngồi đây và em  aaaaalalalaa")
+    res.send("Connect oke")
 })
 
 //Get all service list

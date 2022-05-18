@@ -61,7 +61,7 @@ const routes: Routes = [
     path: "service/after-hours",component: ServiceAfterHourComponent
   },
   {
-    path: "service/service-list/:id",component: ServiceDetailComponent
+    path: "service/servicelist/:id",component: ServiceDetailComponent
   },
 ];
 
