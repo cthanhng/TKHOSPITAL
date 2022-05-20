@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDoctorListComponent implements OnInit {
 
+  doctorlists: any;
+  errorMessage: string ='';
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
