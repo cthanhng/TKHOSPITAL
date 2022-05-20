@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
+// import { BasicScheduleService } from '../services/basic-schedule.service';
 
 @Component({
   selector: 'app-basic',
@@ -28,6 +29,11 @@ export class BasicComponent implements OnInit {
       phone: ['', [Validators.required, Validators.minLength(11)]],
       date: [''],
     })
+
+    // this._service.getPatient_schedule().subscribe({
+    //   next: data => this.patient_schedule = data,
+    //   error: err => this.errorMessage = err,
+    // })
 
   }
   get name(){
