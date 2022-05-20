@@ -6,7 +6,7 @@ const router = express.Router();
 const ServiceList = require('../models/service-list.js')
 
 router.get('/',function (req, res) {
-    res.send("Em ngồi đây và em  lalalaa")
+    res.send("Connect oke")
 })
 
 //Get all service list
@@ -23,13 +23,13 @@ router.get('/ServiceList', function (req, res) {
 })
 
 //Get list by id
-router.get('/ServiceList/:ListId', async function(req, res){
+router.get('/:id', async function(req, res){
     
     try {
 
-    let data = await ServiceList.findById(req.params.ListId);
-    res.json(data)
-    console.log(req.params.ListId)
+    let data = await ServiceList.findById(req.params.id);
+    res.json(data);
+    console.log(req.params.id)
 }
     catch(err){
         res.json({message: err.message})

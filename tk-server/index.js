@@ -15,9 +15,6 @@ db.connect();
 const ServiceRouter = require('./routes/services.routes.js');
 app.use("/",ServiceRouter)
 
-const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
-app.use("/",PatientScheduleRouter)
-
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)
 })

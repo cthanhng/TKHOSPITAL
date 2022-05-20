@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-vip',
   templateUrl: './vip.component.html',
@@ -13,12 +14,12 @@ export class VipComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.regForm = this._formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      address: ['',[Validators.required, Validators.minLength(10)]],
-      phone: ['', [Validators.required, Validators.minLength(11)]],
-      date: [''],
-    })
+    // this.regForm = this._formBuilder.group({
+    //   name: ['', [Validators.required, Validators.minLength(3)]],
+    //   address: ['',[Validators.required, Validators.minLength(10)]],
+    //   phone: ['', [Validators.required, Validators.minLength(11)]],
+    //   date: [''],
+    // })
   }
   get name(){
     return this.regForm.controls['name']
