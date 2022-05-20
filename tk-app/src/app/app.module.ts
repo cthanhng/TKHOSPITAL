@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 import { AdminArticleComponent } from './admin-article/admin-article.component';
+import { AdminServiceComponent } from './admin-service/admin-service.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { AdminArticleComponent } from './admin-article/admin-article.component';
     FooterComponent,
     HomepageComponent,
     AdminDoctorListComponent,
-    AdminArticleComponent
+    AdminArticleComponent,
+    AdminServiceComponent
   ],
   imports: [
     BrowserModule,
