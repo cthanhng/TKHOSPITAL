@@ -20,5 +20,5 @@ Patient_schedule.find({}, (error, data)=>{
 })
 
 app.listen(port, ()=>{
-    console.log('My server listening on port ${port}')
+    console.log(`My server listening on port ${port}`)
 })

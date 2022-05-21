@@ -32,15 +32,15 @@ import { HomeDocComponent } from './home-doc/home-doc.component'
     ServicePageComponent,
     ServiceListComponent,
     ServiceDetailComponent,
-    ServiceAfterHourComponent
+    ServiceAfterHourComponent,
     BasicComponent,
-    VipComponent
+    VipComponent,
     LoginComponent,
     SignUpComponent,
     EditInformationComponent,
     ForgotPassword1Component,
     ForgotPassword2Component,
-    ForgotPassword3Component
+    ForgotPassword3Component,
     VirtualDocComponent,
     HomeDocComponent
   ],
@@ -50,7 +50,6 @@ import { HomeDocComponent } from './home-doc/home-doc.component'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
-    ReactiveFormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

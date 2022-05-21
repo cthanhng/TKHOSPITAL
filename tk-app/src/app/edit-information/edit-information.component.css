@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box !important;
   }
-  body{
+  .box{
     background-color: #DFF0F2;
     margin: 0;
     padding: 0;

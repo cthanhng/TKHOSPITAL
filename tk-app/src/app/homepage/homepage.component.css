@@ -1,7 +1,7 @@
-body,html{
+.box{
     margin: 0;
     padding: 0;
-    background-image: url(../Images/background.png);
+    background-image: url(../../assets/page-images/background.png);
     font-family: 'Lato', sans-serif;
 }
 .bodyContainer{
@@ -14,7 +14,7 @@ body,html{
     display: none;
 }
 #home__background-1{
-    background-image: linear-gradient(rgba(152, 206, 226, 1),rgba(152, 206, 226, 0.5)), url(../IMAGES/BKG_right.jpg);
+    background-image: linear-gradient(rgba(152, 206, 226, 1),rgba(152, 206, 226, 0.5)), url(../../assets/page-images/BKG_right.jpg);
     background-repeat: no-repeat;
     /* background-size: 100%; */
     width: 70vw;
@@ -71,18 +71,6 @@ body,html{
     border-radius: 5px;
     position: relative;
     z-index: 1;
-}
-#home__button--go{
-    width: 60px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: rgba(39, 80, 89, 1);
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    z-index:2 ;
-    margin-top: -38px;
-    margin-left: 22%;
 }
 #home--circle{
     float: right;
@@ -337,9 +325,6 @@ background-color:#065F73 ;
     .home__content-2{
         font-size: 30px;
     }
-    #home__button--go{
-        margin-left: 25%;
-    }
     .home__container--item-1{
         height: 80vh;
        padding-top: 0px;
@@ -437,11 +422,6 @@ background-color:#065F73 ;
     }
     .home__content-4{
         font-size: 15px;
-    }
-    #home__button--go{
-        margin-left: 25%;
-        height: 20px;
-        margin-top: -26px;
     }
     .home__container--item-1{
         height: 50vh;
