@@ -1,12 +1,8 @@
-export class Patient_schedule{
-    _id: any;
-    PatientName: string;
-    Address: string;
-    PhoneNumber: number;
-    constructor() {
-        this._id = "";
-        this.PatientName = "";
-        this.Address ="";
-        this.PhoneNumber = 0;
-    }
+export interface PatientSchedule{
+    userID: String;
+    Time: String;
+    RoomNumber: String;
+    Dentist: String;
+    Patientnumber: String;
+    BookingType: String;
 }

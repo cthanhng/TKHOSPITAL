@@ -16,8 +16,8 @@ const UserInformationSchema = new Schema({
     Height: {type: Number, require: true},
     Weight: {type: Number, require: true},
     City: {type: String, require: true},
-    Ward: {type: String, require: true}
-    
+    Ward: {type: String, require: true},
+    image: {type: String, require: true}
 });
 
 module.exports =mongoose.model("UserInformations", UserInformationSchema);

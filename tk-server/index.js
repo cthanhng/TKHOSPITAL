@@ -20,6 +20,18 @@ db.connect();
 
 const UserInfoRouter = require('./routes/user-information');
 app.use("/",UserInfoRouter)
+const PatientScheduleRouter = require('./routes/patient-schedule');
+app.use("/",PatientScheduleRouter)
+const PaymentRouter = require('./routes/payment.router');
+app.use("/",PaymentRouter)
+const EventRouter = require('./routes/event.routes');
+app.use("/",EventRouter)
+const HealthDiagnosesRouter = require('./routes/health-diagnose');
+app.use("/",HealthDiagnosesRouter)
+
+const MedicalRecordRouter = require('./routes/medical-record');
+app.use("/", MedicalRecordRouter)
+
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)

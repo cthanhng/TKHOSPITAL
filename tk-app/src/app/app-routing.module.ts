@@ -1,3 +1,4 @@
+
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PatientRecordComponent } from './patient-record/patient-record.component';
 import { ServiceAfterHourComponent } from './service-after-hour/service-after-hour.component';
@@ -15,12 +16,16 @@ import { EditInformationComponent } from './edit-information/edit-information.co
 import { PatientPortalComponent } from './patient-portal/patient-portal.component';
 import { VipComponent } from './vip/vip.component';
 import{HeaderComponent} from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 const routes: Routes = [
   {
     path: "service",component: ServicePageComponent
   }, 
   {
     path: "header",component: HeaderComponent
+  },
+  {
+    path:"footer",component: FooterComponent
   },
   {
     path: "homepage",component: HomepageComponent
@@ -65,7 +70,7 @@ const routes: Routes = [
   },
   {
     path: "service/service-list/:id",component: ServiceDetailComponent
-  },
+  }
 ];
 
 @NgModule({
@@ -73,4 +78,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent, HeaderComponent]
+export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent, HeaderComponent, FooterComponent]

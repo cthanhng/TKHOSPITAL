@@ -16,4 +16,5 @@ export interface UserInformation{
     Weight: number;
     City: string;
     Ward: string;
+    image:string;
 }

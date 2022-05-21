@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { Patient_schedule } from '../models/patient_schedule';
+import { PatientSchedule } from '../models/patient_schedule';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class BasicScheduleService {
 
   constructor(private _http: HttpClient) { }
 
-  getPatient_schedule(): Observable<Patient_schedule[]>{
-    return this._http.get<Patient_schedule[]>(this.url).pipe(
+  getPatient_schedule(): Observable<PatientSchedule[]>{
+    return this._http.get<PatientSchedule[]>(this.url).pipe(
       retry(2),
       catchError(this.handleError)
     );
