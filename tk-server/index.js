@@ -11,8 +11,11 @@ app.use(cors());
 const db = require('./config/db');
 db.connect();
 
-const DoctorListRouter = require('./routes/doctor-list.routes')
-app.use("/", DoctorListRouter)
+/* const DoctorListRouter = require('./routes/doctor-list.routes')
+app.use("/", DoctorListRouter) */
+
+const ArticleListRouter = require('./routes/article-list.routes')
+app.use("/", ArticleListRouter)
 
 
 app.listen(port, ()=>{
