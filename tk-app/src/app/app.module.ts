@@ -17,9 +17,20 @@ import { AdminServiceComponent } from './admin-service/admin-service.component';
     HeaderComponent,
     FooterComponent,
     HomepageComponent,
-    AdminDoctorListComponent,
-    AdminArticleComponent,
-    AdminServiceComponent
+    ServicePageComponent,
+    ServiceListComponent,
+    ServiceDetailComponent,
+    ServiceAfterHourComponent,
+    BasicComponent,
+    VipComponent,
+    LoginComponent,
+    SignUpComponent,
+    EditInformationComponent,
+    ForgotPassword1Component,
+    ForgotPassword2Component,
+    ForgotPassword3Component,
+    VirtualDocComponent,
+    HomeDocComponent
   ],
   imports: [
     BrowserModule,
