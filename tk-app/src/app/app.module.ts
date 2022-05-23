@@ -9,14 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
-import { EditInformationComponent } from './edit-information/edit-information.component';
-import { ForgotPassword1Component } from './forgot-password1/forgot-password1.component';
-import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
-import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component';
-import { VirtualDocComponent } from './virtual-doc/virtual-doc.component';
-import { HomeDocComponent } from './home-doc/home-doc.component';
-import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,14 +17,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HeaderComponent,
     FooterComponent,
     HomepageComponent,
-    LoginComponent,
-    SignUpComponent,
-    EditInformationComponent,
-    ForgotPassword1Component,
-    ForgotPassword2Component,
-    ForgotPassword3Component,
-    VirtualDocComponent,
-    HomeDocComponent,
+    
     FilterPipe,
     UniqueFilterPipe
   ],

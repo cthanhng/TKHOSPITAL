@@ -16,6 +16,9 @@ import { VipComponent } from './vip/vip.component';
 import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 import { AdminArticleComponent } from './admin-article/admin-article.component';
 import { AdminServiceComponent } from './admin-service/admin-service.component';
+import { ForgotPassword1Component } from './forgot-password1/forgot-password1.component';
+import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
+import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component';
 
 const routes: Routes = [
   {
@@ -81,4 +84,25 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent,AdminDoctorListComponent, AdminArticleComponent, AdminServiceComponent]
+export const RoutingComponents=[ServiceListComponent,
+  ServicePageComponent,
+  ServiceAfterHourComponent,
+  PatientRecordComponent,
+  PatientPortalComponent, 
+  EditInformationComponent, 
+  SignUpComponent,
+   LoginComponent,
+   VirtualDocComponent
+   ,HomeDocComponent,
+   BasicComponent,
+   VipComponent,
+   AdminDoctorListComponent, 
+   AdminArticleComponent, 
+   AdminServiceComponent,
+   LoginComponent,
+  EditInformationComponent,
+  ForgotPassword1Component,
+  ForgotPassword2Component,
+  ForgotPassword3Component,
+  VirtualDocComponent,
+  HomeDocComponent,]
