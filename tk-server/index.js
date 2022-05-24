@@ -17,6 +17,8 @@ app.use("/", DoctorListRouter) */
 const ArticleListRouter = require('./routes/article-list.routes')
 app.use("/", ArticleListRouter)
 
+const ServiceListRouter = require('./routes/services.routes')
+app.use("/", ServiceListRouter)
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)
