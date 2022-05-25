@@ -7,7 +7,8 @@ const ArticleListSchema = new Schema({
     Title: {type: String, require: true},
     Author: {type: String, require: true},
     UpdateAt: {type: Date, require: true},
-    TimetoRead: {type: String, require: true},
+    Content: {type: String, require: true},
+    TimeToRead: {type: String, require: true},
 })
 
 module.exports = mongoose.model("article_lists",ArticleListSchema);

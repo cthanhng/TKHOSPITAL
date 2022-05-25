@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
@@ -15,10 +16,12 @@ db.connect();
 app.use("/", DoctorListRouter) */
 
 const ArticleListRouter = require('./routes/article-list.routes')
-app.use("/", ArticleListRouter)
+app.use("/article", ArticleListRouter)
 
 const ServiceListRouter = require('./routes/services.routes')
-app.use("/", ServiceListRouter)
+app.use("/service", ServiceListRouter)
+const DoctorListRouter = require('./routes/doctor-list.routes')
+app.use("/doctor", DoctorListRouter)
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)

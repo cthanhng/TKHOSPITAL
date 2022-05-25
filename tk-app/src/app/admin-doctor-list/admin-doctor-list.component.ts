@@ -8,8 +8,8 @@ import { DoctorListService } from '../services/doctor-list.service';
   styleUrls: ['./admin-doctor-list.component.css']
 })
 export class AdminDoctorListComponent implements OnInit {
-
-  doctorlists: any;
+  file: any=null;
+  doctorLists: any;
   errorMessage: string ='';
   private _toastr: any;
 
@@ -18,10 +18,35 @@ export class AdminDoctorListComponent implements OnInit {
   ngOnInit(): void {
     this._service.getDoctorList().subscribe(
       {
-        next: data=>this.doctorlists= data,
+        next: data=>this.doctorLists= data,
         error: err=> this.errorMessage = err,
      }
      )
   }
-
-}
+  getDoctor(){
+    this._service.getDoctorList().subscribe(
+      {
+        next: data=>this.doctorLists= data,
+        error: err=> this.errorMessage = err,
+     }
+     )
+  }
+  onSubmit(data:any){
+    console.log("Name:", data.name);
+    const formData= new FormData();
+    formData.append("name", data.name);
+    formData.append("file",this.file)
+    // console.log("formData",formData);
+    // for (let pair of formData.entries()){
+    //   console.log(pair[0], pair[1]);
+    // }
+    this._service.uploadData(formData).subscribe({
+      next: res=> {
+        console.log("Success");
+        this.getDoctor()
+      },
+      error: err=> {
+        console.log("Error",err.message)
+      }
+  })
+}}

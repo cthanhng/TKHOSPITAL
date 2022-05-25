@@ -19,6 +19,7 @@ import { AdminServiceComponent } from './admin-service/admin-service.component';
 import { ForgotPassword1Component } from './forgot-password1/forgot-password1.component';
 import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
 import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component';
+import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,9 @@ const routes: Routes = [
   {
     path: "admin-service",component: AdminServiceComponent
   },
+  {
+    path: "admin-schedule",component: AdminScheduleComponent
+  },
 ];
 
 @NgModule({
@@ -105,4 +109,5 @@ export const RoutingComponents=[ServiceListComponent,
   ForgotPassword2Component,
   ForgotPassword3Component,
   VirtualDocComponent,
-  HomeDocComponent,]
+  HomeDocComponent,
+  AdminScheduleComponent]

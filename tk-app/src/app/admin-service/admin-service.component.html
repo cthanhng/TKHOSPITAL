@@ -45,17 +45,17 @@
                 <th>ServiceID</th>
                 <th>ServiceName</th>
                 <th>Price</th>
-                <th>Category</th>
+                <th>Department</th>
                 <th>Description</th>
                 <th colspan="2">Function</th>
             </tr>
-            <tr>
+            <tr *ngFor="let s of serviceList">
                 <td><img class="img-scale" src=""></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{s.ServiceID}}</td>
+                <td>{{s.ServiceName}}</td>
+                <td>{{s.Price}}</td>
+                <td>{{s.Department}}</td>
+                <td>{{s.Description}}</td>
                 <td><i class="bi bi-pencil"></i>Edit</td>
                 <td><i class="bi bi-trash"></i>Delete</td>
             </tr>

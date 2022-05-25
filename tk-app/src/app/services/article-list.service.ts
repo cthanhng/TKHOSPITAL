@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { ArticleList } from '../models/article-list';
 
-const baseUrl="http://localhost:3000"
+const baseUrl="http://localhost:3000/article"
 @Injectable({
   providedIn: 'root'
 })

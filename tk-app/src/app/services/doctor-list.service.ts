@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { DoctorList } from '../models/doctor-list';
 
-const baseUrl="http://localhost:3000"
+const baseUrl="http://localhost:3000/doctor"
 @Injectable({
   providedIn: 'root'
 })
@@ -20,4 +20,11 @@ export class DoctorListService {
   handleError(err: HttpErrorResponse) {
     return throwError(()=>new Error(err.message))
   }
+  uploadData(data: any){
+    return this._http.post(`${baseUrl}/upload`,data)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
+    }
 }
