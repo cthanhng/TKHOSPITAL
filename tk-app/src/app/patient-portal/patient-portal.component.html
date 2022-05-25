@@ -1,0 +1,159 @@
+<div class="container">
+    <!-- header cho patient-portal  -->
+      <div class="pt-header-3" >
+          <div class="pt-header-3__image">
+              <img src="../IMAGES/avatar1.png" alt="Không thể tải hình">
+          </div>
+          <div class="pt-header-3__content" >
+              <div>Hello,<b>Tên </b> </div>
+              <hr>
+              <div>Street,Ward, City</div>
+              <div><span>Phone number:</span>.Phone</div>
+              <div><span>Gender: .Gender </span></div>
+          </div>
+      </div>
+      <div class="pt1-nav">
+        <div class="pt1-nav__left">
+          <div class="pt-navbar_1"><a href="Homepage.html">Homepage</a></div>
+          <span> > </span>
+          <div class="pt-navbar_2"><a href="#">Medical record</a></div>
+        </div>
+        <div class="pt1-nav__right">
+          <button  class="pt1-nav__right--button"><i class="fa fa-edit">Edit</i></button>
+        </div>
+      </div>
+      
+      <div class="pt1-main">
+          <div class="pt1-main__column pt1-main__column--1 ">
+             <div class="pt1-main__column1--infor">
+              <div class="pt1-main1__box pt1-main1__box1">
+                  <div><img src="../IMAGES/avatar1.png" alt="Avatar"></div>
+                  <br>
+                  <div><b>.Name</b></div>
+                  <div>DateOfBirth</div>
+                  <div>.Email</div>
+              </div>
+              <div class="pt1-main1__box pt1-main1__box2">
+                  <div><span> Adress </span><br>
+                   Street, Ward,City</div>
+                  <div><span>City</span><br>.City </div>
+                  <div><span>Nation</span><br>.Nationality </div>
+                  <div><span>Job</span><br>.Job</div>
+                  <div><span>Health Insuarance Number</span><br>.HealthInsuaranceCardNumber</div>
+                  <div><span>ID number</span><br>.IDNumber</div>
+              </div>
+             </div> 
+              <div class="pt1-main__table">
+                  <div id="pt2-main">
+                      <div class="pt2-main__container">
+                        <div class="container">
+                          <div class="tab">
+                            <button class="tablinks active">Medical examination schedule</button>
+                            <button class="tablinks">Hospital fee payment history</button>
+                            <button class="tablinks">Announcement/Event</button>
+                          </div>
+              
+                          <div id="Medical examination schedule" class="tabcontent" >
+                            <div class="pt-main__tab1">
+                              <div class="tab1-row">
+                                <div class="tab1-row__item">
+                                  <div><span>Time</span></div>
+                                  <div> .Time</div>
+                                </div>
+                                <div class="tab1-row__item">
+                                  <div><span>Room number</span></div>
+                                  <div>.RoomNumber</div>
+                                </div>
+                                <div class="tab1-row__item">
+                                  <div><span>Dentist</span></div>
+                                  <div>.Dentist</div>
+                                </div>
+                                <div class="tab1-row__item">
+                                  <div><span>Patient number</span></div>
+                                  <div>.Patientnumber</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div id="Hospital fee payment history" class="tabcontent" >
+                              <div>
+                                <table>
+                                  <tr>
+                                      <th>Patient Name</th>
+                                      <th>Date</th>
+                                      <th>Content</th>
+                                      <th>Patient code</th>
+                                      <th>Reciept number</th>
+                                      <th>Money</th>
+                                      <th>Status</th>
+                                  </tr>
+                                  <tr >
+                                      <td>PatientName}}</td>
+                                      <td>Date}}</td>
+                                      <td>Content}}</td>
+                                      <td>.PatientCode}}</td>
+                                      <td>.RecieptNumber}}</td>
+                                      <td>.Money}}</td>
+                                      <td>.Status}}</td>
+                                  </tr>
+                                </table>
+                              </div>
+                          </div>
+              
+                          <div id="Announcement/Event" class="tabcontent" >
+                              <div>
+                                <div class="tab3-row" >
+                                  <div class="pt2-col1">.Time}}</div>
+                                  <div class="pt2-col2">.Content}}</div>
+                                  <div class="pt2-col3"><button>New</button></div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <script type="text/javascript" src="../Script/Patient_Portal_Tab.js">
+                        
+                    </script>
+                        
+                      </div>
+                    </div>    
+              </div>
+              </div>
+              <div class="pt1-main__column pt1-main__column--2">
+              <div class=" pt1-main1__box3">
+                  <div class="pt1-main1__box3--title">
+                      <div>Note</div>
+                      <div></div>
+                  </div>
+                  <div id="btnSave" class="pt1-main1__box3--note">
+                      <div><textarea name="" id="valueNote" ></textarea></div>
+                      <div><button >Save notes</button></div>
+                  </div>
+                  <div class="pt1-main1__box3--footer">
+                      <div><img src="../IMAGES/human_icon.png" alt=""></div>
+                      <div><span>Có hẹn khám</span><br>Doctor .Dentist}}</div>
+                      <div>.Time}}</div>
+                  </div>
+              </div>
+              <div class="pt1-main__column2--file">
+                  <div class="pt1-main__column--title">Files/Documents</div>
+                  <div class="pt1-main__item--file">
+                      <a id="downloadMe" href="">Medical record</a>
+                      <a  href="" download="patient portal.pdf"><i class="fa fa-download"></i></a>
+                  </div>
+                  <div class="pt1-main__item--file">
+                       <a href="">X-ray photo Result</a>
+                      <a href="" download="X-ray photo Result.pdf"><i class="fa fa-download"></i></a>
+                  </div>
+                  <div class="pt1-main__item--file">
+                      <a href=""> General results</a>
+                      <a href="" download="General results.pdf"><i class="fa fa-download"></i></a>
+                  </div>
+            
+              </div>
+          </div>    
+      </div>
+  </div>
+  
+  
+  

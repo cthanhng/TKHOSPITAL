@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div>
+        Specialization
+    </div>
+    <div class="specialist--table">
+        <div class="specialist--table--column">
+            <div class="specialist--table--cell ">
+                <div class="specialist--table--cell ">
+                    <img src="" alt="" class="border-top-left">
+                    <div class="overlay">Best service for kids</div>
+                </div>
+                <div class="specialist--table--cell">
+                    <div (click)="onSelect(serviceList[2])">{{serviceList[2].Department}} </div> 
+                   <br>
+                    <span class="iconify color-green" data-icon="medical-icon:i-pediatrics"></span>
+                </div>
+            </div>
+        </div>
+        <div class="specialist--table--column">
+            <div class="specialist--table--cell">
+                <span class="iconify color-green" data-icon="icon-park-outline:teeth"></span> <br>
+                <div (click)="onSelect(serviceList[0])">{{serviceList[0].Department}} </div>
+            </div>
+            <div class="specialist--table--cell">
+                <img src="" alt="">
+                <div class="overlay">Smile :)</div>
+            </div>
+        </div>
+
+        <div class="specialist--table--column">
+            <div class="specialist--table--cell ">
+                <div class="specialist--table--cell ">
+                    <img src="" alt="" class="border-top-left">
+                    <div class="overlay">Healthy body, healthy mind</div>
+                </div>
+                <div class="specialist--table--cell">
+                   <div (click)="onSelect(serviceList[1])">{{serviceList[1].Department}} </div>
+                   <br>
+                    <span class="iconify color-green" data-icon="medical-icon:i-pediatrics"></span>
+                </div>
+            </div>
+        </div>
+        <div class="specialist--table--column">
+            <div class="specialist--table--cell">
+                <span class="iconify color-green" data-icon="icon-park-outline:teeth"></span> <br>
+                <div (click)="onSelect(serviceList[3])">{{serviceList[3].Department}} </div>
+            </div>
+            <div class="specialist--table--cell">
+                <img src="" alt="">
+                <div class="overlay">Beat in your own way</div>
+            </div>
+        </div>
+        
+    </div>
+</div>

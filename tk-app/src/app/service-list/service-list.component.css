@@ -1,0 +1,121 @@
+/* 
+specialization service */
+.specialist{
+    flex-direction: column;
+}
+.specialist--container{
+    display: flex;
+ flex-direction: row;
+ justify-content: center;
+ 
+}
+.specialist-icon{
+    text-align: center;
+    line-height: 375px;
+    height: 376px;
+}
+.specialist--table{
+    
+    width: 80%;
+    height: 60%;
+    text-align: center;
+    display: flex;
+    margin: 30px;
+    max-height: 800px;
+    background: white;
+    max-width:960px ;
+    border-radius: 30px;
+}
+.specialist--table--column{
+    max-height: 400px;
+    height: 40%;
+}
+.specialist--table--cell{
+    height: 50%;
+    font-size: 25px;
+    font-weight: bold;
+    max-height: 160px;
+    position: relative;
+   
+}
+.specialist--table--cell>a{
+color: #545859;
+text-decoration: none;
+}
+.specialist--table--cell>img{
+    width: 100%;
+    max-width: 300px;
+    max-height: 210px;
+    height: 100%;
+}
+.line-height-full{
+   vertical-align:middle
+}
+.color-green{
+    color:#95BAC6
+}
+.border-top-left{
+    border-radius: 30px 0px 0px 0px
+}
+.border-bottom-right{
+    border-radius: 0px 0px 30px 0px;
+}
+@media screen and (max-width:1048px) {
+    .specialist--table{
+        flex-direction: column;
+    }
+    .specialist--table--column{
+        display: flex;
+        flex-direction: row;
+    }
+    .specialist--table--cell{
+        width: 50%;
+        max-height: 160px;
+    }
+    .specialist--table--cell>img{
+        max-height: 160px;
+    }
+    .specialist-icon{
+        height: 640px;
+        line-height: 640px;
+    }
+}
+@media screen and (max-width:380px) {
+    .specialist{
+        padding: 10px 20px;
+    }
+    .specialist--table{
+        margin: 5px 5px;
+    }
+    .color-green{
+        width: 40px;
+        height: 40px;
+        margin: 5px 0px;
+    }
+    .specialist--table--cell{
+        font-size: 15px;
+    }
+    .specialist-icon{
+        height: 200px;
+        line-height: 280px;
+    }
+}
+.overlay {
+    position: absolute; 
+    bottom: 0; 
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1; 
+    width: 96%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+  }
+  .overlay:last-child{
+    border-radius: 0px 0px 30px 0px
+  }
+  .specialist--table--cell:hover .overlay {
+    opacity: 1;
+  }

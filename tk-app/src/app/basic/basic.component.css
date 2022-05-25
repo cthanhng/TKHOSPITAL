@@ -1,0 +1,13 @@
+.container-fluid{
+    margin-top: 50px;
+}
+.container{
+    background-color: #dae5f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-primary{
+    background-color: #065F73;;
+}
