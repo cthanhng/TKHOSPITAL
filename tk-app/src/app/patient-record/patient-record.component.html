@@ -127,62 +127,15 @@
                <td>3453</td>
                <td><a data-bs-toggle="modal" data-bs-target="#exampleModal" > <i  class="bi bi-eye"></i></a></td>
            </tr>
-            <!-- <tr *ngFor="let n of medicalRecords.medicalRecord[].nam" >
+            <tr *ngFor="let n of this.temp" >
                 <td>{{n.dateIn}}</td>
                 <td>{{n.dateOut}}</td>
                 <td>{{n.diseaseName}}</td>
-                <td><a href="#detail" ><i class="bi-eye"></i></a></td>
-            </tr> -->
+                <td><a data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="selectDetail(n)"><i class="bi-eye"></i></a></td>
+            </tr>
 
         </table>
     </div>
-    <!-- <div class="popup-container" #target>
-        <div class="popup-content">
-            <div class="popup-header">
-                <div class="popup--date">
-                    <div class="date">
-                        Date in: <br>
-                        dateIn}}
-                    </div>
-                    <div class="date">
-                        Date out: <br>
-                        ateOut}}
-                    </div>
-                </div>
-                <div class="popup-info">
-                    <div class="info--content">
-                        <div><span>Disease code: </span>diseaseCode}}</div>
-                        <div><span>Department: </span>prDetail.inforKhamBenh.department}}</div>
-                        <div><span>Payment total:
-                            </span>prDetail.detail[0].total+prDetail.detail[1].total+prDetail.detail[2].total}}
-                        </div>
-                        <div><span>Payment status: </span>prDetail.inforKhamBenh.paymentStatus}}</div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="popup-table">
-                <table>
-                    <tr>
-                        <th>Name of service</th>
-                        <th>Quantity</th>
-                        <th>Unit Price</th>
-                        <th>Total</th>
-
-                    </tr>
-                    <tr >
-                        <td>nameService}}</td>
-                        <td>quantity}}</td>
-                        <td>unitPrice}}</td>
-                        <td>total}}</td>
-                    </tr>
-
-                </table>
-            </div>
-            <a href="#" class="close">x</a>
-        </div>
-    </div> -->
-
     
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -198,7 +151,7 @@
                     <div class="popup--date">
                         <div class="date">
                             Date in: <br>
-                            dateIn}}
+                            detail.dateIn}}
                         </div>
                         <div class="date">
                             Date out: <br>
@@ -235,7 +188,6 @@
     
                     </table>
                 </div>
-                <a href="#" class="close">x</a>
             </div>
         </div>
         <div class="modal-footer">
