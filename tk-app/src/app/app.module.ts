@@ -10,6 +10,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 import { AdminArticleComponent } from './admin-article/admin-article.component';
 import { AdminServiceComponent } from './admin-service/admin-service.component';
+import { OurDoctorComponent } from './our-doctor/our-doctor.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,9 @@ import { AdminServiceComponent } from './admin-service/admin-service.component';
     HomepageComponent,
     AdminDoctorListComponent,
     AdminArticleComponent,
-    AdminServiceComponent
+    AdminServiceComponent,
+    DoctorListComponent,
+    OurDoctorComponent
   ],
   imports: [
     BrowserModule,

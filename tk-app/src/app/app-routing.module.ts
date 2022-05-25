@@ -17,6 +17,8 @@ import { VipComponent } from './vip/vip.component';
 import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 import { AdminArticleComponent } from './admin-article/admin-article.component';
 import { AdminServiceComponent } from './admin-service/admin-service.component';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
+import { OurDoctorComponent } from './our-doctor/our-doctor.component';
 
 const routes: Routes = [
   {
@@ -75,6 +77,9 @@ const routes: Routes = [
   {
     path: "admin-service",component: AdminServiceComponent
   },
+  {
+    path: "our-doctor",component: OurDoctorComponent
+  },
 ];
 
 @NgModule({
@@ -82,4 +87,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent,AdminDoctorListComponent, AdminArticleComponent, AdminServiceComponent]
+export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent,AdminDoctorListComponent, AdminArticleComponent, AdminServiceComponent, OurDoctorComponent]
