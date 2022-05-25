@@ -11,6 +11,8 @@ app.use(cors());
 const db = require('./config/db');
 db.connect();
 
+/* const DoctorListRouter = require('./routes/doctor-list.routes')
+app.use("/", DoctorListRouter) */
 
 // const ServiceRouter = require('./routes/services.routes.js');
 // app.use("/",ServiceRouter)

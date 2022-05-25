@@ -1,10 +1,10 @@
 export interface IService { 
-    "Department":string;
-    "DepartID":string;
-    "List":{
-        "Name":string;
-        "Price":string;
-        "Description":string;
-        "Image":any;
-    }
+    serviceId:string,
+    serviceName: string,
+    department:string,
+    departmentId:string,
+    price:string,
+    description:string
+    image:string
+    
 }

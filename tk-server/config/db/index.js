@@ -1,9 +1,4 @@
 const mongoose = require('mongoose');
-require('dotenv/config')
-
-
-module.exports = {connect}
-const cors = require('cors')
 require('dotenv/config');
 
 async function connect() {
@@ -18,3 +13,5 @@ async function connect() {
         console.log("Error: ",err.message);
     }
 }
+
+module.exports={connect};
