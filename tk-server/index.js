@@ -34,6 +34,9 @@ app.use("/",HealthDiagnosesRouter)
 const MedicalRecordRouter = require('./routes/medical-record');
 app.use("/", MedicalRecordRouter)
 
+const AdminAccountRouter = require('./routes/admin-account.routes');
+app.use("/",AdminAccountRouter )
+
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)

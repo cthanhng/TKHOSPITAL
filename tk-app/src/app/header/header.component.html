@@ -19,9 +19,24 @@
                 <input type="text" placeholder="Search">
                 <a href=""><img src="../Images/search-icon.png" alt=""></a>
             </div> -->
-                    <form action="./Login.html" target="_parent">
-                        <button class="btn btn-primary" type="submit">Log In</button>
-                    </form>
+            <div *ngIf="client;then redirect;else login"></div>
+                    <ng-template #login>
+                        <form action="./Login.html" target="_parent">
+                            <button class="btn btn-primary" type="submit">Log In</button>
+                        </form>
+                    </ng-template>
+                    <ng-template #redirect>
+                        <div class="login_user" >
+                            <div class="dropdown">
+                              <div class="login_user--title"><i class="fa fa-user-circle"></i></div>
+                              <div class="dropdown-content">
+                                <p><a class="item-user" onclick="patientPortal()"><i class="fa fa-window-restore">&nbsp &nbsp</i> Patient Portal</a></p>
+                                <p><a class="item-user"onclick="medicalRecord()" ><i class="fa fa-book">&nbsp &nbsp</i> Medical record</a></p>
+                                <p><a href="Homepage.html"><i class="fa fa-user-shield">&nbsp &nbsp</i> Log out</a></p>
+                              </div>
+                            </div>
+                        </div>
+                    </ng-template>
                     </div>
             </form>
           </div>

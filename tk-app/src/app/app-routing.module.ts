@@ -16,6 +16,8 @@ import { PatientPortalComponent } from './patient-portal/patient-portal.componen
 import { VipComponent } from './vip/vip.component';
 import{HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminServiceComponent } from './admin-service/admin-service.component';
 const routes: Routes = [
   {
     path: "service",component: ServicePageComponent
@@ -67,9 +69,13 @@ const routes: Routes = [
   {
     path: "service/after-hours",component: ServiceAfterHourComponent
   },
-  // {
-  //   path: "service/service-list/:id",component: ServiceDetailComponent
-  // }
+  {
+    path:"admin-login",component: AdminLoginComponent
+  },
+  {
+    path:"admin-service",component: AdminServiceComponent
+  }
+  
 ];
 
 @NgModule({
@@ -77,4 +83,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent, HeaderComponent, FooterComponent]
+export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,PatientRecordComponent,PatientPortalComponent,
+   EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent, 
+   HeaderComponent, FooterComponent, AdminLoginComponent, AdminServiceComponent]

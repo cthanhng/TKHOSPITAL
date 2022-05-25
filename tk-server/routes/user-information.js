@@ -1,4 +1,4 @@
-const { response } = require('express');
+const { response, json } = require('express');
 const express = require('express');
 const router = express.Router();
 
@@ -16,6 +16,17 @@ router.get('/user-informations/:id', function (req, res) {
           
         }
     })
+})
+
+router.post('/user-informations/', async function(req, res) {
+    let user = new userInfor(req.body);
+    try{
+        await user.save();
+        res.json('success')
+    }
+    catch(err){
+        res.json({message:err.message});
+    }
 })
 
 module.exports=router;

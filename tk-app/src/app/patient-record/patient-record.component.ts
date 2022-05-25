@@ -14,7 +14,7 @@ export class PatientRecordComponent implements OnInit {
   medicalRecords:any;
   yearSelected:any;
   temp:any;
-  detail:any
+  detail:any={};
   
   constructor(private _service: HealthDiagnoseService, private _services:MedicalRecordService) { }
 

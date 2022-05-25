@@ -1,20 +1,19 @@
-export interface UserInformation{
+export class UserInformation{
 
-    userID: string;
-    Name: string;
-    DateOfBirth: string;
-    Gender: string;
-    Phone: string;
-    IDNumber: string;
-    Email: string;
-    Nationality: string;
-    Religion: string;
-    Street: string;
-    Job: string;
-    HealthInsuranceCardNumber: string;
-    Height: number;
-    Weight: number;
-    City: string;
-    Ward: string;
-    image:string;
+    
+    "name":string;
+    "date": string;
+    "gender": string;
+    "phone": string;
+    "IDNumber": string;
+    "email": string;
+    "nationality": string;
+    "religion": string;
+    "street": string;
+    "job": string;
+    "healthyInsurance": string;
+    "height": number;
+    "weight": number;
+    "province": string;
+    "ward": string;
 }

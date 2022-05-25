@@ -121,17 +121,11 @@
                 <th>Disease name</th>
                 <th>Detail</th>
             </tr>
-           <tr>
-               <td>3453</td>
-               <td>3453</td>
-               <td>3453</td>
-               <td><a data-bs-toggle="modal" data-bs-target="#exampleModal" > <i  class="bi bi-eye"></i></a></td>
-           </tr>
             <tr *ngFor="let n of this.temp" >
                 <td>{{n.dateIn}}</td>
                 <td>{{n.dateOut}}</td>
                 <td>{{n.diseaseName}}</td>
-                <td><a data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="selectDetail(n)"><i class="bi-eye"></i></a></td>
+                <td><span data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="selectDetail(n)"><i class="bi-eye"></i></span></td>
             </tr>
 
         </table>
@@ -151,7 +145,7 @@
                     <div class="popup--date">
                         <div class="date">
                             Date in: <br>
-                            detail.dateIn}}
+                            {{detail.dateIn}}
                         </div>
                         <div class="date">
                             Date out: <br>

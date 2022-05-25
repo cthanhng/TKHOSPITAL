@@ -1,7 +1,7 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { UserInformation } from '../models/user-information';
+import { IUserInfo } from '../models/user_infor';
 @Injectable({
   providedIn: 'root',
 })
@@ -10,12 +10,22 @@ export class UserInformationService {
 
   constructor(private _http: HttpClient) {}
 
-  getByID(userID: string): Observable<UserInformation> {
+  getByID(userID: string): Observable<IUserInfo> {
     return this._http
-      .get<UserInformation>(`${this.baseUrl}/user-informations/${userID}`)
+      .get<IUserInfo>(`${this.baseUrl}/user-informations/${userID}`)
       .pipe(retry(2), catchError(this.handleError));
   }
   handleError(err: HttpErrorResponse) {
     return throwError(() => new Error(err.message));
+  }
+
+  post(user: IUserInfo) {
+    const headers = new HttpHeaders().set(
+      'Content-Type',
+      'application/json; charset=utf-8'
+    );
+    return this._http
+      .post(`${this.baseUrl}/user-informations/`, user, { headers: headers })
+      .pipe(retry(2), catchError(this.handleError));
   }
 }
