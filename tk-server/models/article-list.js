@@ -10,4 +10,4 @@ const ArticleListSchema = new Schema({
     TimetoRead: {type: String, require: true},
 })
 
-module.exports = mongoose.model("ArticleList",DoctorListSchema);
+module.exports = mongoose.model("article_lists",ArticleListSchema);

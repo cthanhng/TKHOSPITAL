@@ -5,21 +5,28 @@ import { IService } from '../models/service';
 
 
 
-const baseUrl="http://localhost:3000"
+const baseUrl = "http://localhost:3000"
 @Injectable({
   providedIn: 'root'
 })
 export class ListServiceService {
 
-  constructor(private _http:HttpClient ) { }
-  getServiceList(): Observable<IService[]>{
+  constructor(private _http: HttpClient) { }
+  getServiceList(): Observable<IService[]> {
 
-    return this._http.get<IService[]>(`${baseUrl}/ServiceList`).pipe(
+    return this._http.get<IService[]>(`${baseUrl}/services`).pipe(
       retry(2),
       catchError(this.handleError)
     )
   }
   handleError(err: HttpErrorResponse) {
-    return throwError(()=>new Error(err.message))
+    return throwError(() => new Error(err.message))
+  }
+
+  getServiceById(id:string): Observable<IService[]> {
+    return this._http.get<IService[]>(`${baseUrl}/${id}`).pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
   }
 }

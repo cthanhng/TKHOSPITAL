@@ -5,12 +5,12 @@ const router = express.Router();
 const ArticleList = require('../models/article-list')
 
 router.get('/',function (req, res) {
-    res.send("Connect okie")
+    res.send("Connect okeee")
 })
 
-//Get all doctor list
+//Get all article list
 router.get('/article-lists', function (req, res) {
-    DoctorList.find({}, function (err,data) {
+    ArticleList.find({}, function (err,data) {
         if(err) {
             res.json({message:err.message})
         }

@@ -7,10 +7,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
-import { AdminArticleComponent } from './admin-article/admin-article.component';
-import { AdminServiceComponent } from './admin-service/admin-service.component';
-import { OurDoctorComponent } from './our-doctor/our-doctor.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +17,9 @@ import { OurDoctorComponent } from './our-doctor/our-doctor.component';
     HeaderComponent,
     FooterComponent,
     HomepageComponent,
-    AdminDoctorListComponent,
-    AdminArticleComponent,
-    AdminServiceComponent,
-    DoctorListComponent,
-    OurDoctorComponent
+    
+    FilterPipe,
+    UniqueFilterPipe
   ],
   imports: [
     BrowserModule,

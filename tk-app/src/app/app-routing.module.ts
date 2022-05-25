@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { ServicePageComponent } from './service-page/service-page.component';
-import { ServiceDetailComponent } from './service-detail/service-detail.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BasicComponent } from './basic/basic.component';
 import { HomeDocComponent } from './home-doc/home-doc.component';
@@ -17,8 +16,9 @@ import { VipComponent } from './vip/vip.component';
 import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 import { AdminArticleComponent } from './admin-article/admin-article.component';
 import { AdminServiceComponent } from './admin-service/admin-service.component';
-import { DoctorListComponent } from './doctor-list/doctor-list.component';
-import { OurDoctorComponent } from './our-doctor/our-doctor.component';
+import { ForgotPassword1Component } from './forgot-password1/forgot-password1.component';
+import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
+import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component';
 
 const routes: Routes = [
   {
@@ -60,13 +60,13 @@ const routes: Routes = [
   }, 
 
   {
-    path: "service/service-list",component: ServiceListComponent
+    path: "services/service-list",component: ServiceListComponent
   },
   {
     path: "service/after-hours",component: ServiceAfterHourComponent
   },
   {
-    path: "service/servicelist/:id",component: ServiceDetailComponent
+    path: "service/servicelist/:id",component: ServiceListComponent
   },
   {
     path: "admin-doctor-list",component: AdminDoctorListComponent
@@ -77,9 +77,6 @@ const routes: Routes = [
   {
     path: "admin-service",component: AdminServiceComponent
   },
-  {
-    path: "our-doctor",component: OurDoctorComponent
-  },
 ];
 
 @NgModule({
@@ -87,4 +84,25 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,ServiceDetailComponent,PatientRecordComponent,PatientPortalComponent, EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent,AdminDoctorListComponent, AdminArticleComponent, AdminServiceComponent, OurDoctorComponent]
+export const RoutingComponents=[ServiceListComponent,
+  ServicePageComponent,
+  ServiceAfterHourComponent,
+  PatientRecordComponent,
+  PatientPortalComponent, 
+  EditInformationComponent, 
+  SignUpComponent,
+   LoginComponent,
+   VirtualDocComponent
+   ,HomeDocComponent,
+   BasicComponent,
+   VipComponent,
+   AdminDoctorListComponent, 
+   AdminArticleComponent, 
+   AdminServiceComponent,
+   LoginComponent,
+  EditInformationComponent,
+  ForgotPassword1Component,
+  ForgotPassword2Component,
+  ForgotPassword3Component,
+  VirtualDocComponent,
+  HomeDocComponent,]
