@@ -3,73 +3,46 @@
   <div class="container">
     <div class="row align-items-center">
         <div class="col-lg-3 mb-3 mb-md-0">
-            <span class="h2 d-block">Have a glance at <span id="our-doctors">Our exellent doctors!</span></span>
+            <span class="h2 d-block">Have a glance at <span id="our-doctors">Our excellent doctors!</span></span>
             <p>TK-Hospital with a team of experienced and dedicated doctors</p>
         </div>
         <div class="col-lg-9">
             <div class="row">
-                <div class="col-md-4 d-flex">
+                <div class="col-md-4 d-flex" *ngFor="let o of ourdoctors">
                     <div class="card mb-3">
-                        <img class="card-img-top" src="https://www.leasurgery.co.uk/media/content/images/doctor.jpg" alt="không tải được hình">
+                        <img class="card-img-top" src="{{o.Image}}" alt="không tải được hình">
                         <div class="card-body py-3">
-                            <h5 class="mb-0">John Doe</h5>
-                            <span>Co-Founder, CTO</span>
+                            <h5 class="mb-0">{{o.DoctorName}}</h5>
+                            <span>{{o.Department}}</span>
                         </div>
                         <div class="card-footer pt-0 border-top-0">
-                            <a href="#">email@email.com</a>
+                            <p id="doctor-team"><i class="bi bi-eye">See more info with table below!</i></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex">
-                    <div class="card mb-3">
-                        <img class="card-img-top" src="https://www.leasurgery.co.uk/media/content/images/doctor.jpg" alt="không tải được hình">
-                        <div class="card-body py-3">
-                            <h5 class="mb-0">John Doe</h5>
-                            <span>Co-Founder, Marketing</span>
-                        </div>
-                        <div class="card-footer pt-0 border-top-0">
-                            <a href="#">email@email.com </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex">
-                    <div class="card mb-3">
-                        <img class="card-img-top" src="https://www.leasurgery.co.uk/media/content/images/doctor.jpg" alt="không tải được hình">
-                        <div class="card-body py-3">
-                            <h5 class="mb-0">John Doe</h5>
-                            <span>Marketing</span>
-                        </div>
-                        <div class="card-footer pt-0 border-top-0">
-                            <a href="#">email@email.com </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex">
-                  <div class="card mb-3">
-                      <img class="card-img-top" src="https://www.leasurgery.co.uk/media/content/images/doctor.jpg" alt="không tải được hình">
-                      <div class="card-body py-3">
-                          <h5 class="mb-0">John Doe</h5>
-                          <span>Marketing</span>
-                      </div>
-                      <div class="card-footer pt-0 border-top-0">
-                          <a href="#">email@email.com </a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-4 d-flex">
-                <div class="card mb-3">
-                    <img class="card-img-top" src="https://www.leasurgery.co.uk/media/content/images/doctor.jpg" alt="không tải được hình">
-                    <div class="card-body py-3">
-                        <h5 class="mb-0">John Doe</h5>
-                        <span>Marketing</span>
-                    </div>
-                    <div class="card-footer pt-0 border-top-0">
-                        <a href="#">email@email.com </a>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
     </div>
 </div>
 </section>
+<h3 class="text-center" id="doctor-role">List of Doctors by Department</h3>
+<table class="table table-striped table-borderless">
+    <tbody>
+    <tr>
+        <th>Image</th>
+        <th>DoctorID</th>
+        <th>DoctorName</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Description</th>
+    </tr>
+    <tr *ngFor="let o of ourdoctors">
+        <td><img class="img-scale img-wrapper" src="{{o.Image}}"></td>
+        <td>{{o.DoctorID}}</td>
+        <td>{{o.DoctorName}}</td>
+        <td>{{o.Department}}</td>
+        <td>{{o.Position}}</td>
+        <td>{{o.Description}}</td>
+    </tr>
+    </tbody>
+</table>

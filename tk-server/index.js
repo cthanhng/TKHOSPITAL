@@ -14,11 +14,14 @@ db.connect();
 /* const DoctorListRouter = require('./routes/doctor-list.routes')
 app.use("/", DoctorListRouter) */
 
-const ArticleListRouter = require('./routes/article-list.routes')
+/* const ArticleListRouter = require('./routes/article-list.routes')
 app.use("/", ArticleListRouter)
 
 const ServiceListRouter = require('./routes/services.routes')
 app.use("/", ServiceListRouter)
+ */
+const OurDoctorRouter = require('./routes/our-doctor.routes')
+app.use("/", OurDoctorRouter)
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)
