@@ -33,3 +33,8 @@ export class ServiceListComponent implements OnInit {
     this._router.navigate(['/service/service-list',data.DepartId])
       }
 }
+
+
+
+
+

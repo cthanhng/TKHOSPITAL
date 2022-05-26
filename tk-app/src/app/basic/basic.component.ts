@@ -27,7 +27,7 @@ export class BasicComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(3)]],
       address: ['',[Validators.required, Validators.minLength(10)]],
       phone: ['', [Validators.required, Validators.minLength(11)]],
-      date: [''],
+      date: ['' , [Validators.required]]
     })
 
     this._service.getPatient_schedule().subscribe({
@@ -44,5 +44,19 @@ export class BasicComponent implements OnInit {
   }
   get phone(){
     return this.regForm.controls['phone']
+  }
+  get date(){
+    return this.regForm.controls['date']
+  }
+
+  onSubmit(data: any){
+    const formData = new FormData() 
+    formData.append("type" , data.type)
+    // formData.append("file" , this.file)
+
+    // console.log("FormData: ", formData)
+    // for(let pair of formData.entries()){
+    //   console.log(pair[0], pair[1]) //[0]:key [1]:value
+    // }
   }
 }

@@ -1,14 +1,38 @@
-
+body{
+    background-image: url(../../assets/page-images/Schedule.png);
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-size: 1600px 100vh;
+    margin: 0;
+    padding: 0;
+}
 .container{
-    background-color: #dae5f8;
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    max-width: 1000px;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+}
+hr{
+    margin: 20px 10px;
 }
 .margin-btn{
     margin-top: 20px;
 }
-.btn-primary{
-    background-color: #065F73;;
+.btn-primary {
+    background-color: #065F73;
+    border-color: #065F73;
+}
+.vip__title--color{
+    color: #065F73;
+    font-size: x-large;
+    font-weight: bold;
+}
+.vip__form--title{
+    font-weight: bold;
+    margin: 10px;
+}
+.mb-3 , .btn-primary{
+    margin: 13px auto;
 }

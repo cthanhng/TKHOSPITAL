@@ -1,11 +1,11 @@
-<h2 class="text-center bg-dark text-light lh-lg">Header</h2>
+<!-- <h2 class="text-center bg-dark text-light lh-lg">Header</h2> -->
 <body>
     <div class="container-fluid">
         <div class="container">
-            <h3>{{"Register for vip service" | uppercase}}</h3>
-            <form [formGroup]="regForm">
+            <h3 class="text-center lh-lg vip__title--color">{{"Register for vip service" | uppercase}}</h3>
+            <form [formGroup]="regForm" (ngSubmit)="onSubmit(regForm.value)">
                 <div class="mb-3">
-                    <label for="name">Full name</label>
+                    <label class="vip__form--title" for="name">Full name</label>
                     <input type="text" id="name" class="form-control" name="name" placeholder="Enter full name" formControlName="name" [class.is-invalid]="name.invalid && name.touched">
                     <div *ngIf="name.invalid && name.touched">
                         <small class="text-danger" *ngIf="name.errors?.['required']">Name is required</small>
@@ -14,16 +14,16 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label for="address">Address</label>
-                        <input type="text" id="address" class="form-control" placeholder="Enter your address" formControlName="address">
+                        <label for="address" class="vip__form--title" >Address</label>
+                        <input type="text" id="address" class="form-control" placeholder="Enter your address" formControlName="address" [class.is-invalid]="address.invalid && address.touched">
                         <div *ngIf="address.invalid && address.touched">
                             <small class="text-danger" *ngIf="address.errors?.['required']">Address is required</small>
                             <small class="text-danger" *ngIf="address.errors?.['minlength']">Address requires at least 10 characters</small>
                         </div>
                     </div>
                     <div class="col">
-                        <label for="phone">Phone number</label>
-                        <input type="text" id="phone" class="form-control" name="" placeholder="Enter your phone" formControlName="phone">
+                        <label class="vip__form--title"  for="phone">Phone number</label>
+                        <input type="text" id="phone" class="form-control" name="" placeholder="Enter your phone" formControlName="phone" [class.is-invalid]="phone.invalid && phone.touched">
                         <div *ngIf="phone.invalid && phone.touched">
                             <small class="text-danger" *ngIf="phone.errors?.['required']">Phone is required</small>
                             <small class="text-danger" *ngIf="phone.errors?.['minlength']">Phone requires at least 11 numbers</small>
@@ -31,24 +31,35 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="doctor">Choose available doctor</label>
-                    <input type="text" id="doctor" class="form-control" name="">
+                    <label class="vip__form--title"  for="doctor">Choose available doctor</label>
+                    <input type="text" id="doctor" class="form-control" name="" placeholder="Choose your doctor" formControlName="selectedDoctor" [class.is-invalid]="selectedDoctor.invalid && selectedDoctor.touched">
+                    <div *ngIf="selectedDoctor.invalid && selectedDoctor.touched">
+                        <small class="text-danger" *ngIf="selectedDoctor.errors?.['required']">Doctor must  be choosen</small>
+                        <!-- <small class="text-danger" *ngIf="selectedDoctor.errors?.['minlength']">Phone requires at least 11 numbers</small> -->
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label for="time">Select time</label>
-                        <input type="time" id="time" class="form-control" name="">
+                        <label class="vip__form--title"  for="time">Select time</label>
+                        <input type="time" id="time" class="form-control" name="time" formControlName="time" [class.is-invalid]="time.invalid && time.touched">
+                        <div *ngIf="time.invalid && time.touched">
+                            <small class="text-danger" *ngIf="time.errors?.['required']">You are not choosing time</small>
+                        </div>
                     </div>
                     <div class="col">
-                        <label for="date">Date you want to test</label>
-                        <input type="date" id="date" class="form-control" name="">
+                        <label class="vip__form--title"  for="date">Date you want to test</label>
+                        <input type="date" id="date" class="form-control" name="date" formControlName="date" [class.is-invalid]="date.invalid && date.touched">
+                        <div *ngIf="date.invalid && date.touched">
+                            <small class="text-danger" *ngIf="date.errors?.['required']">You are not choosing date</small>
+                        </div>
                     </div>
                 </div>
+                <hr>
                 <div class="mb-3 text-center margin-btn">
-                    <button class="btn btn-primary">Payment Pre-order</button>
+                    <input class="btn btn-primary" [disabled]="regForm.invalid" value="Payment Pre-order">
                 </div>
             </form>
         </div>
     </div>
 </body>
-<h2 class="text-center bg-dark text-light lh-lg">Footer</h2>
+<!-- <h2 class="text-center bg-dark text-light lh-lg">Footer</h2> -->
