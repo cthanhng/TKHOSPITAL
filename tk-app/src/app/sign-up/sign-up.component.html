@@ -1,144 +1,100 @@
-<div class="header">
-    <!-- navigation bar of desktop -->
-  <div class="nav-desktop">
-    <div class="container--1">
-      <div >
-          <a href="" class="box-icon"><i class="fa fa-phone-square" ></i></a>
-          <a href="">Contact us</a>
-      </div>
-      <div class="option">
-        <div><a class="link" target="_parent" href="Homepage.html">Home</a></div>
-        <div><a class="link" target="_parent" href="About_Us.html">About Us</a></div>
-        <div><a class="link" target="_parent" href="Service.html">Services</a></div>
-        <div><a class="link" target="_parent" href="Our_Doctors.html">Our Doctor</a></div>
-        <div><a class="link" target="_parent" href="blog.html">Blog</a></div>
-        <!-- <div class="header-search">
-            <input type="text" placeholder="Search">
-            <a href=""><img src="../Images/search-icon.png" alt=""></a>
-        </div> -->
-        <form action="./Login.html" target="_parent">
-            <button class="login-btn" type="submit">Log In</button>
+<div class="box">
+    <div class="signup-main">
+        <form regForm="ngForm" name="sForm">
+            <div class="signup-title">Register New Account</div>
+            <!-- <div class="signup-form">
+                <div>Name <span>*</span></div>
+                <div>Date of Birth <span>*</span></div>
+                <div>
+                    <input type="text" placeholder="type your name here" name="name" #name="ngModel" required > <br>
+                    <div>  Touched:{{Name.touched}} - Dirty: {{Name.dirty}} - Valid: {{Name.valid}}</div>
+                    <div> Untouched: {{Name.untouched}} - Pristine: {{Name.pristine}} - Invalid: </div>
+                    <small class="text-danger" [class.d-none]="name.valid || name.untouched"> Tên bắt buộc nhập</small>
+                </div>
+                <div>
+                    <input type="date" name="date" id="datetimepicker"></div>
+                <div class="signup-sextitle">Gender <span>*</span></div>
+                <div>
+                    <input type="radio" name="sex" id="sex">
+                    <label for="">Female</label>
+                </div>
+                <div>
+                    <input type="radio" name="sex" id="sex">
+                    <label for="">Male</label>
+                </div>
+                <div>Phone number <span>*</span></div>
+                <div>ID number <span>*</span></div>
+                <div>
+                    <input type="number" name="phone" id="phone" ngModel="phone" #phone="ngModel"[(ngModel)]="user.Phone" required  [class.is-invalid]="errFlag && phone.touched" (blur)="checkPhone(phone.value)"(change)="checkPhone(phone.value)"><br>
+                    <div>  Touched:{{phone.touched}} - Dirty: {{phone.dirty}} - Valid: {{phone.valid}} -errFlag: {{errFlag}}</div>
+                    <div> Untouched: {{phone.untouched}} - Pristine: {{phone.pristine}} - Invalid: {{phone.invalid}}</div>
+                    <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">  Bắt buộc nhập</small> 
+                    <small class="text-danger" *ngIf="!errFlag && phone.touched">10</small>
+                </div>
+                <div>
+                    <input type="number" id="idNum" >
+                </div>
+                <div class="signup-emailtitle">Email <span>*</span></div>
+                <div class="signup-emailbutton"><input class="signup-input--email" type="email" id="email"></div>
+                <div>Nationality <span>*</span></div>
+                <div>Religion <span>*</span></div>
+                <div>
+                    <select name="nationality" id="nationality">
+                        <option value="vietnam">Viet Nam</option>
+                        <option value="china">china</option>
+                        <option value="Korea">Korea</option>
+                        <option value="japan">Japan</option>
+                        <option value="india">India</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="text">
+                </div>
+                <div>Province/City <span>*</span></div>
+                <div>Ward/Commune <span>*</span></div>
+                <div>
+                    <select name="province" id="province">
+                        <option value="hatinh">Hà Tĩnh</option>
+                        <option value="hanoi">Hà Nội</option>
+                        <option value="saigon">Sài Gòn</option>
+                        <option value="dalat">Đà Lạt</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="commune" id="commune">
+                        <option value="tanloc">Tân Lộc</option>
+                        <option value="hongloc">Hồng Lộc</option>
+                        <option value="anloc">An Lộc</option>
+                    </select>
+                </div>
+                <div>Street <span>*</span></div>
+                <div>Job</div>
+                <div><input type="text"></div>
+                <div><input type="text"></div>
+                <div class="signup-healthtitle">Health insuarance card number <span>*</span></div>
+                <div class="healthnumber"><input class="signup-input--health" type="text"></div>
+                <div>Height</div>
+                <div>Weight</div>
+                <div><input type="number" step="1"></div>
+                <div><input type="number" step="1"></div>
+                <div>Password <span>*</span></div>
+                <div>Reenter Password <span>*</span></div>
+                <div><input type="password" step="1"></div>
+                <div><input type="password" step="1"></div>
+            </div> -->
+            <div class="signup-footer">
+                <div class="signup-footer__note">
+                    <span>*</span>- Require field
+                </div>
+                <div class="signup-button">
+                    <div>
+                        <input class="signup__button--create" (click)="onSubmit()" type="button" value="Create account">
+                    </div>
+                    <div class="signup__button--cancel">
+                        <input type="button" value="Cancel">
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
-    </div>
-    <div class="container--2">
-      <div class="name__menu">
-          <div class="name">
-            <img src="../Images/ngoinha-icon.png" alt="">
-              <span class="logo_title">TK</span> Hospital
-          </div>
-      </div>
-      <div class="function">
-      <input class="button-function" type="submit" value="Virtual Doctor" onclick="virtualSchedule()" >
-      <input class="button-function" type="submit" value="Homecare" onclick="homecareSchedule()">
-      <input class="button-function function--3" type="submit" value="Schedule Appointment" onclick="basicSchedule()">
-      </div>
-    </div> 
-  </div>
-  </div>
-  <!-- navagation bar of ipad and phone -->
-  <div class="nav-mobile">
-    <div class="logo">
-      <img src="../Images/ngoinha-icon.png" alt="">
-        <span>TK</span> Hospital
-    </div>
-    <div class="nav-right">
-      <div class="dropdown">
-        <div class="nav-right__icon"><i class="fa fa-bars"></i></div>
-        <div class="dropdown-content">
-            <p><a href="Homepage.html"><i class="fa fa-home">&nbsp &nbsp</i>Home</a></p>
-            <p><a href="About_Us.html"><i class="fa fa-book"> &nbsp &nbsp  </i>About us</a></p>
-            <p><a href="Services.html"><i class="fa fa-cogs"> &nbsp &nbsp  </i>Service</a></p>
-            <p><a href="Our_Doctors.html"><i class="fa fa-user-md"> &nbsp &nbsp  </i>Our doctor</a></p>
-            <p><a href="blog.html"><i class="fa fa-book">&nbsp &nbsp</i>Blog</a></p>
-            <p><a href="Schedule_Virtual.html"><i class="fa fa-bed">&nbsp &nbsp</i>Virtual Doctor</a></p>
-            <p><a href="Schedule_Homecare.html"><i class="fa fa-home">&nbsp &nbsp</i>Homecare</a></p>
-            <p><a href="Schedule_Basic.html"><i class="fa fa-calendar">&nbsp &nbsp</i>Schedule Appointment</a></p>
-            <p><a href="Login.html"><i class="fa fa-user-shield">&nbsp &nbsp</i>Log In</a></p>
-            <p><a href=""><i class="fa fa-envelope">&nbsp &nbsp</i>Contact</a></p>
-        </div>
-    </div>
-    </div>
-  </div>
-<div class="signup-main">
-    <form action="">
-        <div class="signup-title">Register New Account</div>
-        <div class="signup-form">
-            <div>Name <span>*</span></div>
-            <div>Date of Birth <span>*</span></div>
-            <div><input type="text" placeholder="type your name here"></div>
-            <div><input type="date" name="date" id="datetimepicker"></div>
-            <div class="signup-sextitle">Sex <span>*</span></div>
-            <div><input type="radio" name="sex" id="sex">
-                <label for="">Female</label>
-            </div>
-            <div><input type="radio" name="sex" id="sex">
-                <label for="">Male</label>
-            </div>
-            <div>Phone number <span>*</span></div>
-            <div>ID number <span>*</span></div>
-            <div><input type="number" name="phone" id="phone" onchange="validatePhone()"></div>
-            <div><input type="number" id="idNum" onchange="validateIdNumber()"></div>
-            <div class="signup-emailtitle">Email <span>*</span></div>
-            <div class="signup-emailbutton"><input class="signup-input--email" type="email" id="email" onchange="validateEmail()"></div>
-            <div>Nationality <span>*</span></div>
-            <div>Religion <span>*</span></div>
-            <div>
-                <select name="nationality" id="nationality">
-                    <option value="vietnam">Viet Nam</option>
-                    <option value="china">china</option>
-                    <option value="Korea">Korea</option>
-                    <option value="japan">Japan</option>
-                    <option value="india">India</option>
-                </select>
-            </div>
-            <div>
-                <input type="text">
-            </div>
-            <div>Province/City <span>*</span></div>
-            <div>Ward/Commune <span>*</span></div>
-            <div>
-                <select name="province" id="province">
-                    <option value="hatinh">Hà Tĩnh</option>
-                    <option value="hanoi">Hà Nội</option>
-                    <option value="saigon">Sài Gòn</option>
-                    <option value="dalat">Đà Lạt</option>
-                </select>
-            </div>
-            <div>
-                <select name="commune" id="commune">
-                    <option value="tanloc">Tân Lộc</option>
-                    <option value="hongloc">Hồng Lộc</option>
-                    <option value="anloc">An Lộc</option>
-                </select>
-            </div>
-            <div>Street <span>*</span></div>
-            <div>Job</div>
-            <div><input type="text"></div>
-            <div><input type="text"></div>
-            <div class="signup-healthtitle">Health insuarance card number <span>*</span></div>
-            <div class="healthnumber"><input class="signup-input--health" type="text"></div>
-            <div>Height</div>
-            <div>Weight</div>
-            <div><input type="number" step="1"></div>
-            <div><input type="number" step="1"></div>
-            <div>Password <span>*</span></div>
-            <div>Reenter Password <span>*</span></div>
-            <div><input type="password" step="1"></div>
-            <div><input type="password" step="1"></div>
-        </div>
-        <div class="signup-footer">
-            <div class="signup-footer__note">
-                <span>*</span>- Require field
-            </div>
-            <div class="signup-button">
-                <div>
-                    <input class="signup__button--create" type="button" value="Create account">
-                </div>
-                <div class="signup__button--cancel">
-                    <input type="button" value="Cancel">
-                </div>
-            </div>
-        </div>
-    </form>
 </div>

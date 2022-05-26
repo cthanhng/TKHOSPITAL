@@ -1,0 +1,156 @@
+
+
+<div class="container">
+    <!-- header cho patient-portal  -->
+      <div class="pt-header-3" >
+          <div class="pt-header-3__image">
+              <img src="{{userInfor?.image}}" alt="Không thể tải hình">
+          </div>
+          <div class="pt-header-3__content"  >
+              <div>Hello,<b>{{userInfor?.Name}} </b> </div>
+              <hr>
+              <div>{{userInfor?.Street}},{{userInfor?.Ward}},{{userInfor?.City}}</div>
+              <div><span>Phone number:</span>{{userInfor?.Phone}}</div>
+              <div><span>Gender: {{userInfor?.Street}}</span></div>
+          </div>
+      </div>
+      <div class="pt1-nav">
+        <div class="pt1-nav__left">
+          <div class="pt-navbar_1"><a href="Homepage.html">Homepage</a></div>
+          <span> > </span>
+          <div class="pt-navbar_2"><a href="#">Medical record</a></div>
+        </div>
+        <div class="pt1-nav__right">
+          <button  class="pt1-nav__right--button"><i class="fa fa-edit">Edit</i></button>
+        </div>
+      </div>
+      
+      <div class="pt1-main">
+          <div class="pt1-main__column pt1-main__column--1 ">
+             <div class="pt1-main__column1--infor">
+              <div class="pt1-main1__box pt1-main1__box1">
+                  <div><img src="{{userInfor?.image}}" alt="Avatar"></div>
+                  <br>
+                  <div><b>{{userInfor?.Name}}</b></div>
+                  <div>{{userInfor?.DateOfBirth}}</div>
+                  <div>{{userInfor?.Email}}</div>
+              </div>
+              <div class="pt1-main1__box pt1-main1__box2">
+                  <div><span> Adress </span><br>
+                    {{userInfor?.Street}}, {{userInfor?.Ward}}, {{userInfor?.City}}</div>
+                  <div><span>City</span><br>{{userInfor?.City}} </div>
+                  <div><span>Nation</span><br>{{userInfor?.Nationality}}</div>
+                  <div><span>Job</span><br>{{userInfor?.Job}}</div>
+                  <div><span>Health Insuarance Number</span><br>{{userInfor?.HealthInsuranceCardNumber}}</div>
+                  <div><span>ID number</span><br>{{userInfor?.IDNumber}}</div>
+              </div>
+             </div> 
+              <div class="pt1-main__table">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Medical examination schedule</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Hospital fee payment history</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Announcement/Event</button>
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="pt-main__tab1">
+                      <div class="tab1-row">
+                        <div class="tab1-row__item">
+                          <div><span>Time</span></div>
+                          <div> {{patientSchedule?.Time}}</div>
+                        </div>
+                        <div class="tab1-row__item">
+                          <div><span>Room number</span></div>
+                          <div>{{patientSchedule?.RoomNumber}}</div>
+                        </div>
+                        <div class="tab1-row__item">
+                          <div><span>Dentist</span></div>
+                          <div>{{patientSchedule?.Dentist}}</div>
+                        </div>
+                        <div class="tab1-row__item">
+                          <div><span>Patient number</span></div>
+                          <div>{{patientSchedule?.Patientnumber}}</div>
+                        </div>
+                        <div class="tab1-row__item">
+                          <div><span>Booking type</span></div>
+                          <div>{{patientSchedule?.BookingType}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div>
+                      <table>
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Date</th>
+                            <th>Content</th>
+                            <th>Patient code</th>
+                            <th>Reciept number</th>
+                            <th>Money</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr *ngFor="let p of payments?.payment">
+                            <td>{{p.PatientName}}</td>
+                            <td>{{p.Date}}</td>
+                            <td>{{p.Content}}</td>
+                            <td>{{p.PatientCode}}</td>
+                            <td>{{p.RecieptNumber}}</td>
+                            <td>{{p.Money}}</td>
+                            <td>{{p.Status}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div>
+                      <div class="tab3-row" *ngFor="let e of events" >
+                        <div class="pt2-col1">{{e.Time}}</div>
+                        <div class="pt2-col2">{{e.Content}}</div>
+                        <div class="pt2-col3"><button>New</button></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </div>
+              <div class="pt1-main__column pt1-main__column--2">
+              <div class=" pt1-main1__box3">
+                  <div class="pt1-main1__box3--title">
+                      <div>Note</div>
+                      <div></div>
+                  </div>
+                  <div id="btnSave" class="pt1-main1__box3--note">
+                      <div><textarea name="" id="valueNote" ></textarea></div>
+                      <div><button >Save notes</button></div>
+                  </div>
+                  <div class="pt1-main1__box3--footer">
+                      <div><img src="../IMAGES/human_icon.png" alt=""></div>
+                      <div><span>Có hẹn khám</span><br>Doctor .{{patientSchedule?.Dentist}}</div>
+                      <div>{{patientSchedule?.Time}}</div>
+                  </div>
+              </div> 
+              <div class="pt1-main__column2--file">
+                  <div class="pt1-main__column--title">Files/Documents</div>
+                  <div class="pt1-main__item--file">
+                      <a id="downloadMe" href="">Medical record</a>
+                      <a  href="" download="patient portal.pdf"><i class="fa fa-download"></i></a>
+                  </div>
+                  <div class="pt1-main__item--file">
+                       <a href="">X-ray photo Result</a>
+                      <a href="" download="X-ray photo Result.pdf"><i class="fa fa-download"></i></a>
+                  </div>
+                  <div class="pt1-main__item--file">
+                      <a href=""> General results</a>
+                      <a href="" download="General results.pdf"><i class="fa fa-download"></i></a>
+                  </div>
+            
+              </div>
+          </div>    
+  </div>
+  </div>
+  
+  
+  

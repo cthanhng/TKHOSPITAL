@@ -7,16 +7,16 @@
                     <a href="">Contact us</a>
                 </div>
                 <div class="option">
-                    <div><a class="link" target="_parent" href="Homepage.html">Home</a></div>
-                    <div><a class="link" target="_parent" href="About_Us.html">About Us</a></div>
-                    <div><a class="link" target="_parent" href="Service.html">Services</a></div>
-                    <div><a class="link" target="_parent" href="Our_Doctors.html">Our Doctor</a></div>
-                    <div><a class="link" target="_parent" href="Blog.html">Blog</a></div>
+                    <div><a class="link" target="_parent" routerLink="/" routerLinkActive="active">Home</a></div>
+                    <div><a class="link" target="_parent" href="">About Us</a></div>
+                    <div><a class="link" target="_parent" routerLink="/service" routerLinkActive="active">Services</a></div>
+                    <div><a class="link" target="_parent" href="">Our Doctor</a></div>
+                    <div><a class="link" target="_parent" href="">Blog</a></div>
                     <!-- <div class="header-search">
                 <input type="text" placeholder="Search">
                 <a href=""><img src="../Images/search-icon.png" alt=""></a>
             </div> -->
-                    <form action="./Login.html" target="_parent">
+                    <form action="./login"  routerLink="/login" routerLinkActive="active" target="_parent">
                         <button class="login-btn" type="submit">Log In</button>
                     </form>
                 </div>
@@ -24,15 +24,15 @@
             <div class="container--2">
                 <div class="name__menu">
                     <div class="name">
-                        <div> <img src="../Images/ngoinha-icon.png" alt=""></div>
+                        <!-- <div> <img src="../Images/ngoinha-icon.png" alt=""></div> -->
                         <div> <span class="logo_title">TK</span> Hospital</div>
                     </div>
                 </div>
                 <div class="function">
-                    <input class="button-function" type="submit" value="Virtual Doctor" onclick="virtualSchedule()">
-                    <input class="button-function" type="submit" value="Homecare" onclick="homecareSchedule()">
+                    <input class="button-function" type="submit" value="Virtual Doctor" routerLink="/virtual-doctor" routerLinkActive="active">
+                    <input class="button-function" type="submit" value="Homecare" routerLink="/home-doctor" routerLinkActive="active">
                     <input class="button-function function--3" type="submit" value="Schedule Appointment"
-                        onclick="basicSchedule()">
+                    routerLink="/basic-schedule" routerLinkActive="active">
                 </div>
             </div>
         </div>
@@ -40,23 +40,23 @@
     <!-- navagation bar of ipad and phone -->
     <div class="nav-mobile">
         <div class="logo">
-            <img src="../Images/ngoinha-icon.png" alt="">
+            <!-- <img src="../Images/ngoinha-icon.png" alt=""> -->
             <span>TK</span> Hospital
         </div>
         <div class="nav-right">
             <div class="dropdown">
                 <div class="nav-right__icon"><i class="fa fa-bars"></i></div>
                 <div class="dropdown-content">
-                    <p><a href="Homepage.html"><i class="fa fa-home">&nbsp &nbsp</i>Home</a></p>
-                    <p><a href="About_Us.html"><i class="fa fa-book"> &nbsp &nbsp </i>About us</a></p>
-                    <p><a href="Services.html"><i class="fa fa-cogs"> &nbsp &nbsp </i>Service</a></p>
-                    <p><a href="Our_Doctors.html"><i class="fa fa-user-md"> &nbsp &nbsp </i>Our doctor</a></p>
-                    <p><a href="blog.html"><i class="fa fa-book">&nbsp &nbsp</i>Blog</a></p>
-                    <p><a href="Schedule_Virtual.html"><i class="fa fa-bed">&nbsp &nbsp</i>Virtual Doctor</a></p>
-                    <p><a href="Schedule_Homecare.html"><i class="fa fa-home">&nbsp &nbsp</i>Homecare</a></p>
-                    <p><a href="Schedule_Basic.html"><i class="fa fa-calendar">&nbsp &nbsp</i>Schedule Appointment</a>
+                    <p><a routerLink="/" routerLinkActive="active"><i class="fa fa-home">&nbsp &nbsp</i>Home</a></p>
+                    <p><a href=""><i class="fa fa-book"> &nbsp &nbsp </i>About us</a></p>
+                    <p><a routerLink="/service" routerLinkActive="active">><i class="fa fa-cogs"> &nbsp &nbsp </i>Service</a></p>
+                    <p><a href=""><i class="fa fa-user-md"> &nbsp &nbsp </i>Our doctor</a></p>
+                    <p><a href=""><i class="fa fa-book">&nbsp &nbsp</i>Blog</a></p>
+                    <p><a routerLink="/virtual-doctor" routerLinkActive="active"><i class="fa fa-bed">&nbsp &nbsp</i>Virtual Doctor</a></p>
+                    <p><a routerLink="/home-doctor" routerLinkActive="active"><i class="fa fa-home">&nbsp &nbsp</i>Homecare</a></p>
+                    <p><a routerLink="/basic-schedule" routerLinkActive="active"><i class="fa fa-calendar">&nbsp &nbsp</i>Schedule Appointment</a>
                     </p>
-                    <p><a href="Login.html"><i class="fa fa-user-shield">&nbsp &nbsp</i>Log In</a></p>
+                    <p><a routerLink="/login" routerLinkActive="active"><i class="fa fa-user-shield">&nbsp &nbsp</i>Log In</a></p>
                     <p><a href=""><i class="fa fa-envelope">&nbsp &nbsp</i>Contact</a></p>
                 </div>
             </div>
@@ -65,9 +65,10 @@
     
 
     <!-- body part 1 -->
+   <div class="box">
     <div id="home__background-1">
         <div id="home--circle">
-            <img id="home__img--1" src="../IMAGES/unsplash_DK--4VWK1tw.png" alt="">
+            <img id="home__img--1" src="../../assets/page-images/unsplash_DK--4VWK1tw.png" alt="">
         </div>
         <div class="home__title">WELCOME TO <SPan class="tk">TK</SPan> <br>
             HOSPITAL
@@ -86,7 +87,6 @@
         </div>
         <div id="home--search">
             <input id="home__button--writemail" type="text" placeholder="Write your email here">
-        <input id="home__button--go" type="submit" value="Go">
         </div>
     </div>
     <div class="container--3">
@@ -103,16 +103,16 @@
             <div class="home__container--detail">
                 <a class="detail--1" href="../HTML/Terms_Of_Service.html">
                     <div class="home--titlebutton">Homecare</div>
-                    <img src="../Images/Tư vấn online.png" alt="">
+                    <img src="../../assets/page-images/Tư vấn online.png" alt="">
                 </a>
             
                 <a href="../HTML/Terms_Of_Service.html" class="detail--2">
                     <div class="home--titlebutton home--titlebutton-2">Schedule Appointment</div>
-                    <img src="../Images/Bác sĩ gia đình.png" alt="">
+                    <img src="../../assets/page-images/Bác sĩ gia đình.png" alt="">
                 </a>
             
                 <a href="../HTML/Terms_Of_Service.html" class="detail--3">
-                    <div class="home--titlebutton">Virtual Doctor</div><img src="../Images/Khám tại bệnh viện.png" alt="">
+                    <div class="home--titlebutton">Virtual Doctor</div><img src="../../assets/page-images/Khám tại bệnh viện.png" alt="">
                 </a>
             </div>
             <div id="home__header-2">
@@ -124,7 +124,7 @@
     <!-- body part 3 -->
     <div class="bodyContainer part3">
         <div class="vision--container">
-            <img src="../Images/homepage2.jpg" alt="" id="slideShow--image">
+            <img src="../../assets/page-images/homepage2.jpg" alt="" id="slideShow--image">
             <div class="vision--container--textbox">
                 <div class="vision--container--text">
                     <div class="vision--tittle">VISION STATEMENT</div>
@@ -149,9 +149,9 @@
                 Our Specialist
             </div>
             <div class="image-slide">
-                <img src="../Images/doctor1 (1).jpg" alt="">
-                <img src="../Images/doctor2.jpg" alt="">
-                <img src="../Images/doctor3.jpg" alt="">
+                <img src="../../assets/page-images/doctor1 (1).jpg" alt="">
+                <img src="../../assets/page-images/doctor2.jpg" alt="">
+                <img src="../../assets/page-images/doctor3.jpg" alt="">
             </div>
         </div>
     </div>
@@ -162,7 +162,7 @@
         </div>
         <div class="review--container">
             <div class="review--img ">
-                <img src="../Images/homepage 4.jpg" alt="" class="review-picture shadow-left">
+                <img src="../../assets/page-images/homepage 4.jpg" alt="" class="review-picture shadow-left">
             </div>
             <div class="review-textbox">
                 <div class="review--tittle">Treatment of Dorsal Back Pain with Glucopuncture...
@@ -185,7 +185,7 @@
                 <div class="review--more">Read more...</div>
             </div>
             <div class="review--img ">
-                <img src="../Images/homepage 4.2.jpg" alt="" class="review-picture shadow-right">
+                <img src="../../assets/page-images/homepage 4.2.jpg" alt="" class="review-picture shadow-right">
             </div>
         </div>
     </div>
@@ -204,5 +204,6 @@
             </div>
         </div>
     </div>
-    <iframe id="footer" src="./footer.html" frameborder="0" name="footer" ></iframe>
 
+
+   </div>

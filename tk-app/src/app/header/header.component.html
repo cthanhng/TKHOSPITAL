@@ -1,1 +1,58 @@
-<p>header works!</p>
+    <nav class="navbar navbar-expand-lg navbar-light header-container">
+        <div class="container-fluid text-light" >
+          <a class="navbar-brand" style="color:white" href="#">Contact Us</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            </ul>
+            <form class="d-flex">
+                <div class="d-flex navbar-nav me-auto mb-2 mb-lg-0 " style="color:white">
+                    <div><a class="text-light navbar-brand nav-item" target="_parent" href="Homepage.html">Home</a></div>
+                    <div><a class=" text-light navbar-brand nav-item" target="_parent" href="About_Us.html">About Us</a></div>
+                    <div><a class="text-light navbar-brand" target="_parent" href="Service.html">Services</a></div>
+                    <div><a class="text-light navbar-brand" target="_parent" href="Our_Doctors.html">Our Doctor</a></div>
+                    <div><a class="text-light navbar-brand" target="_parent" href="Blog.html">Blog</a></div>
+                    <!-- <div class="header-search">
+                <input type="text" placeholder="Search">
+                <a href=""><img src="../Images/search-icon.png" alt=""></a>
+            </div> -->
+            <div *ngIf="client;then redirect;else login"></div>
+                    <ng-template #login>
+                        <form action="./Login.html" target="_parent">
+                            <button class="btn btn-primary" type="submit">Log In</button>
+                        </form>
+                    </ng-template>
+                    <ng-template #redirect>
+                        <div class="login_user" >
+                            <div class="dropdown">
+                              <div class="login_user--title"><i class="fa fa-user-circle"></i></div>
+                              <div class="dropdown-content">
+                                <p><a class="item-user" onclick="patientPortal()"><i class="fa fa-window-restore">&nbsp &nbsp</i> Patient Portal</a></p>
+                                <p><a class="item-user"onclick="medicalRecord()" ><i class="fa fa-book">&nbsp &nbsp</i> Medical record</a></p>
+                                <p><a href="Homepage.html"><i class="fa fa-user-shield">&nbsp &nbsp</i> Log out</a></p>
+                              </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    </div>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div class="d-flex justify-content-between collapse " style="margin:5px 20px">
+        <div class="name__menu">
+            <div class="d-none d-sm-block">
+                <div> <img src="../Images/ngoinha-icon.png" alt=""></div>
+                <div style="font-size:25px"> <span class="logo_title" style="color:red">TK</span> Hospital</div>
+            </div>
+        </div>
+        <div class=" d-flex justify-content-sm-center justify-content-md-end p-1 mb-2">
+            <input class=" btn btn-primary " style="background-color: cadetblue;" type="button" value="Virtual Doctor" onclick="virtualSchedule()">
+            <input class=" btn btn-primary " style="background-color: cadetblue;" type="button" value="Homecare" onclick="homecareSchedule()">
+            <input class="btn  btn-primary" style="background-color: cadetblue;" type="submit" value="Schedule Appointment"
+                onclick="basicSchedule()">
+        </div>
+    </div>

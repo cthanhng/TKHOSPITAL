@@ -8,12 +8,15 @@ import { ListServiceService } from '../services/list-service.service';
   styleUrls: ['./service-list.component.css']
 })
 export class ServiceListComponent implements OnInit {
+  filteredDepartment = 'All'
 
   constructor(private _service:ListServiceService, private _router:Router, private _activatedRoute:ActivatedRoute) { }
   serviceList:any
   errMsg:any
   selectedID:any
   ngOnInit(): void {
+    this.getAllService();
+    
     this._activatedRoute.paramMap.subscribe(
       (params)=> {
         let id = params.get("id");
@@ -22,16 +25,21 @@ export class ServiceListComponent implements OnInit {
         }
       }
     )
-    this._service.getServiceList().subscribe(
-     {
-       next: data=>this.serviceList= data,
-       error: err=> this.errMsg=err,
-    }
-    )
+   
+   
+    console.log(this.serviceList)
   }
   onSelect(data: any){
-    this._router.navigate(['/service/service-list',data.DepartId])
+    this._router.navigate(['/services/service-list',data._id])
       }
+  getAllService(){
+      this._service.getServiceList().subscribe(
+        {
+          next: data=>this.serviceList= data,
+          error: err=> this.errMsg=err,
+       }
+       )
+    }
 }
 
 

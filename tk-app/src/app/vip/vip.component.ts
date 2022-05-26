@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-vip',
   templateUrl: './vip.component.html',
