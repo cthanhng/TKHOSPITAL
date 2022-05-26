@@ -18,6 +18,13 @@ import{HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminServiceComponent } from './admin-service/admin-service.component';
+import { ForgotPassword1Component } from './forgot-password1/forgot-password1.component';
+import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
+import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component';
+import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
+import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
+import { AdminArticleComponent } from './admin-article/admin-article.component';
+
 const routes: Routes = [
   {
     path: "service",component: ServicePageComponent
@@ -73,9 +80,17 @@ const routes: Routes = [
     path:"admin-login",component: AdminLoginComponent
   },
   {
-    path:"admin-service",component: AdminServiceComponent
-  }
-  
+    path: "admin-doctor-list",component: AdminDoctorListComponent
+  },
+  {
+    path: "admin-article",component: AdminArticleComponent
+  },
+  {
+    path: "admin-service",component: AdminServiceComponent
+  },
+  {
+    path: "admin-schedule",component: AdminScheduleComponent
+  },
 ];
 
 @NgModule({
@@ -83,6 +98,27 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RoutingComponents=[ServiceListComponent,ServicePageComponent,ServiceAfterHourComponent,PatientRecordComponent,PatientPortalComponent,
-   EditInformationComponent, SignUpComponent, LoginComponent,VirtualDocComponent,HomeDocComponent,BasicComponent,VipComponent, 
-   HeaderComponent, FooterComponent, AdminLoginComponent, AdminServiceComponent]
+export const RoutingComponents=[ServiceListComponent,
+  ServicePageComponent,
+  ServiceAfterHourComponent,
+  PatientRecordComponent,
+  PatientPortalComponent, 
+  EditInformationComponent, 
+  SignUpComponent,
+   LoginComponent,
+   VirtualDocComponent
+   ,HomeDocComponent,
+   BasicComponent,
+   VipComponent,
+   AdminDoctorListComponent, 
+   AdminArticleComponent, 
+   AdminServiceComponent,
+   LoginComponent,
+  EditInformationComponent,
+  ForgotPassword1Component,
+  ForgotPassword2Component,
+  ForgotPassword3Component,
+  VirtualDocComponent,
+  HomeDocComponent,
+  AdminScheduleComponent]
+
