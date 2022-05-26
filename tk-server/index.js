@@ -15,6 +15,7 @@ db.Connect();
 /* const DoctorListRouter = require('./routes/doctor-list.routes')
 app.use("/", DoctorListRouter) */
 
+<<<<<<< Updated upstream
 const ArticleListRouter = require('./routes/article-list.routes')
 app.use("/article", ArticleListRouter)
 
@@ -24,6 +25,10 @@ const DoctorListRouter = require('./routes/doctor-list.routes')
 app.use("/doctor", DoctorListRouter)
 // const ServiceRouter = require('./routes/services.routes.js');
 // app.use("/",ServiceRouter)
+=======
+const ServiceRouter = require('./routes/services.routes');
+app.use("/",ServiceRouter)
+>>>>>>> Stashed changes
 
 // const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
 // app.use("/",PatientScheduleRouter)
@@ -45,6 +50,7 @@ app.use("/", MedicalRecordRouter)
 const AdminAccountRouter = require('./routes/admin-account.routes');
 app.use("/",AdminAccountRouter )
 
+<<<<<<< Updated upstream
 /* const ArticleListRouter = require('./routes/article-list.routes')
 app.use("/", ArticleListRouter)
 
@@ -53,6 +59,10 @@ app.use("/", ServiceListRouter)
  */
 const OurDoctorRouter = require('./routes/our-doctor.routes')
 app.use("/", OurDoctorRouter)
+=======
+const UserAccountRouter = require('./routes/user-account.routes');
+app.use("/",UserAccountRouter )
+>>>>>>> Stashed changes
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)
