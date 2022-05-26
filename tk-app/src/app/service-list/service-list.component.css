@@ -1,121 +1,309 @@
-/* 
-specialization service */
-.specialist{
-    flex-direction: column;
-}
-.specialist--container{
+.detail--container{
     display: flex;
- flex-direction: row;
- justify-content: center;
- 
+flex-direction: row;
+width: 100%;
+color: #545859;
+font-family: Lato;
 }
-.specialist-icon{
-    text-align: center;
-    line-height: 375px;
-    height: 376px;
+.detail--column-one{
+    width: 17%;
+    max-width: 210px;
+    background-color: #B0D7E2;
+    padding: 5px 5px;
+
 }
-.specialist--table{
-    
-    width: 80%;
-    height: 60%;
-    text-align: center;
-    display: flex;
-    margin: 30px;
-    max-height: 800px;
-    background: white;
-    max-width:960px ;
-    border-radius: 30px;
+
+
+.detail--column-two{
+    width: 110%;
+    padding: 50px;
+    background-color: #DFF0F2;
 }
-.specialist--table--column{
-    max-height: 400px;
-    height: 40%;
+.column--one--header{
+    font-size: 28px !important;
+    font-weight: 900;
+    margin: 5px 5px;
+    cursor: pointer;
 }
-.specialist--table--cell{
-    height: 50%;
-    font-size: 25px;
-    font-weight: bold;
-    max-height: 160px;
+.dropdown {
     position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    position: absolute;
+    background-color: #B0D7E2;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(38, 162, 179, 0.2);
+    z-index: 1;
+  }
+.dropdown-content a:hover {background-color: #a5e1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  
+.column--one--header>a{
+    color:#545859 ;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+}
+.column--one--specializaion{
+    transform: rotate();
    
 }
-.specialist--table--cell>a{
-color: #545859;
-text-decoration: none;
+.detail--description{
+    display: flex;
 }
-.specialist--table--cell>img{
+
+.description--image>img{
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin-right: 100px;
+    border-radius: 20px;
+}
+.services--description{
+    width: 50%;
+    max-width: 600px;
+}
+.description--title{
+    font-size: 50px;
+    font-weight: bold;
+}
+.description--price{
+    font-size:40px ;
+    color: red;
+}
+.description--header{
+    font-size: 38px;
+}
+.description--content{
+    font-size: 30px;
+}
+.services--description>input{
+    border-radius: 30px;
+    background-color: white;
+    font-size: 25px;
+    height: 50px;
+    margin-top:15px
+}
+.detail--related{
+    margin: 50px 0px 0px;
+}
+.detail--related--caption{
+font-size: 30px;
+font-weight: 700;
+margin-top: 10px;
+}
+.detail--related--option{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-y:auto;
+   text-align: center;
+   justify-content: space-around;
+    margin: 50px 0px 0px;
+}
+.related--option--box{
     width: 100%;
     max-width: 300px;
-    max-height: 210px;
+    margin: 0px 30px;
+}
+.option--box--img{
+    width: 100%;
+}
+.option--box--img>img{
+    width: 100%;
     height: 100%;
+    max-width: 200px;
+  height: 200px;
 }
-.line-height-full{
-   vertical-align:middle
+.option--box--caption{
+    font-size: 25px;
+    text-align: center;
+    font-weight: 600;
 }
-.color-green{
-    color:#95BAC6
+.mySlides{
+    display:flex;
+    flex-wrap: wrap;
 }
-.border-top-left{
-    border-radius: 30px 0px 0px 0px
+.mySlides div{
+    display:flex;
 }
-.border-bottom-right{
-    border-radius: 0px 0px 30px 0px;
+.mySlides div.box-active {
+    display: block;
+    width: 100%;
+} 
+.active{
+    opacity: 0.6
 }
-@media screen and (max-width:1048px) {
-    .specialist--table{
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #065f73;
+    padding: 2px 16px;
+    color: white;
+    margin: 50px 20px;
+  }
+  
+  
+
+  .column {
+    float: left;
+    width: 18%;
+  }
+body {
+    font-family: Arial;
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  img {
+    vertical-align: middle;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+ 
+  
+
+
+@media screen and (max-width: 1048px) {
+    .detail--container{
         flex-direction: column;
+        width: 100%;
+
     }
-    .specialist--table--column{
+    .detail--column-one{
+        width: 100%;
+        max-width: 1024px;
         display: flex;
         flex-direction: row;
+        justify-content:center;
+        padding: 5px 0px;
     }
-    .specialist--table--cell{
-        width: 50%;
-        max-height: 160px;
+    .detail--column-one>div{
+       line-height: 50px;
     }
-    .specialist--table--cell>img{
-        max-height: 160px;
+    .column--one--specializaion{
+        font-size: 30px;
+        font-weight: 1000;
     }
-    .specialist-icon{
-        height: 640px;
-        line-height: 640px;
+    .detail--column-two{
+        width: 100%;
+        padding: 0px;
+     
+    }
+    .detail--column-two>div{
+        padding: 20px 50px;
+    }
+    .description--image>img{
+       
+        max-width: 300px;
+        height: 300px;
+    }
+    .description--title{
+        font-size: 30px;
+    }
+    .description--price{
+        font-size: 28px;
+    }
+    .description--header{
+        font-size: 28px;
+    }
+    .description--content{
+        font-size: 20px;
+    }
+    .detail--related{
+        margin: 20px 0px;
+    }
+    .detail--related--caption{
+        font-size: 25px;
+        margin: 10px 20px;
+    }
+    .detail--related--option{
+        margin-top: 10px;
+        
+    }
+    .related--option--box{
+        max-width: 150px;
+    }
+    .option--box--img>img{
+        max-width: 150px;
+        height: 150px;
+
+    }
+    .option--box--caption{
+        font-size: 20px;
+    }
+    .dropdown-content{
+       display: none;
     }
 }
-@media screen and (max-width:380px) {
-    .specialist{
-        padding: 10px 20px;
+
+@media screen and (max-width: 380px) {
+    .column--one--header{
+        font-size: 20px;
     }
-    .specialist--table{
-        margin: 5px 5px;
+    .detail--column-two>div{
+        padding: 5px 10px;
     }
-    .color-green{
-        width: 40px;
-        height: 40px;
-        margin: 5px 0px;
-    }
-    .specialist--table--cell{
-        font-size: 15px;
-    }
-    .specialist-icon{
+    .description--image>img{
         height: 200px;
-        line-height: 280px;
+        margin: 0px 5px;
+        width: 170px;
     }
+    .detail--description{
+        margin-top:10px;
+    
+    }
+    .description--title{
+            font-size: 15px;
+    }
+    .description--price{
+        font-size: 13px;
+    }
+    .description--header{
+        font-size: 13px;
+    }
+    .description--content{
+        font-size: 12px;
+        zoom: 0.9;
+    }
+    .services--description>input{
+        border-radius: 15px;
+        font-size: 15px;
+        height: 25px;
+        margin-top:10px
+    }
+    .detail--related--caption{
+        font-size: 20px;
+    }
+    .detail--related{
+        margin-top: 8px;
+    }
+    
+    .related--option--box{
+        max-width: 200px;
+        margin:0 ;
+    }
+
+    .option--box--img>img{
+       max-width: 100%;
+    }
+    .option--box--caption{
+        font-size: 12px;
+    }
+   
 }
-.overlay {
-    position: absolute; 
-    bottom: 0; 
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1; 
-    width: 96%;
-    transition: .5s ease;
-    opacity:0;
-    color: white;
-    font-size: 18px;
-    padding: 5px;
-    text-align: center;
-  }
-  .overlay:last-child{
-    border-radius: 0px 0px 30px 0px
-  }
-  .specialist--table--cell:hover .overlay {
-    opacity: 1;
-  }

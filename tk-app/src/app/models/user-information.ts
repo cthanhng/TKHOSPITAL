@@ -1,17 +1,19 @@
-export class userInformation{
+export class UserInformation{
+
+    
     "name":string;
-    "date":Date;
-    "gender":string;
+    "date": string;
+    "gender": string;
     "phone": string;
-    "IDNumber":string;
-    "mail":string;
-    "nationnality": string;
+    "IDNumber": string;
+    "email": string;
+    "nationality": string;
     "religion": string;
-    "province":string;
-    "ward":string;
     "street": string;
-    "job":string;
-    "healthyInsuarance":string;
-    "height":string;
-    "weight":string
+    "job": string;
+    "healthyInsurance": string;
+    "height": number;
+    "weight": number;
+    "province": string;
+    "ward": string;
 }

@@ -9,9 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
-import { ArticleComponent } from './article/article.component';
-import { PaymentComponent } from './payment/payment.component';
-import { PaymentOtpComponent } from './payment-otp/payment-otp.component';
+import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +22,8 @@ import { PaymentOtpComponent } from './payment-otp/payment-otp.component';
     
     FilterPipe,
     UniqueFilterPipe,
-    ArticleComponent,
-    PaymentComponent,
-    PaymentOtpComponent
+    AdminScheduleComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

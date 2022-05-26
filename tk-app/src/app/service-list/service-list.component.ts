@@ -9,11 +9,12 @@ import { ListServiceService } from '../services/list-service.service';
 })
 export class ServiceListComponent implements OnInit {
   filteredDepartment = 'All'
-
+  public selectedIndex: number = 0;
   constructor(private _service:ListServiceService, private _router:Router, private _activatedRoute:ActivatedRoute) { }
   serviceList:any
   errMsg:any
   selectedID:any
+  selectedItem:any
   ngOnInit(): void {
     this.getAllService();
     
@@ -40,4 +41,19 @@ export class ServiceListComponent implements OnInit {
        }
        )
     }
+   
+    selectImage(selectedItem:any) {
+      this.selectedItem=selectedItem;
+  }
+
+  // onChangeDepartment(department: string) {
+  //   this.filteredDepartment=department
+ 
+
+  // }
 }
+
+
+
+
+

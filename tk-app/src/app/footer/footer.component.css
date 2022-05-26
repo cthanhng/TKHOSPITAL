@@ -1,0 +1,56 @@
+html, body{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .footer{
+    background-color: rgba(6, 95, 115, 1);
+  }
+  .footer-bar{
+    display: flex;
+  }
+  .footer-mar{
+    margin: 30px;
+    flex: 1;
+  }
+  .footer-logo img{
+    margin-top: 30px;
+  }
+  .title-inf{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .lienhe>p , .diachi>p{
+    font-size: 18px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .copyright{
+    background-color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+  }
+  /*-------- footer--------*/
+  .bg-footer{
+    background-color: #065F73;
+    color: white;
+  }
+  .cpr-bg{
+    background-color: white;
+  }
+  .cpr-bg a{
+    color: black;
+    text-decoration: black;
+  }
+  .ft-link{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+  .ft-link:hover{
+    color: #73BCD9;
+  }

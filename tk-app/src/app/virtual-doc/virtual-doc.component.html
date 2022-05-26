@@ -1,100 +1,114 @@
-<form [formGroup]="virtualForm" (ngSubmit)="onSubmit(virtualForm.value)">
-    <div class="form--container">
-        <div class="form--container2">
-            <div class="form--row">
-                <h3>Virtual Doctor</h3>
-            </div>
-            <div class="form--row">
-                <p>Our virtual visit (also known as telehealth) options connect you with a doctor from your phone, tablet or computer so you can stay safe and healthy.</p>
-            </div>
-            <div class="form--row">
-                <label for="">What type of visit do you need</label>
-                <select name="type" id="type" class="form--input form-control" formControlName="type" [class.is-invalid]="typeInput.invalid && typeInput.touched" required>
-                    <option value="Adult General Medicine">Adult General Medicine</option>
-                    <option value="Covid-19 Response">Covid-19 Response</option>
-                    <option value="Pediatrics General Medicine">Pediatrics General Medicine</option>
-                </select>
-                <div *ngIf="typeInput.invalid && typeInput.touched">
-                    <small class="text-danger" *ngIf="typeInput.errors?.['required']">Type of visit must be choosed</small>
+<body>
+    <form [formGroup]="virtualForm" (ngSubmit)="onSubmit(virtualForm.value)">
+        <div class="form--container">
+            <div class="form--container2">
+                <div class="form--row">
+                    <h3>Virtual Doctor</h3>
                 </div>
-            </div>
-            <div class="form--row">
-                <label for="">Connecting Way</label>
-                <div class="radio--row">
-                <input [class.is-valid]="connectInput.invalid && connectInput.touched" formControlName="connect" type="radio"  name="connect" value="PhoneCall" required><span>Phone Call</span>
-                <input [class.is-valid]="connectInput.invalid && connectInput.touched" formControlName="connect" type="radio"  name="connect" value="VideoCall" required> <span>Video Call</span>
+                <div class="form--row">
+                    <p>Our virtual visit (also known as telehealth) options connect you with a doctor from your phone, tablet or computer so you can stay safe and healthy.</p>
                 </div>
-                <div *ngIf="connectInput.invalid && placeInput.valid && placeInput.touched">
-                    <small class="text-danger" *ngIf="connectInput.errors?.['required']">Connecting Way????</small>
+                <div class="form--row">
+                    <label for="">What type of visit do you need</label>
+                    <div class="form--scapegoat">
+                        <select name="type" id="type" class="form--input form-control" formControlName="type" [class.is-invalid]="typeInput.invalid && typeInput.touched" required>
+                            <option value="" hidden>What's your problems</option>
+                            <option value="Adult General Medicine">Adult General Medicine</option>
+                            <option value="Covid-19 Response">Covid-19 Response</option>
+                            <option value="Pediatrics General Medicine">Pediatrics General Medicine</option>
+                        </select>
+                        <div class="form--notification" *ngIf="typeInput.invalid && typeInput.touched">
+                            <small class="text-danger" *ngIf="typeInput.errors?.['required']">Type of visit must be choosed</small>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form--row">
-                <label for="">Where will the visit take place</label>
-                <select name="platform" id="place" class="form--input form-control" formControlName="place" [class.is-invalid]="placeInput.invalid && placeInput.touched && connectInput.invalid">
-                    <option hidden>Please select the platform where we are going to meet</option>
-                    <option value="Google Meet">Google Meet</option>
-                    <option value="Zoom">Zoom</option>
-                    <option value="Skype">Skype</option>
-                    <option value="Amazon Chime">Amazon Chime</option>
-                    <option value="Facetime">Facetime</option>
-                </select>
-                <div *ngIf="placeInput.invalid && placeInput.touched && connectInput.valid">
-                    <small class="text-danger" *ngIf="placeInput.errors?.['required']">Which Platform will you choose</small>
+                <div class="form--row">
+                    <label for="">Connecting Way</label>
+                    <div class="form--scpaegoat">
+                        <div class="radio--row">
+                        <input [class.is-valid]="connectInput.invalid && connectInput.touched" formControlName="connect" type="radio"  name="connect" value="PhoneCall" required><span>Phone Call</span>
+                        <input [class.is-valid]="connectInput.invalid && connectInput.touched" formControlName="connect" type="radio"  name="connect" value="VideoCall" required> <span>Video Call</span>
+                        </div>
+                        <div *ngIf="connectInput.invalid && placeInput.valid && placeInput.touched">
+                            <small class="text-danger" *ngIf="connectInput.errors?.['required']">Connecting Way????</small>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form--row">
-                <label for="">Which pharmacy would you like to use?</label>
-                <select name="district" id="place" class="form--input form-control" formControlName="district" [class.is-invalid]="districtInput.invalid && districtInput.touched" required>
-                    <option value="" hidden>A prescription will be sent here</option>
-                    <option value="District 1">District 1</option>
-                    <option value="District 2">District 2</option>
-                    <option value="District 3">District 3</option>
-                    <option value="District 4">District 4</option>
-                    <option value="District 5">District 5</option>
-                    <option value="District 6">District 6</option>
-                    <option value="District 7">District 7</option>
-                    <option value="District 8">District 8</option>
-                    <option value="District 9">District 9</option>
-                    <option value="District 10">District 10</option>
-                    <option value="District 11">District 11</option>
-                    <option value="District 12">District 12</option>
-                    <option value="Bình Thạnh District">Bình Thạnh District</option>
-                    <option value="Gò Vấp District">Gò Vấp District</option>
-                    <option value="Thủ Đức District">Thủ Đức District</option>
-                    <option value="Phú Nhuận District">Phú Nhuận District</option>
-                    <option value="Phú Nhuận District">Phú Nhuận District</option>
-                    <option value="Tân Phú District">Tân Phú District</option>
-                    <option value="Bình Tân District">Bình Tân District</option>
-                    <option value="Nhà Bè District">Nhà Bè District</option>
-                    <option value="Hóc Môn District">Hóc Môn District</option>
-                    <option value="Bình Chánh District">Bình Chánh District</option>
-                    <option value="Củ Chi District">Củ Chi District</option>
-                    <option value="Cần Giờ District">Cần Giờ District</option>
-                </select>
-                <div *ngIf="districtInput.invalid && districtInput.touched">
-                    <small class="text-danger" *ngIf="districtInput.errors?.['required']">Pharmacity nearby</small>
+                <div class="form--row">
+                    <label for="">Where will the visit take place</label>
+                    <div class="form--scapegoat">
+                        <select name="platform" id="place" class="form--input form-control" placeholder="Which Plaform will be available" formControlName="place" [class.is-invalid]="placeInput.invalid && placeInput.touched && connectInput.invalid">
+                            <option class="text-light" value="" hidden>Which Plaform will be available</option>
+                            <option value="Google Meet">Google Meet</option>
+                            <option value="Zoom">Zoom</option>
+                            <option value="Skype">Skype</option>
+                            <option value="Amazon Chime">Amazon Chime</option>
+                            <option value="Facetime">Facetime</option>
+                        </select>
+                        <div class="" *ngIf="placeInput.invalid && placeInput.touched && connectInput.valid">
+                            <small class="text-danger" *ngIf="placeInput.errors?.['required']">Which Platform will you choose</small>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form--row" >
-                <label for="">Pick your day</label>
-                <input id="datetimepicker" class="form--input form-control" type="date" name="date" formControlName="date" [class.is-invalid]="dateInput.invalid && dateInput.touched" required >
-                <div *ngIf="dateInput.invalid && dateInput.touched">
-                    <small class="text-danger" *ngIf="dateInput.errors?.['required']">Choose date please!!</small>
+                <div class="form--row">
+                    <label for="">Which pharmacy would you like to use?</label>
+                    <div class="form--scapegoat">
+                        <select name="district" id="place" class="form--input form-control" formControlName="district" [class.is-invalid]="districtInput.invalid && districtInput.touched" required>
+                            <option value="" hidden>A prescription will be sent here</option>
+                            <option value="District 1">District 1</option>
+                            <option value="District 2">District 2</option>
+                            <option value="District 3">District 3</option>
+                            <option value="District 4">District 4</option>
+                            <option value="District 5">District 5</option>
+                            <option value="District 6">District 6</option>
+                            <option value="District 7">District 7</option>
+                            <option value="District 8">District 8</option>
+                            <option value="District 9">District 9</option>
+                            <option value="District 10">District 10</option>
+                            <option value="District 11">District 11</option>
+                            <option value="District 12">District 12</option>
+                            <option value="Bình Thạnh District">Bình Thạnh District</option>
+                            <option value="Gò Vấp District">Gò Vấp District</option>
+                            <option value="Thủ Đức District">Thủ Đức District</option>
+                            <option value="Phú Nhuận District">Phú Nhuận District</option>
+                            <option value="Phú Nhuận District">Phú Nhuận District</option>
+                            <option value="Tân Phú District">Tân Phú District</option>
+                            <option value="Bình Tân District">Bình Tân District</option>
+                            <option value="Nhà Bè District">Nhà Bè District</option>
+                            <option value="Hóc Môn District">Hóc Môn District</option>
+                            <option value="Bình Chánh District">Bình Chánh District</option>
+                            <option value="Củ Chi District">Củ Chi District</option>
+                            <option value="Cần Giờ District">Cần Giờ District</option>
+                        </select>
+                        <div *ngIf="districtInput.invalid && districtInput.touched">
+                            <small class="text-danger" *ngIf="districtInput.errors?.['required']">Pharmacity nearby</small>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form--row">
-                <label for="">Pick your time</label>
-                <input type="time" id="book_time2" name="booking-time" min="08:00" max="20:00" required onchange="show2();" class="form--input form-control" formControlName="time" [class.is-invalid]="timeInput.invalid && timeInput.touched" required>
-                <label for="" id="vd_note">Available time: 8:00 to 20:00</label>
-                <div *ngIf="timeInput.invalid && timeInput.touched">
-                    <small class="text-danger" *ngIf="dateInput.errors?.['required']">Choose time please!!</small>
+                <div class="form--row" >
+                    <label for="">Pick your day</label>
+                    <div class="form--scapegoat"> 
+                        <input id="datetimepicker" class="form--input form-control" type="date" name="date" formControlName="date" [class.is-invalid]="dateInput.invalid && dateInput.touched" required >
+                        <div *ngIf="dateInput.invalid && dateInput.touched">
+                            <small class="text-danger" *ngIf="dateInput.errors?.['required']">Choose date please!!</small>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class="form--row">
-                <input type="submit" id="nexttopayment" class="form--button" name="nexttopayment" [disabled]="virtualForm.invalid" value="Next">
+                <div class="form--row">
+                    <label for="">Pick your time</label> 
+                    <div class="form--scapegoat">
+                        <input type="time" id="book_time2" name="booking-time" min="08:00" max="20:00" required onchange="show2();" class="form--input form-control" formControlName="time" [class.is-invalid]="timeInput.invalid && timeInput.touched" required>
+                        <label for="" id="vd_note">Available time: 8:00 to 20:00</label>
+                        <div *ngIf="timeInput.invalid && timeInput.touched">
+                            <small class="text-danger" *ngIf="dateInput.errors?.['required']">Choose time please!!</small>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="virtual__form--button mb-3 text-center margin-btn">
+                    <input type="submit" id="nexttopayment" class="btn btn-primary" name="nexttopayment" [disabled]="virtualForm.invalid" value="Payment Pre-order">
+                </div>
             </div>
         </div>
-    </div>
-</form>
-
+    </form>
+</body>
