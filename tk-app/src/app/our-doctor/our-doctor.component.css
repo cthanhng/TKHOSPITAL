@@ -62,7 +62,7 @@
 .bg-title{
   background-color: #065F73;
 } 
-#our-doctors, #doctor-team, #doctor-role{
+#our-doctors, #doctor-team, #doctor-role, #doctor-table{
   color: #065F73;
   font-weight: bold;
 }
@@ -100,4 +100,19 @@
 .img-wrapper{
   height: 5em;
   width: 8em;
+}
+.doctor-role{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+}
+.role-item{
+  background-color: rgb(41, 144, 175);
+  margin: 10px;
+  padding: 30px;
+  font-weight: bold;
+  font-family: arial;
+  width: 200px;
+  height: 80px;
 }
