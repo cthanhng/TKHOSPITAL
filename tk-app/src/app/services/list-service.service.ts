@@ -5,7 +5,7 @@ import { IService } from '../models/service';
 
 
 
-const baseUrl = "http://localhost:3000"
+const baseUrl = "http://localhost:3000/service"
 @Injectable({
   providedIn: 'root'
 })
@@ -29,4 +29,11 @@ export class ListServiceService {
       catchError(this.handleError)
     )
   }
+  uploadData(data: any){
+    return this._http.post(`${baseUrl}/upload`,data)
+    .pipe(
+      retry(2),
+      catchError(this.handleError)
+    )
+}
 }

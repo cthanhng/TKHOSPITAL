@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
-
+const multer= require('multer');
+const path= require('path');
+const app = express();
+app.use(express.static(path.join(__dirname,'/images')))
 //Import models
 const DoctorList = require('../models/doctor-list')
 
@@ -19,6 +22,87 @@ router.get('/doctor-lists', function (req, res) {
           
         }
     })
+})
+
+//Get service by id
+router.get('/:id', async function(req, res){
+    
+    try {
+
+    let data = await DoctorList.findById(req.params.id);
+    res.json(data);
+    console.log(req.params.id)
+}
+    catch(err){
+        res.json({message: err.message})
+    }
+})
+
+var storage =multer.diskStorage({
+    destination: "images/doctors",
+    filename: (req,file,cb)=>{
+        cb(null,`${Date.now()}--${file.originalname}`)
+    }
+})
+
+let maxSize=10*1024*1024
+var upload =multer({
+    storage:storage,
+    limits:{
+     fileSize:maxSize
+    }
+
+}).single("file")
+
+//Insert new product 
+router.post("/upload", (req, res)=>{
+    upload (req, res,async(err) => {
+        if (err){
+            res.json({message: err.message})
+        }
+        else
+        {
+            console.log("file received: ", req.file.filename);
+            //Insert into database
+            let newDoctor = new DoctorList({
+                DoctorName: req.body.name,
+                Department: req.body.department,
+                Position: req.body.position,
+                Description: req.body.description,
+                thumbPath:req.file.filename
+            });
+            await newDoctor.save();
+           res.json({message: "Success!"})
+       }}
+       )
+   })
+
+//Update product by id
+router.patch("/:doctorId",async (req, res) => {
+    try{
+    await DoctorList.updateOne({_id:req.params.doctorId},{
+        $set:{DoctorName: req.body.name,
+            Department: req.body.department,
+            Position: req.body.position,
+            Description: req.body.description,}
+    })
+    res.json({message:"success"})
+    }
+    catch(err){
+        console.log(err.message)
+        res.json({message:err.message})
+    }
+})
+
+//Delete product
+router.delete("/:doctorId",async (req, res) => {
+    try{
+    await DoctorList.deleteOne({_id:req.params.doctorId});
+    res.json({message:"success"})
+} catch(err){
+    res.json ({status:400,message:err.message});
+}
+
 })
 
 

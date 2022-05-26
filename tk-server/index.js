@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
@@ -14,6 +15,13 @@ db.connect();
 /* const DoctorListRouter = require('./routes/doctor-list.routes')
 app.use("/", DoctorListRouter) */
 
+const ArticleListRouter = require('./routes/article-list.routes')
+app.use("/article", ArticleListRouter)
+
+const ServiceListRouter = require('./routes/services.routes')
+app.use("/service", ServiceListRouter)
+const DoctorListRouter = require('./routes/doctor-list.routes')
+app.use("/doctor", DoctorListRouter)
 // const ServiceRouter = require('./routes/services.routes.js');
 // app.use("/",ServiceRouter)
 
