@@ -2,13 +2,13 @@
     <div class="signup-main">
         <form regForm="ngForm" name="sForm">
             <div class="signup-title">Register New Account</div>
-            <div class="signup-form">
+            <!-- <div class="signup-form">
                 <div>Name <span>*</span></div>
                 <div>Date of Birth <span>*</span></div>
                 <div>
-                    <input type="text" placeholder="type your name here" name="name" #name="ngModel"[(ngModel)]="u.name" required > <br>
-                    <div>  Touched:{{name.touched}} - Dirty: {{name.dirty}} - Valid: {{name.valid}}</div>
-                    <div> Untouched: {{name.untouched}} - Pristine: {{name.pristine}} - Invalid: {{name.invalid}}</div>
+                    <input type="text" placeholder="type your name here" name="name" #name="ngModel" required > <br>
+                    <div>  Touched:{{Name.touched}} - Dirty: {{Name.dirty}} - Valid: {{Name.valid}}</div>
+                    <div> Untouched: {{Name.untouched}} - Pristine: {{Name.pristine}} - Invalid: </div>
                     <small class="text-danger" [class.d-none]="name.valid || name.untouched"> Tên bắt buộc nhập</small>
                 </div>
                 <div>
@@ -25,7 +25,7 @@
                 <div>Phone number <span>*</span></div>
                 <div>ID number <span>*</span></div>
                 <div>
-                    <input type="number" name="phone" id="phone" ngModel="phone" #phone="ngModel"[(ngModel)]="u.phone" required  [class.is-invalid]="errFlag && phone.touched" (blur)="checkPhone(phone.value)"(change)="checkPhone(phone.value)"><br>
+                    <input type="number" name="phone" id="phone" ngModel="phone" #phone="ngModel"[(ngModel)]="user.Phone" required  [class.is-invalid]="errFlag && phone.touched" (blur)="checkPhone(phone.value)"(change)="checkPhone(phone.value)"><br>
                     <div>  Touched:{{phone.touched}} - Dirty: {{phone.dirty}} - Valid: {{phone.valid}} -errFlag: {{errFlag}}</div>
                     <div> Untouched: {{phone.untouched}} - Pristine: {{phone.pristine}} - Invalid: {{phone.invalid}}</div>
                     <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">  Bắt buộc nhập</small> 
@@ -81,14 +81,14 @@
                 <div>Reenter Password <span>*</span></div>
                 <div><input type="password" step="1"></div>
                 <div><input type="password" step="1"></div>
-            </div>
+            </div> -->
             <div class="signup-footer">
                 <div class="signup-footer__note">
                     <span>*</span>- Require field
                 </div>
                 <div class="signup-button">
                     <div>
-                        <input class="signup__button--create" type="button" value="Create account">
+                        <input class="signup__button--create" (click)="onSubmit()" type="button" value="Create account">
                     </div>
                     <div class="signup__button--cancel">
                         <input type="button" value="Cancel">

@@ -1,3 +1,4 @@
+
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PatientRecordComponent } from './patient-record/patient-record.component';
 import { ServiceAfterHourComponent } from './service-after-hour/service-after-hour.component';
@@ -13,18 +14,27 @@ import { LoginComponent } from './login/login.component';
 import { EditInformationComponent } from './edit-information/edit-information.component';
 import { PatientPortalComponent } from './patient-portal/patient-portal.component';
 import { VipComponent } from './vip/vip.component';
-import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
-import { AdminArticleComponent } from './admin-article/admin-article.component';
+import{HeaderComponent} from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminServiceComponent } from './admin-service/admin-service.component';
 import { ForgotPassword1Component } from './forgot-password1/forgot-password1.component';
 import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
 import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component';
 import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
+import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
+import { AdminArticleComponent } from './admin-article/admin-article.component';
 
 const routes: Routes = [
   {
     path: "service",component: ServicePageComponent
   }, 
+  {
+    path: "header",component: HeaderComponent
+  },
+  {
+    path:"footer",component: FooterComponent
+  },
   {
     path: "homepage",component: HomepageComponent
   }, 
@@ -67,7 +77,7 @@ const routes: Routes = [
     path: "service/after-hours",component: ServiceAfterHourComponent
   },
   {
-    path: "service/servicelist/:id",component: ServiceListComponent
+    path:"admin-login",component: AdminLoginComponent
   },
   {
     path: "admin-doctor-list",component: AdminDoctorListComponent
@@ -111,3 +121,4 @@ export const RoutingComponents=[ServiceListComponent,
   VirtualDocComponent,
   HomeDocComponent,
   AdminScheduleComponent]
+

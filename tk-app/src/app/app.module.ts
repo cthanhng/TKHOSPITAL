@@ -10,6 +10,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
 import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AdminScheduleComponent } from './admin-schedule/admin-schedule.componen
     
     FilterPipe,
     UniqueFilterPipe,
-    AdminScheduleComponent
+    AdminScheduleComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
