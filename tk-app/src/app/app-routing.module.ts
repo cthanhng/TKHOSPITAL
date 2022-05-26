@@ -77,6 +77,15 @@ const routes: Routes = [
   {
     path: "admin-service",component: AdminServiceComponent
   },
+  {
+    path:"forgot-password1", component:ForgotPassword1Component
+  },
+  {
+    path:"forgot-password2", component:ForgotPassword2Component
+  },
+  {
+    path:"forgot-password3", component:ForgotPassword3Component
+  }
 ];
 
 @NgModule({
