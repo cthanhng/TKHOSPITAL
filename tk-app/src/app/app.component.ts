@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
       }
 
       this.isAdmin = JSON.parse(client).type === 'admin';
+      // this.isUser=JSON.parse(client).type === 'user';
     });
   }
 
