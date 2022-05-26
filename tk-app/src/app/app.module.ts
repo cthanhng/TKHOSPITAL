@@ -11,6 +11,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
 import { ArticleComponent } from './article/article.component';
 import { PaymentComponent } from './payment/payment.component';
+import { PaymentOtpComponent } from './payment-otp/payment-otp.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PaymentComponent } from './payment/payment.component';
     FilterPipe,
     UniqueFilterPipe,
     ArticleComponent,
-    PaymentComponent
+    PaymentComponent,
+    PaymentOtpComponent
   ],
   imports: [
     BrowserModule,
