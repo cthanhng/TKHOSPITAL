@@ -20,6 +20,7 @@ import { ForgotPassword1Component } from './forgot-password1/forgot-password1.co
 import { ForgotPassword2Component } from './forgot-password2/forgot-password2.component';
 import { ForgotPassword3Component } from './forgot-password3/forgot-password3.component';
 import { OurDoctorComponent } from './our-doctor/our-doctor.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
   {
@@ -81,6 +82,9 @@ const routes: Routes = [
   {
     path: "our-doctor",component: OurDoctorComponent
   },
+  {
+    path: "article",component: ArticleComponent
+  }
 ];
 
 @NgModule({
@@ -110,5 +114,6 @@ export const RoutingComponents=[ServiceListComponent,
   ForgotPassword3Component,
   VirtualDocComponent,
   HomeDocComponent,
-  OurDoctorComponent
+  OurDoctorComponent,
+  ArticleComponent
 ]

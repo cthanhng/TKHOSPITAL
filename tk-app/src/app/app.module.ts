@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
     HomepageComponent,
     
     FilterPipe,
-    UniqueFilterPipe
+    UniqueFilterPipe,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
