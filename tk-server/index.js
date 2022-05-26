@@ -45,6 +45,14 @@ app.use("/", MedicalRecordRouter)
 const AdminAccountRouter = require('./routes/admin-account.routes');
 app.use("/",AdminAccountRouter )
 
+/* const ArticleListRouter = require('./routes/article-list.routes')
+app.use("/", ArticleListRouter)
+
+const ServiceListRouter = require('./routes/services.routes')
+app.use("/", ServiceListRouter)
+ */
+const OurDoctorRouter = require('./routes/our-doctor.routes')
+app.use("/", OurDoctorRouter)
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)
