@@ -10,7 +10,7 @@ const cors = require('cors');
 app.use(cors());
 
 const db= require('./config/db/index')
-db.Connect();
+db.connect();
 
 /* const DoctorListRouter = require('./routes/doctor-list.routes')
 app.use("/", DoctorListRouter) */
@@ -44,6 +44,9 @@ app.use("/", MedicalRecordRouter)
 
 const AdminAccountRouter = require('./routes/admin-account.routes');
 app.use("/",AdminAccountRouter )
+const UserAccountRouter = require('./routes/user-account.routes');
+app.use("/",UserAccountRouter )
+
 
 /* const ArticleListRouter = require('./routes/article-list.routes')
 app.use("/", ArticleListRouter)

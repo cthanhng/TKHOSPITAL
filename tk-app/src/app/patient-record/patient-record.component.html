@@ -136,7 +136,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Detail information of medical record</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -145,24 +145,24 @@
                     <div class="popup--date">
                         <div class="date">
                             Date in: <br>
-                            {{detail.dateIn}}
+                            {{Pdetail.dateIn}}
                         </div>
                         <div class="date">
                             Date out: <br>
-                            ateOut}}
+                            {{Pdetail.dateOut}}
                         </div>
                     </div>
-                    <div class="popup-info">
-                        <div class="info--content">
-                            <div><span>Disease code: </span>diseaseCode}}</div>
-                            <div><span>Department: </span>prDetail.inforKhamBenh.department}}</div>
+                    <!-- <div class="popup-info">
+                        <div class="info--content" *ngFor="let d of Pdetail.inforKhamBenh">
+                            <div><span>Disease code: </span>{{d.diseaseCode}}</div>
+                            <div><span>Department: </span>{{d.department}}</div>
                             <div><span>Payment total:
-                                </span>prDetail.detail[0].total+prDetail.detail[1].total+prDetail.detail[2].total}}
+                                </span>{{detail.detail[0].total+detail.detail[1].total+detail.detail[2].total}}
                             </div>
-                            <div><span>Payment status: </span>prDetail.inforKhamBenh.paymentStatus}}</div>
+                            <div><span>Payment status: </span>{{detail.inforKhamBenh.paymentStatus}}</div>
     
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="popup-table">
                     <table>
@@ -173,11 +173,11 @@
                             <th>Total</th>
     
                         </tr>
-                        <tr >
-                            <td>nameService}}</td>
-                            <td>quantity}}</td>
-                            <td>unitPrice}}</td>
-                            <td>total}}</td>
+                        <tr *ngFor="let n of Pdetail.detail">
+                            <td>{{n.nameService}}</td>
+                            <td>{{n.quantity}}</td>
+                            <td>{{n.unitPrice}}</td>
+                            <td>{{n.total}}</td>
                         </tr>
     
                     </table>

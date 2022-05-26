@@ -18,4 +18,11 @@ getByID(userID: string): Observable<PatientSchedule> {
 handleError(err: HttpErrorResponse) {
   return throwError(() => new Error(err.message));
 }
+getScheduleList(): Observable<PatientSchedule> {
+  return this._http.get<PatientSchedule>(`${this.baseUrl}/patient-schedule`)
+    .pipe(retry(2), catchError(this.handleError1));
+}
+handleError1(err: HttpErrorResponse) {
+  return throwError(() => new Error(err.message));
+}
 }
