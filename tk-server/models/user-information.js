@@ -15,7 +15,7 @@ const UserInfoSchema = new Schema({
     Ward:{type:String,required:true},
     Street:{type:String,required:true},
     Job:{type:String, required:true},
-    HealthInsuarance:{type:Number,required:true},
+    HealthInsurance:{type:Number,required:true},
     Height:{type:Number,required:true},
     Weight:{type:Number, required:true}
 });
