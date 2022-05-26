@@ -10,6 +10,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
 import { ArticleComponent } from './article/article.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ArticleComponent } from './article/article.component';
     
     FilterPipe,
     UniqueFilterPipe,
-    ArticleComponent
+    ArticleComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
