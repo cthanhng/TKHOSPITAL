@@ -10,7 +10,7 @@ const cors = require('cors');
 app.use(cors());
 
 const db= require('./config/db/index')
-db.Connect();
+db.connect();
 
 /* const DoctorListRouter = require('./routes/doctor-list.routes')
 app.use("/", DoctorListRouter) */
