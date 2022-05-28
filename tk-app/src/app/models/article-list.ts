@@ -3,6 +3,5 @@ export interface ArticleList {
     "ArticleID":string;
     "Title": string;
     "Author": string;
-    "UpdateAt": Date;
-    "TimetoRead": string;
+    "Content": string;
 }

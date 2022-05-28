@@ -138,7 +138,7 @@ export const RoutingComponents=[ServiceListComponent,
   HomeDocComponent,
   AdminScheduleComponent,
   OurDoctorComponent,
-  ArticleComponent
+  ArticleComponent,
 ]
 
   
