@@ -69,10 +69,10 @@ router.post("/upload", (req, res)=>{
             let newArticle = new ArticleList({
                Title: req.body.title,
                 Author: req.body.author,
-               TimeToRead: req.body.timeToRead,
                UpdateAt:req.body.updatedAt,
                 Content: req.body.content,
-                Image:req.file.filename
+                Image:req.file.filename,
+                imageName: req.body.imageName
             });
             await newArticle.save();
            res.json({message: "Success!"})

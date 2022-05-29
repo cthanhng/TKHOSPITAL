@@ -72,7 +72,7 @@
         </h1>
         <article class="blog-post" *ngFor="let r of articleList">
           <h2 class="blog-post-title">{{r.Title}}</h2>
-          <img class="img-scale" src="{{r.Image}}" alt="không tải được hình">
+          <img class="img-scale" src="http://localhost:3000/{{r.Image}}" alt="không tải được hình">
           <p class="blog-post-meta"><span>Mã bài post {{r.ArticleID}}</span> by <span>{{r.Author}}</span></p>
           <p class="text-dark">{{r.Content}}</p> 
         </article>

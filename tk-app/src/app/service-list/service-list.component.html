@@ -50,7 +50,7 @@
                     <div *ngFor="let s of serviceList | filter:filteredDepartment:'Department';let i=index"
                         class="column related--option--box" [ngClass]="{'active': selectedIndex == i}">
                         <div class="option--box--img">
-                            <img class="cursor" src="{{s.Images}}" alt="">
+                            <img class="cursor" src="http://localhost:3000/{{s.Image}}" alt="">
                         </div>
                         <div class="option--box--caption" (click)="scrollToElement(target)" (click)="selectImage(s)">
                             {{s.ServiceName}}

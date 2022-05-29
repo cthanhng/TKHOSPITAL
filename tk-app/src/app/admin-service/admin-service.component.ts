@@ -14,8 +14,8 @@ export class AdminServiceComponent implements OnInit {
     price:[''],
     department:[''],
     description:[''],
-    serviceImage:['']
   })
+  Departments=["Dentistry","Pediatrics","Cardiology","Neurology"]
   file: any = null;
 
   constructor(private _service: ListServiceService, private _router: Router, private _formBuilder: FormBuilder,  private _toastr: ToastrService) { }
@@ -52,17 +52,13 @@ export class AdminServiceComponent implements OnInit {
     )
   }
   onSubmit(data: any) {
-    console.log("Name:", data.name);
+    console.log("Name:", data.serviceName);
     const formData = new FormData();
-    formData.append("name", data.name);
+    formData.append("name", data.serviceName);
     formData.append("department", data.department);
     formData.append("price", data.price);
     formData.append("description", data.description);
     formData.append("file", this.file)
-    // console.log("formData",formData);
-    // for (let pair of formData.entries()){
-    //   console.log(pair[0], pair[1]);
-    // }
     this._service.insertService(formData).subscribe({
       next: res => {
         console.log("Success");
