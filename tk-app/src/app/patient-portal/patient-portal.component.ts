@@ -39,6 +39,5 @@ export class PatientPortalComponent implements OnInit {
    this._services2.getEventList().subscribe({
       next: (data) =>{this.events=data}})  
     }
-    
 
   }

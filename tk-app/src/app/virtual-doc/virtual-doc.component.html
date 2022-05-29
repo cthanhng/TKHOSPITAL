@@ -1,21 +1,22 @@
+
 <body>
-    <form [formGroup]="virtualForm" (ngSubmit)="onSubmit(virtualForm.value)">
+    <!-- (ngSubmit)="onSubmit(virtualForm.value)" -->
+     <form #prodForm="ngForm" (ngSubmit)="onSubmit(prodForm)"> 
         <div class="form--container">
             <div class="form--container2">
                 <div class="form--row">
                     <h3>Virtual Doctor</h3>
                 </div>
+                
                 <div class="form--row">
                     <p>Our virtual visit (also known as telehealth) options connect you with a doctor from your phone, tablet or computer so you can stay safe and healthy.</p>
                 </div>
                 <div class="form--row">
                     <label for="">What type of visit do you need</label>
                     <div class="form--scapegoat">
-                        <select name="type" id="type" class="form--input form-control" formControlName="type" [class.is-invalid]="typeInput.invalid && typeInput.touched" required>
-                            <option value="" hidden>What's your problems</option>
-                            <option value="Adult General Medicine">Adult General Medicine</option>
-                            <option value="Covid-19 Response">Covid-19 Response</option>
-                            <option value="Pediatrics General Medicine">Pediatrics General Medicine</option>
+                        <select name="type" id="type" class="form--input form-control"  [class.is-invalid]="typeInput.invalid && typeInput.touched" required [(ngModel)]="virtualTemp.type">
+                            <option value="" hidden>-----------------------</option>
+                            <option *ngFor="let c of type" [ngValue]="c">{{c}}</option>
                         </select>
                         <div class="form--notification" *ngIf="typeInput.invalid && typeInput.touched">
                             <small class="text-danger" *ngIf="typeInput.errors?.['required']">Type of visit must be choosed</small>
@@ -26,8 +27,8 @@
                     <label for="">Connecting Way</label>
                     <div class="form--scpaegoat">
                         <div class="radio--row">
-                        <input [class.is-valid]="connectInput.invalid && connectInput.touched" formControlName="connect" type="radio"  name="connect" value="PhoneCall" required><span>Phone Call</span>
-                        <input [class.is-valid]="connectInput.invalid && connectInput.touched" formControlName="connect" type="radio"  name="connect" value="VideoCall" required> <span>Video Call</span>
+                        <input [class.is-valid]="connectInput.invalid && connectInput.touched" [(ngModel)]="virtualTemp.connect" type="radio"  name="connect" value="PhoneCall" required><span>Phone Call</span>
+                        <input [class.is-valid]="connectInput.invalid && connectInput.touched" [(ngModel)]="virtualTemp.connect" type="radio"  name="connect" value="VideoCall" required> <span>Video Call</span>
                         </div>
                         <div *ngIf="connectInput.invalid && placeInput.valid && placeInput.touched">
                             <small class="text-danger" *ngIf="connectInput.errors?.['required']">Connecting Way????</small>
@@ -37,7 +38,7 @@
                 <div class="form--row">
                     <label for="">Where will the visit take place</label>
                     <div class="form--scapegoat">
-                        <select name="platform" id="place" class="form--input form-control" placeholder="Which Plaform will be available" formControlName="place" [class.is-invalid]="placeInput.invalid && placeInput.touched && connectInput.invalid">
+                        <select name="platform" id="place" class="form--input form-control" placeholder="Which Plaform will be available" [(ngModel)]="virtualTemp.place" [class.is-invalid]="placeInput.invalid && placeInput.touched && connectInput.invalid">
                             <option class="text-light" value="" hidden>Which Plaform will be available</option>
                             <option value="Google Meet">Google Meet</option>
                             <option value="Zoom">Zoom</option>
@@ -53,7 +54,7 @@
                 <div class="form--row">
                     <label for="">Which pharmacy would you like to use?</label>
                     <div class="form--scapegoat">
-                        <select name="district" id="place" class="form--input form-control" formControlName="district" [class.is-invalid]="districtInput.invalid && districtInput.touched" required>
+                        <select name="district" id="place" class="form--input form-control" [(ngModel)]="virtualTemp.district" [class.is-invalid]="districtInput.invalid && districtInput.touched" required>
                             <option value="" hidden>A prescription will be sent here</option>
                             <option value="District 1">District 1</option>
                             <option value="District 2">District 2</option>
@@ -88,7 +89,7 @@
                 <div class="form--row" >
                     <label for="">Pick your day</label>
                     <div class="form--scapegoat"> 
-                        <input id="datetimepicker" class="form--input form-control" type="date" name="date" formControlName="date" [class.is-invalid]="dateInput.invalid && dateInput.touched" required >
+                        <input id="datetimepicker" class="form--input form-control" type="date" name="date" [(ngModel)]="virtualTemp.date" [class.is-invalid]="dateInput.invalid && dateInput.touched" required >
                         <div *ngIf="dateInput.invalid && dateInput.touched">
                             <small class="text-danger" *ngIf="dateInput.errors?.['required']">Choose date please!!</small>
                         </div>
@@ -96,8 +97,8 @@
                 </div>
                 <div class="form--row">
                     <label for="">Pick your time</label> 
-                    <div class="form--scapegoat">
-                        <input type="time" id="book_time2" name="booking-time" min="08:00" max="20:00" required onchange="show2();" class="form--input form-control" formControlName="time" [class.is-invalid]="timeInput.invalid && timeInput.touched" required>
+                    <div class="form--scapegoat" formControlName="time">
+                        <input type="time" id="book_time2" name="booking-time" min="08:00" max="20:00" required class="form--input form-control" [(ngModel)]="virtualTemp.time" [class.is-invalid]="timeInput.invalid && timeInput.touched" required [(ngModel)]="virtual.time">
                         <label for="" id="vd_note">Available time: 8:00 to 20:00</label>
                         <div *ngIf="timeInput.invalid && timeInput.touched">
                             <small class="text-danger" *ngIf="dateInput.errors?.['required']">Choose time please!!</small>
@@ -106,9 +107,16 @@
                 </div>
                 <hr>
                 <div class="virtual__form--button mb-3 text-center margin-btn">
-                    <input type="submit" id="nexttopayment" class="btn btn-primary" name="nexttopayment" [disabled]="virtualForm.invalid" value="Payment Pre-order">
+                    <input 
+                     type="submit" id="nexttopayment" class="btn btn-primary"
+                     name="nexttopayment"  value="Payment Pre-order" [disabled]="prodForm.invalid">
                 </div>
             </div>
         </div>
     </form>
+    
+    <!-- <p>{{virtualForm.value | json}}</p> -->
+    
 </body>
+<!-- [disabled]="virtualForm.invalid" -->
+<!-- routerLinkActive="active" routerLink="/virtual-doctor/confirm" -->

@@ -1,0 +1,131 @@
+/*----------- header--------------- */
+.navbar{
+    background-color: #065F73;
+}
+.nav-brand__color{
+    color: white;
+    text-decoration: none;
+    margin-right: 30px;
+    margin-left: 5px;
+}
+.nav-brand__color:hover{
+    color: #73BCD9;
+}
+.nav-item__detail{
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+}
+.nav-item__detail:hover{
+    color: #73BCD9;
+}
+.material-icons{
+    color: white;
+}
+.login-btn{
+    width: 100px;
+    color: white;
+    background-color:#73BCD9;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+.login-btn:hover{
+    background-color: #84bfd6;
+}
+/*---------------- body----------------------*/
+.col img{
+    width: 250px;
+}
+.col-sm-6 button{
+    margin: 10px;
+    background-color: #73BCD9;
+    border-radius: 10px;
+}
+.col-sm-6 button:hover{
+    background-color: #84bfd6;
+}
+.mid-nav{
+    background-color: white;
+    padding: 10px;
+}
+.main{
+    padding: 20px;
+}
+.form-label{
+    font-weight: bold;
+    margin-top: 15px;
+}
+.form{
+    margin: 20px;
+    border-radius: 20px;
+    padding: 42px;
+    background-color: rgb(255, 255, 255, 0.2);
+}
+.form-title{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #065F73;
+}
+.form-control{
+    height: 40px;
+}
+.btn-sm{
+    background-color: rgb(6, 95, 115);
+    padding: 7px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+    width: fit-content;
+    border-color: #065F73;
+    margin: auto 20px;
+}
+
+.col-12{
+    text-align: center;
+    margin-top: 30px;
+}
+.col-12 button{
+    width: 200px;
+}
+.regis-btn{
+    border-radius: 10px;
+    background-color: #dfe9ec;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+}
+.regis-btn:hover{
+    color: white;
+}
+
+
+/*-------- footer--------*/
+.bg-footer{
+    background-color: #065F73;
+    color: white;
+}
+.cpr-bg{
+    background-color: white;
+}
+.cpr-bg a{
+    color: black;
+    text-decoration: black;
+}
+.ft-link{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.ft-link:hover{
+    color: #73BCD9;
+}
+.col-12{
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+.col-12 button{
+    width: 200px;
+}

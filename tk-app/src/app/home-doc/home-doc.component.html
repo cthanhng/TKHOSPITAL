@@ -1,6 +1,6 @@
 <body>
 
-    <form [formGroup]="regForm" (ngSubmit)="onSubmit(regForm.value)">
+    <form #prodForm="ngForm" (ngSubmit)="onSubmit(prodForm)">
     <div class="product__page">
             <div class="product__form-container">
                 <div class="product__form-title">REGISTER FOR HOMECARE</div>
@@ -9,7 +9,7 @@
                         <div class="product__user-details">
                             <div class="product__input-box">
                                 <span class="product__details">Full Name</span>
-                                <input class="product__form-input form-control" name="name" type="text" placeholder="Type your name" formControlName="name" [class.is-invalid]="name.invalid && name.touched" required>
+                                <input class="product__form-input form-control" name="name" type="text" placeholder="Type your name" [(ngModel)]="homeDocSchedule.name" [class.is-invalid]="name.invalid && name.touched" required>
                                 <div *ngIf="name.invalid && name.touched">
                                     <small class="text-danger" *ngIf="name.errors?.['required']">Name is required</small>
                                     <small class="text-danger" *ngIf="name.errors?.['minlength']">Name requires at least 3 characters</small>
@@ -17,7 +17,7 @@
                             </div>
                             <div class="product__input-box">
                                 <span class="product__details">Date of Birth</span>
-                                <input class="product__form-input form-control" type="text" placeholder="Type your birthday" formControlName="dob" [class.is-invalid]="dob.invalid && dob.touched" name="dob">
+                                <input class="product__form-input form-control" type="text" placeholder="Type your birthday" [(ngModel)]="homeDocSchedule.dateOfBirth" [class.is-invalid]="dob.invalid && dob.touched" name="dob">
                                 <div *ngIf="dob.invalid && dob.touched" required>
                                     <small class="text-danger" *ngIf="dob.errors?.['required']">Date of birth is required</small>
                                     <small class="text-danger" *ngIf="dob.errors?.['minlength']">Date of birth requires at least 3 characters</small>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="product__input-box">
                                 <span class="product__details">Email</span>
-                                <input class="product__form-input form-control" type="text" formControlName="email" [class.is-invalid]="email.invalid && email.touched" placeholder="example@example.com"  name="email">
+                                <input class="product__form-input form-control" type="text" [(ngModel)]="homeDocSchedule.email" [class.is-invalid]="email.invalid && email.touched" placeholder="example@example.com"  name="email">
                                 <div *ngIf="email.invalid && email.touched" required>
                                     <small class="text-danger" *ngIf="email.errors?.['required']">Email is required</small>
                                     <small class="text-danger" *ngIf="email.errors?.['minlength']">Email requires at least 3 characters</small>
@@ -33,7 +33,7 @@
                             </div>
                             <div class="product__input-box">
                                 <span class="product__details">Phone</span>
-                                <input class="product__form-input form-control" formControlName="phone" [class.is-invalid]="phone.invalid && phone.touched" type="text" placeholder="Type your phone number" name="phone">
+                                <input class="product__form-input form-control" [(ngModel)]="homeDocSchedule.phone" [class.is-invalid]="phone.invalid && phone.touched" type="text" placeholder="Type your phone number" name="phone">
                                 <div *ngIf="phone.invalid && phone.touched" required>
                                     <small class="text-danger" *ngIf="phone.errors?.['required']">Phone is required</small>
                                     <small class="text-danger" *ngIf="phone.errors?.['minlength']">Phone requires at least 3 characters</small>
@@ -41,7 +41,7 @@
                             </div>
                             <div class="product__input-box">
                                 <span class="product__details">Address</span>
-                                <input class="product__form-input form-control" type="text" placeholder="Type your address"  name="address" formControlName="address" [class.is-invalid]="address.invalid && address.touched" required>
+                                <input class="product__form-input form-control" type="text" placeholder="Type your address"  name="address" [(ngModel)]="homeDocSchedule.address" [class.is-invalid]="address.invalid && address.touched" required>
                                 <div *ngIf="address.invalid && address.touched">
                                     <small class="text-danger" *ngIf="address.errors?.['required']">Address is required</small>
                                     <small class="text-danger" *ngIf="address.errors?.['minlength']">Address requires at least 3 characters</small>
@@ -50,7 +50,7 @@
                         </div>
                         <div class=" product__input-box product__choose-doctor" ng-controller="DoctorController">
                             <span class="product__details">Choose available doctor</span>
-                            <select class="product__form-input form-control" name="selectedDoctor" id="" ng-options="d.DoctorName for d in doctors" formControlName="selectedDoctor" [class.is-invalid]="selectedDoctor.invalid && selectedDoctor.touched">
+                            <select class="product__form-input form-control" name="selectedDoctor" id="" ng-options="d.DoctorName for d in doctors" [(ngModel)]="homeDocSchedule.doctor" [class.is-invalid]="selectedDoctor.invalid && selectedDoctor.touched">
                             </select>
                             <div *ngIf="selectedDoctor.invalid && selectedDoctor.touched">
                                 <small class="text-danger" *ngIf="selectedDoctor.errors?.['required']">Doctor is required</small>
@@ -60,7 +60,7 @@
                         <div class="product__user-details">
                             <div class="product__input-box">
                                 <span class="product__details">Date your want to test</span>
-                                <input id="datetimepicker" class="product__form-input form-control" type="date" placeholder="Nhập ngày bạn muốn khám" formControlName="date" [class.is-invalid]="date.invalid && date.touched"
+                                <input id="datetimepicker" class="product__form-input form-control" type="date" placeholder="Nhập ngày bạn muốn khám" [(ngModel)]="homeDocSchedule.date" [class.is-invalid]="date.invalid && date.touched"
                                 required name="date">
                                 <div *ngIf="date.invalid && date.touched">
                                     <small class="text-danger" *ngIf="date.errors?.['required']">Date is required</small>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="product__input-box">
                                 <span class="product__details">Select available time</span>
-                                <input class="product__form-input form-control" type="time" placeholder="--:--" formControlName="time" [class.is-invalid]="time.invalid && time.touched"
+                                <input class="product__form-input form-control" type="time" placeholder="--:--" [(ngModel)]="homeDocSchedule.time" [class.is-invalid]="time.invalid && time.touched"
                                 min="08:00" max="20:00" required onchange="show2();" name="time">
                                 <div *ngIf="time.invalid && time.touched">
                                     <small class="text-danger" *ngIf="time.errors?.['required']">Time is required</small>
@@ -79,8 +79,9 @@
                         </div>
                         <hr>
                         <div class="product__form-button mb-3 text-center margin-btn"> 
-                            <input type="submit" class="btn btn-primary" [disabled]="regForm.invalid" value="Register" name="register">
+                            <input type="submit" class="btn btn-primary"  value="Register" name="register">
                         </div>
+                        <!-- [disabled]="regForm.invalid" -->
                 </div>
             </div>
         </div>

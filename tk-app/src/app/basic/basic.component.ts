@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
+import { newSchedule } from '../models/Schedule-info';
+import { VirtualScheduleService } from '../services/virtual-schedule.service';
 // import { BasicScheduleService } from '../services/basic-schedule.service';
 
 @Component({
@@ -10,25 +12,17 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class BasicComponent implements OnInit {
 
-  regForm: any;
+  // regForm: any;
+  basic: any
+  errMsg: any
   patient_schedule: any;
-  errorMessage: string ='';
-  constructor(private _formBuilder: FormBuilder) { }
+  basicSchedule: newSchedule = new newSchedule()
+  constructor(private _formBuilder: FormBuilder, private _service: VirtualScheduleService) { }
 
-  /* public regForm = this._formBuilder.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
-    address: [''],
-    phone: [''],
-    date: [''],
-  }) */
+
 
   ngOnInit(): void {
-    this.regForm = this._formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      address: ['',[Validators.required, Validators.minLength(10)]],
-      phone: ['', [Validators.required, Validators.minLength(11)]],
-      date: ['' , [Validators.required]]
-    })
+    this.getSchedule()
 
     // this._service.getPatient_schedule().subscribe({
     //   next: data => this.patient_schedule = data,
@@ -36,6 +30,36 @@ export class BasicComponent implements OnInit {
     // })
 
   }
+
+  getSchedule(){
+    this._service.getAllSchedule().subscribe(
+      {
+        next: data => this.basic = data,
+        error: err => this.errMsg = err
+      })
+  }
+
+  public regForm = this._formBuilder.group({
+    name: ['', [Validators.required, Validators.minLength(3)]],
+    address: ['',[Validators.required, Validators.minLength(10)]],
+    phone: ['', [Validators.required, Validators.minLength(11)]],
+    date: ['' , [Validators.required]]
+  })
+
+  onSubmit(form: NgForm){
+    this._service.uploadData(this.basicSchedule).subscribe({
+      next: res => {
+        console.log("Success!!!!!!!!")
+        console.log(this.basicSchedule)
+        this.getSchedule()
+      },
+      error: err => {
+        console.log("Error: ", err.message)
+      }
+    })
+  }
+
+
   get name(){
     return this.regForm.controls['name']
   }
@@ -49,14 +73,8 @@ export class BasicComponent implements OnInit {
     return this.regForm.controls['date']
   }
 
-  onSubmit(data: any){
-    const formData = new FormData() 
-    formData.append("type" , data.type)
-    // formData.append("file" , this.file)
+  // onSub
+  
 
-    // console.log("FormData: ", formData)
-    // for(let pair of formData.entries()){
-    //   console.log(pair[0], pair[1]) //[0]:key [1]:value
-    // }
-  }
+
 }

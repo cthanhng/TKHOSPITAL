@@ -11,6 +11,10 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
 import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { ScheduleVirtualConfirmComponent } from './schedule-virtual-confirm/schedule-virtual-confirm.component';
+import { ScheduleBasicConfirmComponent } from './schedule-basic-confirm/schedule-basic-confirm.component';
+import { ScheduleVipConfirmComponent } from './schedule-vip-confirm/schedule-vip-confirm.component';
+import { ScheduleHomedocConfirmComponent } from './schedule-homedoc-confirm/schedule-homedoc-confirm.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     FilterPipe,
     UniqueFilterPipe,
     AdminScheduleComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    ScheduleVirtualConfirmComponent,
+    ScheduleBasicConfirmComponent,
+    ScheduleVipConfirmComponent,
+    ScheduleHomedocConfirmComponent
   ],
   imports: [
     BrowserModule,
