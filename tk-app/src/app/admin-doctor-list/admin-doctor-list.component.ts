@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
-
+import { Doctor } from '../models/doctor-list';
 import { DoctorListService } from '../services/doctor-list.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -14,7 +14,7 @@ export class AdminDoctorListComponent implements OnInit {
  
   doctorList: any;
   errorMessage: string = '';
-  // doctor: Doctor = new Doctor();
+  doctor: Doctor = new Doctor();
   file:any
   Departments=["Dentistry","Pediatrics","Cardiology","Neurology"]
   Positions=["Vice Director","Director","Nursing","Intership"]
@@ -121,7 +121,7 @@ export class AdminDoctorListComponent implements OnInit {
       form.reset();
 
     }
-
+    this.doctor=new Doctor();
   }
 
   onDelete(id:string){
