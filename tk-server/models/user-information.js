@@ -21,4 +21,4 @@ const UserInfoSchema = new Schema({
     image:{type:String,required:true},
     password:{type:String, required:true}
 });
-module.exports = mongoose.model('userinformation', UserInfoSchema);///chưa đặt lại tên cho db
+module.exports = mongoose.model('user_information', UserInfoSchema);///chưa đặt lại tên cho db

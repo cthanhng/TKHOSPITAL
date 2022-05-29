@@ -32,7 +32,7 @@ app.use("/doctor", DoctorListRouter)
 // const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
 // app.use("/",PatientScheduleRouter)
 
-const UserInfoRouter = require('./routes/user-information');
+const UserInfoRouter = require('./routes/user-information.routes');
 app.use("/",UserInfoRouter)
 const PatientScheduleRouter = require('./routes/patient-schedule');
 app.use("/",PatientScheduleRouter)
@@ -50,7 +50,8 @@ const AdminAccountRouter = require('./routes/admin-account.routes');
 app.use("/",AdminAccountRouter )
 const UserAccountRouter = require('./routes/user-account.routes');
 app.use("/",UserAccountRouter )
-
+const UserInfomationRouter= require('/routes/user-information.routes');
+app.use("/", UserInfomationRouter)
 
 /* const ArticleListRouter = require('./routes/article-list.routes')
 app.use("/", ArticleListRouter)

@@ -13,6 +13,7 @@ import { AdminScheduleComponent } from './admin-schedule/admin-schedule.componen
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { PackageServiceComponent } from './package-service/package-service.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
     FilterPipe,
     UniqueFilterPipe,
     AdminScheduleComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    PackageServiceComponent
   ],
   imports: [
     BrowserModule,

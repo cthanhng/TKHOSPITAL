@@ -26,6 +26,7 @@ import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.
 import { AdminArticleComponent } from './admin-article/admin-article.component';
 import { OurDoctorComponent } from './our-doctor/our-doctor.component';
 import { ArticleComponent } from './article/article.component';
+import { PackageServiceComponent } from './package-service/package-service.component';
 
 const routes: Routes = [
   {
@@ -107,6 +108,9 @@ const routes: Routes = [
   {
     path:"article", component:ArticleComponent
   },
+  {
+    path:"service/package-service",component:PackageServiceComponent
+  }
 ];
 
 @NgModule({
@@ -139,6 +143,7 @@ export const RoutingComponents=[ServiceListComponent,
   AdminScheduleComponent,
   OurDoctorComponent,
   ArticleComponent,
+  PackageServiceComponent
 ]
 
   
