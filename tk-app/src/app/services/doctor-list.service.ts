@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { DoctorList } from '../models/doctor-list';
+import { DoctorList,Doctor } from '../models/doctor-list';
 
 const baseUrl="http://localhost:3000/doctor"
 @Injectable({
@@ -20,11 +20,17 @@ export class DoctorListService {
   handleError(err: HttpErrorResponse) {
     return throwError(()=>new Error(err.message))
   }
-  uploadData(data: any){
+  insertDoctor(data: any) {
     return this._http.post(`${baseUrl}/upload`,data)
     .pipe(
       retry(2),
       catchError(this.handleError)
     )
+    }
+    updateDoctor(id:string, newData:Doctor):Observable<any> {
+      return this._http.patch(`${baseUrl}/${id}`,newData)
+    }
+    deleteDoctor(id:string){
+      return this._http.delete(`${baseUrl}/${id}`)
     }
 }

@@ -5,7 +5,7 @@ const ServiceListSchema = new Schema({
     Department:{type:String},
     Price:{type:String},
     Description:{type:String},
-    Images:{type:String},
+    Image:{type:String},
 }
 )
 
