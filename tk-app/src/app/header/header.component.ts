@@ -15,4 +15,15 @@ export class HeaderComponent implements OnInit {
       this.client = JSON.parse(localStorage.getItem('client')!);
     }, 1_000);
   }
+  patientPortal(){
+    return location.href='http://localhost:4200/patient-portal'
+  }
+  medicalRecord(){
+    location.href='http://localhost:4200/patient-record'
+  }
+  logOut(){
+
+  }
+  
 }
+

@@ -10,6 +10,7 @@ import { UserInformationService } from '../services/user-information.service';
 })
 export class SignUpComponent implements OnInit {
   user:IUserInfo={
+    userID: '',
     City:'abcxd',
     DateOfBirth:"25/12/2001",
     Email:'thunt19406@st.uel.edu.vn',
@@ -25,7 +26,8 @@ export class SignUpComponent implements OnInit {
     Street:'345365',
     Ward:'dfgfh',
     Weight:'100',
-    image:'dgfgtrrtgrh'
+    image:'dgfgtrrtgrh',
+    password:'',
   }
   errFlag = false;
 
