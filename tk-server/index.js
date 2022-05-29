@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 
 
+const path= require('path');
+app.use(express.static(path.join(__dirname,'/images/doctors')))
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
