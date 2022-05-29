@@ -10,34 +10,36 @@
     </div>
 </div>
 -->
-<div ngDefaultControl [(ngModel)]="filteredDepartment" name="departmentFilter" id="departmentFilter">
+<div ngDefaultControl [(ngModel)]="filteredDepartment" class="d-flex" name="departmentFilter" id="departmentFilter">
     <div class="detail--column-one dropdown">
         <div class="column--one--header ">
             Specialization
         </div>
         <div class="dropdown-content column--one--header">
-            <button (click)="filteredDepartment=s.Department" type="button"
-                *ngFor="let s of serviceList | filterUnique">{{s.Department}}</button>
+            <a href="" (click)="filteredDepartment=s.Department" type="button" class="mt-5 ml-3"
+                *ngFor="let s of serviceList | filterUnique">{{s.Department}}</a>
         </div>
     </div>
 
     <div class="detail--column-two">
-        <div>
-            <div class="description--image">
-                <img src="{{selectedItem?.Image}}">
-            </div>
-            <div class="services--description">
-                <div class="description--title">
-                    {{selectedItem?.ServiceName}}
+        <div >
+            <div class="d-flex" #target>
+                <div class="description--image">
+                    <img src="{{selectedItem?.Image}}">
                 </div>
-                <div class="description--price">
-                    {{selectedItem?.Price}}
-                </div>
-                <div class="description--header">
-                    Desciption
-                </div>
-                <div class="description--content">
-                    {{selectedItem?.Description}}
+                <div class="services--description">
+                    <div class="description--title">
+                        {{selectedItem?.ServiceName}}
+                    </div>
+                    <div class="description--price">
+                        {{selectedItem?.Price}}
+                    </div>
+                    <div class="description--header">
+                        Description
+                    </div>
+                    <div class="description--content">
+                        {{selectedItem?.Description}}
+                    </div>
                 </div>
             </div>
             <div class="row detail--related">
@@ -48,9 +50,9 @@
                     <div *ngFor="let s of serviceList | filter:filteredDepartment:'Department';let i=index"
                         class="column related--option--box" [ngClass]="{'active': selectedIndex == i}">
                         <div class="option--box--img">
-                            <img class="cursor" src="{{s.Images}}" alt="">
+                            <img class="cursor" src="http://localhost:3000/{{s.Image}}" alt="">
                         </div>
-                        <div class="option--box--caption" (click)="selectImage(s)">
+                        <div class="option--box--caption" (click)="scrollToElement(target)" (click)="selectImage(s)">
                             {{s.ServiceName}}
                         </div>
                     </div>

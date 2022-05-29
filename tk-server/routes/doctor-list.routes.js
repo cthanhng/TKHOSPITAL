@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const multer= require('multer');
-const path= require('path');
-const app = express();
-app.use(express.static(path.join(__dirname,'/images')))
+
+
+
 //Import models
 const DoctorList = require('../models/doctor-list')
 
@@ -62,14 +62,15 @@ router.post("/upload", (req, res)=>{
         }
         else
         {
-            console.log("file received: ", req.file.filename);
-            //Insert into database
+            
+            //Insert into databases
             let newDoctor = new DoctorList({
+                DoctorID:req.body.doctorId,
                 DoctorName: req.body.name,
                 Department: req.body.department,
                 Position: req.body.position,
                 Description: req.body.description,
-                thumbPath:req.file.filename
+                Image:req.file.filename,
             });
             await newDoctor.save();
            res.json({message: "Success!"})
@@ -77,22 +78,23 @@ router.post("/upload", (req, res)=>{
        )
    })
 
-//Update product by id
-router.patch("/:doctorId",async (req, res) => {
-    try{
-    await DoctorList.updateOne({_id:req.params.doctorId},{
-        $set:{DoctorName: req.body.name,
-            Department: req.body.department,
-            Position: req.body.position,
-            Description: req.body.description,}
-    })
-    res.json({message:"success"})
-    }
-    catch(err){
-        console.log(err.message)
-        res.json({message:err.message})
-    }
-})
+//Update doctor by id
+// router.patch("/:doctorId",async (req, res) => {
+//     try{
+//     await DoctorList.updateOne({_id:req.params.doctorId},{
+//         $set:{DoctorName: req.body.name,
+//             Department: req.body.department,
+//             Position: req.body.position,
+//             Description: req.body.description,
+//             Image:req.file.filename}
+//     })
+//     res.json({message:"success"})
+//     }
+//     catch(err){
+//         console.log(err.message)
+//         res.json({message:err.message})
+//     }
+// })
 
 //Delete product
 router.delete("/:doctorId",async (req, res) => {

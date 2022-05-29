@@ -73,7 +73,7 @@ router.post("/upload", (req, res)=>{
                 Department: req.body.department,
                 Price: req.body.price,
                 Description: req.body.description,
-                thumbPath:req.file.filename
+                Image:req.file.filename
             });
             await serviceNew.save();
            res.json({message: "Success!"})
@@ -82,22 +82,22 @@ router.post("/upload", (req, res)=>{
    })
 
 //Update product by id
-router.patch("/:serviceId",async (req, res) => {
-    try{
-    await ServiceList.updateOne({_id:req.params.serviceId},{
-        $set:{ServiceName: req.body.name,
-            Department: req.body.department,
-            Department: req.body.department,
-            Price: req.body.price,
-            Description: req.body.description}
-    })
-    res.json({message:"success"})
-    }
-    catch(err){
-        console.log(err.message)
-        res.json({message:err.message})
-    }
-})
+// router.patch("/:serviceId",async (req, res) => {
+//     try{
+//     await ServiceList.updateOne({_id:req.params.serviceId},{
+//         $set:{ServiceName: req.body.name,
+//             Department: req.body.department,
+//             Department: req.body.department,
+//             Price: req.body.price,
+//             Description: req.body.description}
+//     })
+//     res.json({message:"success"})
+//     }
+//     catch(err){
+//         console.log(err.message)
+//         res.json({message:err.message})
+//     }
+// })
 
 //Delete product
 router.delete("/:serviceId",async (req, res) => {

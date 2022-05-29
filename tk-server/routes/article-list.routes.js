@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer= require('multer');
 const path= require('path');
-const app = express();
 
-app.use(express.static(path.join(__dirname,'/images')))
 
 //Import models
 const ArticleList = require('../models/article-list')
@@ -69,9 +67,10 @@ router.post("/upload", (req, res)=>{
             let newArticle = new ArticleList({
                Title: req.body.title,
                 Author: req.body.author,
-               TimeToRead: req.body.timeToRead,
+               UpdateAt:req.body.updatedAt,
                 Content: req.body.content,
-                thumbPath:req.file.filename
+                Image:req.file.filename,
+                imageName: req.body.imageName
             });
             await newArticle.save();
            res.json({message: "Success!"})
@@ -80,21 +79,21 @@ router.post("/upload", (req, res)=>{
    })
 
 //Update product by id
-router.patch("/:articleId",async (req, res) => {
-    try{
-    await ArticleList.updateOne({_id:req.params.articleId},{
-        $set:{Title: req.body.title,
-            Author: req.body.author,
-           TimeToRead: req.body.timeToRead,
-            Content: req.body.content,}
-    })
-    res.json({message:"success"})
-    }
-    catch(err){
-        console.log(err.message)
-        res.json({message:err.message})
-    }
-})
+// router.patch("/:articleId",async (req, res) => {
+//     try{
+//     await ArticleList.updateOne({_id:req.params.articleId},{
+//         $set:{Title: req.body.title,
+//             Author: req.body.author,
+//            TimeToRead: req.body.timeToRead,
+//             Content: req.body.content,}
+//     })
+//     res.json({message:"success"})
+//     }
+//     catch(err){
+//         console.log(err.message)
+//         res.json({message:err.message})
+//     }
+// })
 
 //Delete product
 router.delete("/:articleId",async (req, res) => {

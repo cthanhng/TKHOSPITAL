@@ -30,6 +30,10 @@ export class ServiceListComponent implements OnInit {
    
     console.log(this.serviceList)
   }
+  scrollToElement($element:any): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
   onSelect(data: any){
     this._router.navigate(['/services/service-list',data._id])
       }

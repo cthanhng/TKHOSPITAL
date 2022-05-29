@@ -1,4 +1,5 @@
 export interface IUserInfo{
+    userID: string;
     Name:string;
     DateOfBirth:string; 
     Gender:string;
@@ -15,5 +16,6 @@ export interface IUserInfo{
     City:string;
     Ward:string;
     image:string;
+    password:string;
 
 }

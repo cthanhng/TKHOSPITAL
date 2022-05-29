@@ -9,6 +9,7 @@ import { EventService } from '../services/event.service';
 import { PatientScheduleService } from '../services/patient-schedule.service';
 import { PaymentsService } from '../services/payments.service';
 import { UserInformationService } from '../services/user-information.service';
+import { first } from 'rxjs';
 
 
 @Component({
@@ -21,11 +22,27 @@ export class PatientPortalComponent implements OnInit {
   constructor(private _service:UserInformationService, 
     private _services:PatientScheduleService, private _services1: PaymentsService, 
     private _services2: EventService) { }
-  id:string="02";
+  userInfo=window.localStorage.getItem('userInfo');
   userInfor: any;
   patientSchedule?: PatientSchedule;
   payments?: Payment;
   events: any;
+  id: string="01"
+  id_tam=window.localStorage.getItem('user')
+  //  getUsers() {
+  //   return Object.values(localStorage)
+  //     .map(json => {
+  //       try {
+  //         return JSON.parse(json);
+  //       }
+  //       catch (e) {
+  //         return undefined;
+  //       }
+  //     })
+  //     .filter((user?: any): user is {userID: string} => user && typeof user.userID === 'string');
+  // }
+  //  userID = this.getUsers();
+
   ngOnInit(): void {
     this._service.getByID(this.id).subscribe({
       next: (data) =>{this.userInfor=data}})
@@ -37,7 +54,11 @@ export class PatientPortalComponent implements OnInit {
       next: (data) =>{this.payments=data}})  
 
    this._services2.getEventList().subscribe({
-      next: (data) =>{this.events=data}})  
+      next: (data) =>{this.events=data}})
+  
+      // this._service.getAll()
+      //       .pipe(first())
+      //       .subscribe(users => this.userInfor = users);
     }
 
   }

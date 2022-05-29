@@ -1,0 +1,54 @@
+
+form{
+    margin: 50px;
+    border-radius: 20px;
+    padding: 20px;
+    background-image: url(../../assets/page-images/vaccine_covid.jpg);
+    background-blend-mode:lighten;
+}
+
+.fm-title{
+    padding: 20px;
+}
+
+.products{
+    padding: 10px;
+}
+.products .item{
+	margin-bottom:1em;
+}
+.products .item-name{
+	font-weight:600;
+	font-size: 0.9em;
+    text-align: left;
+}
+.products .item-description{
+	font-size:0.8em;
+	opacity:0.6;
+    text-align: left;
+}
+.products .item p{
+	margin-bottom:0.2em;
+}
+.products .price{
+	float: right;
+	font-weight: 600;
+	font-size: 0.9em;
+}
+.products .total{
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	margin-top: 10px;
+	padding-top: 19px;
+	font-weight: 600;
+	line-height: 1;
+    text-align: left;
+}
+.margin-btn{
+    margin-top: 20px;
+}
+.btn-primary{
+    background-color: #065F73;
+}
+.btn-primary:hover{
+    background-color: #153339;
+}

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <form class="bg-form" [formGroup]="regForm">
+        <div class="fm-title text-center">
+            <h3 class="text-center text-light">{{"Credit/Debit Card Payment" | uppercase}}</h3>
+            <img src="https://img.icons8.com/color/36/000000/visa.png" alt="không tải được hình">
+            <img src="https://img.icons8.com/color/36/000000/mastercard.png" alt="không tải được hình">
+            <img src="https://img.icons8.com/fluent/24/000000/paypal.png" alt="không tải được hình">  
+        </div>
+        <h2 class="lh-lg text-center text-light">{{"otp code verification" | uppercase}}</h2>
+        <div class="mb-3">
+            <label for="otp" class="text-light">Enter OTP to confirm:</label>
+            <input type="text" id="otp" class="form-control" placeholder="Enter your OTP Code" formControlName="otp" [class.is-invalid]="otp.invalid && otp.touched">
+            <div *ngIf="otp.invalid && otp.touched">
+                <small class="text-danger" *ngIf="otp.errors?.['required']">OTP Code is required</small>
+            </div>
+        </div>
+        <div class="mb-3 text-center margin-btn">
+            <button class="btn btn-secondary">Resend</button>
+            <button class="btn btn-primary ms-2">Confirm</button>
+        </div>
+    </form>
+</div>

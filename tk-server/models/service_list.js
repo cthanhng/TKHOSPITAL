@@ -5,9 +5,9 @@ const ServiceListSchema = new Schema({
     Department:{type:String},
     Price:{type:String},
     Description:{type:String},
-    Images:{type:String},
+    Image:{type:String},
 }
 )
 
 
-module.exports =mongoose.model("Services",ServiceListSchema);
+module.exports =mongoose.model("services",ServiceListSchema);

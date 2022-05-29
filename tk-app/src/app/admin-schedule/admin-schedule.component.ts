@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PatientScheduleService } from '../services/patient-schedule.service';
 
 @Component({
   selector: 'app-admin-schedule',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminScheduleComponent implements OnInit {
 
-  constructor() { }
-
+  constructor( 
+    private _services:PatientScheduleService,private router: Router ) { }
+  
+  patientSchedule: any;
+  
   ngOnInit(): void {
-  }
-
+    
+    
+    this._services.getScheduleList().subscribe({
+      next: (data) =>{this.patientSchedule=data}})
+    }
+    
+    logOut(){
+      localStorage.removeItem('client')
+       this.router.navigate(['/'])
+     }
 }
