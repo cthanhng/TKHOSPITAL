@@ -108,7 +108,7 @@ body,html{
     margin: 20px 60px;
     display: flex;
     justify-content: space-between;
-
+    height: 80;
 }
 .icon--container{ 
     width: 150px;
