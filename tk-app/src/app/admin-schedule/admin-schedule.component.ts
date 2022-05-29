@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PatientScheduleService } from '../services/patient-schedule.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PatientScheduleService } from '../services/patient-schedule.service';
 export class AdminScheduleComponent implements OnInit {
 
   constructor( 
-    private _services:PatientScheduleService, ) { }
+    private _services:PatientScheduleService,private router: Router ) { }
   
   patientSchedule: any;
   
@@ -20,5 +21,8 @@ export class AdminScheduleComponent implements OnInit {
       next: (data) =>{this.patientSchedule=data}})
     }
     
-    
+    logOut(){
+      localStorage.removeItem('client')
+       this.router.navigate(['/'])
+     }
 }

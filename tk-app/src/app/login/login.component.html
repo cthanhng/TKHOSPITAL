@@ -8,10 +8,14 @@
                 <div>Password</div>
                 <input type="password" name="password" id="password" [(ngModel)]="user.password">
                 <div class="forgot-pw">
-                    <a href="./Forgot_password_1.html">Forgot password?</a>
+                    <a>Forgot password?</a>
                 </div>
                 <div ><input class="button--login" type="submit" (click)="onSubmit()" value="Login" ></div><br>
+                <div>
+                    <a routerLink="/admin-login">Log In for Administrator</a>
+                </div>
                 <hr><br>
+               
                 <div class="input-button--create">
                     <input class="button--create" type="button" value="Create new account" onclick="register()">
                 </div>

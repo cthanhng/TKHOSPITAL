@@ -4,6 +4,7 @@ import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { Doctor } from '../models/doctor-list';
 import { DoctorListService } from '../services/doctor-list.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-doctor-list',
@@ -17,14 +18,14 @@ export class AdminDoctorListComponent implements OnInit {
   doctor: Doctor = new Doctor();
   file:any
   Departments=["Dentistry","Pediatrics","Cardiology","Neurology"]
-  Positions=["Vice Director","Director","Nursing","Intership"]
+  Positions=["Vice Director","Director","Nursing","Internship"]
   public doctorForm = this._formBuilder.group({
     name: ['', [Validators.required]],
     department: ['', [Validators.required,]],
     position: ['', [Validators.required]],
     description: ['', [Validators.required, Validators.minLength(10)]],
   })
-  constructor(private _formBuilder: FormBuilder, private _service: DoctorListService,  private _toastr: ToastrService) { }
+  constructor(private _formBuilder: FormBuilder, private _service: DoctorListService,  private _toastr: ToastrService,private router: Router) { }
 
   ngOnInit(): void {
     this.getDoctor()
@@ -108,4 +109,8 @@ export class AdminDoctorListComponent implements OnInit {
   get descriptionInput(){
     return this.doctorForm.controls["description"]
       }
+      logOut(){
+        localStorage.removeItem('client')
+         this.router.navigate(['/'])
+       }
 }

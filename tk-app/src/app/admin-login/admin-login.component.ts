@@ -1,6 +1,7 @@
 import { AdminAccountService } from './../services/admin-account.service';
 import { Component, OnInit } from '@angular/core';
 import { AdminAccount } from '../models/admin_account';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -14,7 +15,7 @@ export class AdminLoginComponent implements OnInit {
     password: '',
   };
 
-  constructor(private _adminAccountService: AdminAccountService) {}
+  constructor(private _adminAccountService: AdminAccountService,private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -48,5 +49,9 @@ export class AdminLoginComponent implements OnInit {
         alert(err.message);
       },
     });
+  }
+  logOut(){
+   localStorage.removeItem('client')
+    this.router.navigate(['/'])
   }
 }

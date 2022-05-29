@@ -1,4 +1,7 @@
-
+.service--container{
+    background-color: #B0D7E2;
+    padding-left: 10vw;
+}
 .pservice-content--text{
     font-size: 25px;
     margin: 10px 0px;
@@ -18,9 +21,11 @@
     padding-top:2px;
     vertical-align: baseline;
 }
-.pservice-content--textbox>div{
-    line-height: 30px;
-    font-size: 20px;
+.pservice-content--textbox{
+    display:flex;
+    flex-wrap: wrap;
+    width: 600px;
+    justify-content:space-around
 }
 .pservice-content--box{
     width: 60%;
@@ -32,9 +37,9 @@ border-radius: 60% 50% 58% 82% / 87% 60% 82% 55%;
     background-color: #CBE6EE;
 }
 .pservice-content--textbox{
-    background-color: white;
+    background-color: white!important;
     border-radius:30px ;
-    padding: 15px;
+    padding: 20px;
 }
 .list--package{
     padding: 10px;
