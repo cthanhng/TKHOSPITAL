@@ -1,0 +1,16 @@
+form{
+    margin: 50px;
+    border-radius: 20px;
+    padding: 20px;
+    background-image: url(../../assets/page-images/vaccine_covid.jpg);
+    background-blend-mode:lighten;
+}
+
+.fm-title{
+    padding: 20px;
+}
+
+.margin-btn{
+    margin: 20px;
+    padding: 20px;
+}

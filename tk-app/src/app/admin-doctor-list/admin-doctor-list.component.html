@@ -1,21 +1,20 @@
 <div class="wrapper">
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <img width="200px" src="../../assets/page-images/TK Hospital.png" alt="không tải được hình">
-        </div>
-        <hr>
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="#" data-toggle="collapse" aria-expanded="false">{{"Home" | uppercase}}</a>
+                <a href="homepage" data-toggle="collapse" aria-expanded="false">{{"Home" | uppercase}}</a>
             </li>
             <li>
-                <a href="#">{{"Tracking Service" | uppercase}}</a>
+                <a href="admin-service"><i class="bi bi-calendar2-week"></i> {{"Tracking Service" | uppercase}}</a>
             </li>
             <li>
-                <a href="#">{{"Tracking article" | uppercase}}</a>
+                <a href="admin-article"><i class="bi bi-envelope-heart"></i> {{"Tracking article" | uppercase}}</a>
             </li>
             <li>
-                <a href="#">{{"Tracking Doctor List" | uppercase}}</a>
+                <a href="admin-doctor-list"><i class="bi bi-app-indicator"></i> {{"Tracking Doctor List" | uppercase}}</a>
+            </li>
+            <li>
+                <a href="admin-schedule"><i class="bi bi-calendar-day"></i> {{"Tracking Schedule" | uppercase}}</a>
             </li>
         </ul>
     </nav>
@@ -34,7 +33,7 @@
                 </div>
             </div>
         </nav>
-        <p><a href="#">Homepage</a> > <a href="#">Tracking Doctor List</a></p>
+        <p><a href="homepage">Homepage</a> > <a href="admin-doctor-list">Tracking Doctor List</a></p>
         <form class="doctor-list-form" #productForm="ngForm">
             <div class="text-center fs-4 fw-bold mb-3">
                 Update Doctor Information
@@ -63,8 +62,15 @@
                 <label for="Description">Description</label>
                 <input class="mb-3 form-control" type="text" id="Description">
             </div>
+            <div class="d-flex flex-column">
+                <label for="Image">Image name</label>
+                <input class="mb-3 form-control" type="text" id="Image">
+            </div>
+            <div class="mb-3">
+                <input type="file" name="" id="" class="form-control">
+            </div>
             <div class="text-center btn-container my-3">
-                <button class="btn btn-primary mr-5" style="margin-right: 15px" type="submit">Submit</button>
+                <button class="btn btn-primary mr-5" style="margin-right: 15px" type="submit">Upload</button>
                 <button class="btn btn-secondary" type="reset">Reset</button>
             </div>
         </form>

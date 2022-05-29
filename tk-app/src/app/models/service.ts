@@ -6,5 +6,6 @@ export interface IService {
     price:string,
     description:string
     image:string
+    category: string
     
 }
