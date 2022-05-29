@@ -10,10 +10,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdminServiceComponent implements OnInit {
   public serviceForm = this._formBuilder.group({
-    serviceName: ['', [Validators.required, Validators.minLength(3)]],
-    price:[''],
-    department:[''],
-    description:[''],
+    serviceName: ['', [Validators.required, Validators.minLength(5)]],
+    price:['',[Validators.required, Validators.minLength(5)]],
+    department:['',[Validators.required]],
+    description:['',[Validators.required, Validators.minLength(50)]],
   })
   Departments=["Dentistry","Pediatrics","Cardiology","Neurology"]
   file: any = null;
@@ -92,4 +92,16 @@ export class AdminServiceComponent implements OnInit {
       })
     }
   }
+  get nameInput(){
+    return this.serviceForm.controls["serviceName"]
+      }
+  get priceInput(){
+    return this.serviceForm.controls["price"]
+      }
+  get departmentInput(){
+    return this.serviceForm.controls["department"]
+      }
+  get descriptionInput(){
+    return this.serviceForm.controls["description"]
+      }
 }

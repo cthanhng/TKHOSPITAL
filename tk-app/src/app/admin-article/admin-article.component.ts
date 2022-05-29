@@ -17,10 +17,10 @@ export class AdminArticleComponent implements OnInit {
   nowDate:any
   public articleForm = this._formBuilder.group({
     
-    title: [''],
-    author: [''],
-    content: [''],
-    imageName: [''],
+    title: ['',[Validators.required]],
+    author: ['',[Validators.required]],
+    content: ['',[Validators.required, Validators.minLength(100)]],
+    imageName: ['',[Validators.required, Validators.maxLength(15)]],
   })
   constructor(private _service: ArticleListService,private _formBuilder: FormBuilder,private _toastr: ToastrService) { }
 
@@ -97,4 +97,16 @@ export class AdminArticleComponent implements OnInit {
       })
     }
   }
+  get titleInput(){
+    return this.articleForm.controls["title"]
+      }
+  get authorInput(){
+    return this.articleForm.controls["author"]
+      }
+  get contentInput(){
+    return this.articleForm.controls["content"]
+      }
+  get imageNameInput(){
+    return this.articleForm.controls["imageName"]
+      }
 }
