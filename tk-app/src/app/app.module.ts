@@ -11,6 +11,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
 import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,16 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut:3000,
+      progressBar:true,
+      progressAnimation:'decreasing',
+      preventDuplicates:true
+    })
+  ]
+  ,
   providers: [],
   bootstrap: [AppComponent]
 })

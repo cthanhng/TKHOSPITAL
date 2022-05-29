@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 
 
+const path= require('path');
+app.use(express.static(path.join(__dirname,'/images/doctors')))
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
@@ -54,8 +56,11 @@ app.use("/", ArticleListRouter)
 const ServiceListRouter = require('./routes/services.routes')
 app.use("/", ServiceListRouter)
  */
-const OurDoctorRouter = require('./routes/our-doctor.routes')
+/* const OurDoctorRouter = require('./routes/our-doctor.routes')
 app.use("/", OurDoctorRouter)
+ */
+const ArticleRouter = require('./routes/article.routes')
+app.use("/", ArticleRouter)
 
 app.listen(port, ()=>{
     console.log(`My server listening on port ${port}`)

@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <form class="bg-form" [formGroup]="regForm">
+        <div class="fm-title text-center">
+            <h3 class="text-center text-light">{{"Credit/Debit Card Payment" | uppercase}}</h3>
+            <img src="https://img.icons8.com/color/36/000000/visa.png" alt="không tải được hình">
+            <img src="https://img.icons8.com/color/36/000000/mastercard.png" alt="không tải được hình">
+            <img src="https://img.icons8.com/fluent/24/000000/paypal.png" alt="không tải được hình">  
+        </div>
+        <h2 class="lh-lg text-center text-light">{{"payment pre-order details" | uppercase}}</h2>
+        <p class="text-light">The total pre-order cost of the service is $10.
+            Please choose your appropriate card to proceed with the payment. Commonly applied to all three service packages (VIP, Homecare, Virtual Doctor)
+        </p>
+        <div class="products">
+            <div class="item">
+              <span class="price text-light">$10</span>
+              <p class="item-name text-light">Provisional</p>
+              <p class="item-description text-light">No other taxes apply</p>
+            </div>
+            <div class="total text-light">Total<span class="price">$10</span></div>
+        </div>
+        <h3 class="text-center text-light">Please enter the card information!</h3>
+        <div class="mb-3">
+            <label for="cardnumber" class="text-light">Card number:</label>
+            <input type="number" id="cardnumber" class="form-control" placeholder="Enter your card number" formControlName="cardnumber" [class.is-invalid]="cardnumber.invalid && cardnumber.touched">
+            <div *ngIf="cardnumber.invalid && cardnumber.touched">
+                <small class="text-danger" *ngIf="cardnumber.errors?.['required']">Card number is required</small>
+                <small class="text-danger" *ngIf="cardnumber.errors?.['minlength']">Card number requires at least 3 characters</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="cardexpiry" class="text-light">Card Expiry:</label>
+                <input type="text" id="cardexpiry" class="form-control" placeholder="Enter your card expiry" formControlName="cardexpiry">
+                <div *ngIf="cardexpiry.invalid && cardexpiry.touched">
+                    <small class="text-danger" *ngIf="cardexpiry.errors?.['required']">Card expiry is required</small>
+                    <small class="text-danger" *ngIf="cardexpiry.errors?.['minlength']">Card expiry requires at least 3 characters</small>
+                </div>
+            </div>
+            <div class="col">
+                <label for="cardcvc" class="text-light">Card CVC:</label>
+                <input type="text" id="cardcvc" class="form-control" placeholder="Enter your card expiry" formControlName="cardcvc">
+                <div *ngIf="cardcvc.invalid && cardcvc.touched">
+                    <small class="text-danger" *ngIf="cardcvc.errors?.['required']">Card cvc is required</small>
+                    <small class="text-danger" *ngIf="cardcvc.errors?.['minlength']">Card cvc requires at least 3 characters</small>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="cardname" class="text-light">Card holder name:</label>
+            <input type="text" id="cardname" class="form-control" placeholder="Enter your card holder name" formControlName="cardname">
+            <div *ngIf="cardname.invalid && cardname.touched">
+                <small class="text-danger" *ngIf="cardname.errors?.['required']">Card holder name is required</small>
+                <small class="text-danger" *ngIf="cardname.errors?.['minlength']">Card holder name requires at least 3 characters</small>
+            </div>
+        </div>
+        <div class="mb-3 text-center margin-btn">
+            <button class="btn btn-primary">Agree to pay $10</button>
+        </div>
+    </form>
+</div>

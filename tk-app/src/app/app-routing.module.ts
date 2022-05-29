@@ -25,6 +25,7 @@ import { AdminScheduleComponent } from './admin-schedule/admin-schedule.componen
 import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 import { AdminArticleComponent } from './admin-article/admin-article.component';
 import { OurDoctorComponent } from './our-doctor/our-doctor.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
   {
@@ -102,7 +103,10 @@ const routes: Routes = [
   },
   {
     path:"forgot-password3", component:ForgotPassword3Component
-  }
+  },
+  {
+    path:"article", component:ArticleComponent
+  },
 ];
 
 @NgModule({
@@ -133,7 +137,9 @@ export const RoutingComponents=[ServiceListComponent,
   VirtualDocComponent,
   HomeDocComponent,
   AdminScheduleComponent,
-  OurDoctorComponent]
+  OurDoctorComponent,
+  ArticleComponent,
+]
 
   
 
