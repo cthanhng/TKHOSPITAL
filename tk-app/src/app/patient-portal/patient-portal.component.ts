@@ -60,6 +60,5 @@ export class PatientPortalComponent implements OnInit {
       //       .pipe(first())
       //       .subscribe(users => this.userInfor = users);
     }
-    
 
   }

@@ -24,6 +24,7 @@ import { ForgotPassword3Component } from './forgot-password3/forgot-password3.co
 import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
 import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 import { AdminArticleComponent } from './admin-article/admin-article.component';
+
 import { OurDoctorComponent } from './our-doctor/our-doctor.component';
 import { ArticleComponent } from './article/article.component';
 import { PackageServiceComponent } from './package-service/package-service.component';
@@ -56,7 +57,10 @@ const routes: Routes = [
   }, 
   {
     path: "virtual-doctor",component: VirtualDocComponent
-  }, 
+  },
+  // {
+  //   path: "virtual-doctor/confirm" , component: ScheduleVirtualConfirmComponent
+  // },
   {
     path: "login",component: LoginComponent
   }, 
@@ -141,10 +145,10 @@ export const RoutingComponents=[ServiceListComponent,
   VirtualDocComponent,
   HomeDocComponent,
   AdminScheduleComponent,
+
   OurDoctorComponent,
   ArticleComponent,
   PackageServiceComponent
 ]
 
-  
 

@@ -32,21 +32,37 @@ app.use("/doctor", DoctorListRouter)
 // const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
 // app.use("/",PatientScheduleRouter)
 
+
+const UserInfoRouter = require('./routes/user-information');
+app.use("/", UserInfoRouter)
+
+const BookingSchedules = require('./routes/schedule-list');
+app.use("/booking-schedules/", BookingSchedules)
+
+
 const UserInfoRouter = require('./routes/user-information.routes');
 app.use("/",UserInfoRouter)
+
 const PatientScheduleRouter = require('./routes/patient-schedule');
-app.use("/",PatientScheduleRouter)
+app.use("/", PatientScheduleRouter)
+
 const PaymentRouter = require('./routes/payment.router');
-app.use("/",PaymentRouter)
+app.use("/", PaymentRouter)
+
 const EventRouter = require('./routes/event.routes');
-app.use("/",EventRouter)
+app.use("/", EventRouter)
 const HealthDiagnosesRouter = require('./routes/health-diagnose');
-app.use("/",HealthDiagnosesRouter)
+app.use("/", HealthDiagnosesRouter)
 
 const MedicalRecordRouter = require('./routes/medical-record');
 app.use("/", MedicalRecordRouter)
 
 const AdminAccountRouter = require('./routes/admin-account.routes');
+
+
+
+
+
 app.use("/",AdminAccountRouter )
 const UserAccountRouter = require('./routes/user-account.routes');
 app.use("/",UserAccountRouter )
@@ -64,6 +80,43 @@ app.use("/", OurDoctorRouter)
  */
 
 
-app.listen(port, ()=>{
+
+app.get("/", (req, res) => {
+    res.send("OKASD")
+})
+
+
+
+
+app.listen(port, () => {
     console.log(`My server listening on port ${port}`)
 })
+// app.post("/upload", (req, res) => {
+//     upload(req, res, async (err) => {
+//         if (err) {
+//             res.json({ message: err.message })
+//         } else {
+
+//             //Insert into DB
+//             let patientSchelduleInfo = new scheduleInfo(req.body)
+//             await patientSchelduleInfo.save()
+//             res.json({ message: "Success!!" })
+//         }
+//     })
+// })
+
+// // BookingID: req.body.BookingID,
+// Doctor: req.body.phone,
+// // Department: req.body.email,
+// PatientName: req.body.name,
+// // BookingType: req.body.time,
+// // Confirmation: req.body.time,
+// Phone: req.body.phone,
+// Email: req.body.Email,
+// // District: req.body.time,
+// // Platform: req.body.time,
+// Date: req.body.Date,
+// Time: req.body.time,
+// // ConnectingWay: req.body.time,
+// // TypeOfVisit: req.body.time,
+// // thumbPath: req.file.filename
