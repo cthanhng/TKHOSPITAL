@@ -1,6 +1,6 @@
     <nav class="navbar navbar-expand-lg navbar-light header-container">
         <div class="container-fluid text-light" >
-          <a class="navbar-brand" style="color:white" href="#">Contact Us</a>
+          <a class="navbar-brand" style="color:white" routerLink="/homepage">Contact Us</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -13,8 +13,8 @@
                     <div><a class="text-light navbar-brand nav-item" target="_parent" routerLink="/homepage">Home</a></div>
                   
                     <div><a class="text-light navbar-brand" target="_parent" routerLink="/service">Services</a></div>
-                    <div><a class="text-light navbar-brand" target="_parent" >Our Doctor</a></div>
-                    <div><a class="text-light navbar-brand" target="_parent" >Article</a></div>
+                    <div><a class="text-light navbar-brand" target="_parent" routerLink="/our-doctor">Our Doctor</a></div>
+                    <div><a class="text-light navbar-brand" target="_parent" routerLink="/article">Article</a></div>
                     <!-- <div class="header-search">
                 <input type="text" placeholder="Search">
                 <a href=""><img src="../Images/search-icon.png" alt=""></a>
@@ -40,9 +40,9 @@
                                     <i class="bi-person-circle"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-lg-end">
-                                  <li><button class="dropdown-item" type="button" (click)="patientPortal()">Patient Portal</button></li>
-                                  <li><button class="dropdown-item" type="button" (click)="medicalRecord()"> Medical record</button></li>
-                                  <li><button class="dropdown-item" type="button" (click)="logOut()">Log out</button></li>
+                                  <li><a class="dropdown-item" type="button" (click)="patientPortal()">Patient Portal</a></li>
+                                  <li><a class="dropdown-item" type="button" (click)="medicalRecord()"> Medical record</a></li>
+                                  <li><a class="dropdown-item" type="button" (click)="logOut()">Log out</a></li>
                                 </ul>
                               </div>
                         </div>
@@ -60,9 +60,9 @@
             </div>
         </div>
         <div class=" d-flex justify-content-sm-center justify-content-md-end p-1 mb-2">
-            <input class=" btn btn-primary " style="background-color: cadetblue;" type="button" value="Virtual Doctor" onclick="virtualSchedule()">
-            <input class=" btn btn-primary " style="background-color: cadetblue;" type="button" value="Homecare" onclick="homecareSchedule()">
+            <input class=" btn btn-primary " style="background-color: cadetblue;" type="button" value="Virtual Doctor" routerLink="/virtual-doctor" >
+            <input class=" btn btn-primary " style="background-color: cadetblue;" type="button" value="Homecare" routerLink="/home-doctor" >
             <input class="btn  btn-primary" style="background-color: cadetblue;" type="submit" value="Schedule Appointment"
-                onclick="basicSchedule()">
+                routerLink="/basic-schedule">
         </div>
     </div>
