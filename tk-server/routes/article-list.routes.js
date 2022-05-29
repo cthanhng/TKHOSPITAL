@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer= require('multer');
 const path= require('path');
-const app = express();
 
-app.use(express.static(path.join(__dirname,'/images')))
 
 //Import models
 const ArticleList = require('../models/article-list')
