@@ -10,4 +10,4 @@ const ServiceListSchema = new Schema({
 )
 
 
-module.exports =mongoose.model("Services",ServiceListSchema);
+module.exports =mongoose.model("services",ServiceListSchema);

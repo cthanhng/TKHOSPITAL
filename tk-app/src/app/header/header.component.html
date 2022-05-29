@@ -27,14 +27,24 @@
                     </ng-template>
                     <ng-template #redirect>
                         <div class="login_user" >
-                            <div class="dropdown">
-                              <div class="login_user--title"><i class="fa fa-user-circle"></i></div>
+                            <!-- <div class="dropdown">
+                              <div class="login_user--title"><i class="bi-person-circle"></i></div>
                               <div class="dropdown-content">
-                                <p><a class="item-user" onclick="patientPortal()"><i class="fa fa-window-restore">&nbsp &nbsp</i> Patient Portal</a></p>
-                                <p><a class="item-user"onclick="medicalRecord()" ><i class="fa fa-book">&nbsp &nbsp</i> Medical record</a></p>
+                                <p><a class="item-user" ><i class="fa fa-window-restore">&nbsp &nbsp</i> Patient Portal</a></p>
+                                <p><a class="item-user" ><i class="fa fa-book">&nbsp &nbsp</i> Medical record</a></p>
                                 <p><a href="Homepage.html"><i class="fa fa-user-shield">&nbsp &nbsp</i> Log out</a></p>
                               </div>
-                            </div>
+                            </div> -->
+                            <div class="btn-group">
+                                <button type="button" style="background-color: cadetblue;" class=".bg-info dropdown-toggle btn btn-primary " data-bs-toggle="dropdown"  data-bs-display="static" aria-expanded="false">
+                                    <i class="bi-person-circle"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-lg-end">
+                                  <li><button class="dropdown-item" type="button">Patient Portal</button></li>
+                                  <li><button class="dropdown-item" type="button"> Medical record</button></li>
+                                  <li><button class="dropdown-item" type="button">Log out</button></li>
+                                </ul>
+                              </div>
                         </div>
                     </ng-template>
                     </div>

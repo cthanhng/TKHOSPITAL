@@ -46,6 +46,9 @@ app.use("/", MedicalRecordRouter)
 
 const AdminAccountRouter = require('./routes/admin-account.routes');
 app.use("/",AdminAccountRouter )
+const UserAccountRouter = require('./routes/user-account.routes');
+app.use("/",UserAccountRouter )
+
 
 /* const ArticleListRouter = require('./routes/article-list.routes')
 app.use("/", ArticleListRouter)

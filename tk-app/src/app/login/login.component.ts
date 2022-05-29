@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserAccount } from '../models/user-account';
+import { UserAccountService } from '../services/user-account.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  userAccount: UserAccount = {
+    userID: '',
+    email: '',
+    password: '',
+    Type: '',
+  };
 
-  ngOnInit(): void {
+  constructor(private _userAccountService: UserAccountService) {}
+
+  ngOnInit(): void {}
+
+  onSubmit() {
+    if (this.userAccount.email == '') {
+      alert(',,,,');
+      return;
+    }
+    if (this.userAccount.password == '') {
+
+      alert('The password is required');
+      return;
+    }
+
+    this._userAccountService.getByemail(this.userAccount.email).subscribe({
+      next: (data) => {
+        if (this.userAccount.password != data.password) {
+          alert('Password is not matched');
+        } else {
+          alert('Success login');
+          location.href = 'http://localhost:4200/homepage';
+          localStorage.setItem(
+            'client',
+            JSON.stringify({
+
+              UserAccount: this.userAccount.email,
+              type: 'user',
+            })
+          );
+        }
+      },
+      error: (err) => {
+        alert(err.message);
+      },
+    });
   }
 
 }

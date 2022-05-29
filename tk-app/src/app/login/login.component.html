@@ -4,13 +4,13 @@
             <form action="" name="form1">
                 <h3><span>TK </span> Hospital Online Login</h3>
                 <div>Email or Phone number</div>
-                <input name="user" type="text" id="ephone">
+                <input name="user" type="text" id="ephone" [(ngModel)]="userAccount.email">
                 <div>Password</div>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" [(ngModel)]="userAccount.password">
                 <div class="forgot-pw">
                     <a href="./Forgot_password_1.html">Forgot password?</a>
                 </div>
-                <div ><input class="button--login" type="submit" value="Login" onclick="goi()"></div><br>
+                <div ><input class="button--login" type="submit" (click)="onSubmit()" value="Login" ></div><br>
                 <hr><br>
                 <div class="input-button--create">
                     <input class="button--create" type="button" value="Create new account" onclick="register()">

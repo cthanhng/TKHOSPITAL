@@ -7,4 +7,4 @@ const OurDoctorSchema = new Schema({
     Department: {type: String, require: true},
 })
 
-module.exports = mongoose.model("our_doctors",OurDoctorSchema);
+module.exports = mongoose.model("doctor_list",OurDoctorSchema);

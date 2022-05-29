@@ -14,7 +14,7 @@ export class PatientRecordComponent implements OnInit {
   medicalRecords:any;
   yearSelected:any;
   temp:any;
-  detail:any={};
+  Pdetail:any={};
   
   constructor(private _service: HealthDiagnoseService, private _services:MedicalRecordService) { }
 
@@ -36,8 +36,8 @@ export class PatientRecordComponent implements OnInit {
     
   }
   selectDetail(n:any):void{
-    this.detail=n;
-    console.log(this.detail)
+    this.Pdetail=n;
+    console.log(this.Pdetail)
   }
 scrollToElement($element:any): void {
   console.log($element);
