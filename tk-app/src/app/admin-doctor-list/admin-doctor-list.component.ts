@@ -19,13 +19,10 @@ export class AdminDoctorListComponent implements OnInit {
   Departments=["Dentistry","Pediatrics","Cardiology","Neurology"]
   Positions=["Vice Director","Director","Nursing","Intership"]
   public doctorForm = this._formBuilder.group({
-
-    doctorId: ['', [Validators.required, Validators.minLength(3)]],
-    name: [''],
-    department: [''],
-    position: [''],
-    description: [''],
-    doctorImage: ['']
+    name: ['', [Validators.required]],
+    department: ['', [Validators.required,]],
+    position: ['', [Validators.required]],
+    description: ['', [Validators.required, Validators.minLength(10)]],
   })
   constructor(private _formBuilder: FormBuilder, private _service: DoctorListService,  private _toastr: ToastrService) { }
 
@@ -52,56 +49,16 @@ export class AdminDoctorListComponent implements OnInit {
     }
   }
 
-  // onSubmit(form: NgForm) {
-   
-   
-  //   if ((this.doctor._id) == ``) {
-      
-  //     this._service.insertDoctor(this.doctor).subscribe(res => {
-  //       if (res.message === "success") {
-  //         // alert("Success!!");
-  //         this._toastr.success("Inserted Successfully","Notice:")
-  //         this.getDoctor()
-  //       }
-  //       else {
-  //         alert("Error! :(((")
-  //         this.getDoctor()
-
-  //       }
-  //     })
-  //   } else {
-  //     this._service.updateDoctor(this.doctor._id,this.doctor).subscribe(
-  //       res=>{
-  //       let resData=JSON.parse(JSON.stringify(res));
-  //       if (resData.message==="success") {
-  //         this._toastr.success("Updated Successfully","Notice:")
-  //         this.getDoctor();
-  //        this.onReset();
-  //       }
-  //       else{
-  //         alert(resData.message);
-  //       }
-  //     })
-
-  //   }
-  // }
-  // onEdit(data: Doctor) {
-  //   this.doctor= data;
-  // }
-
 
   onSubmit(data: any) {
    
     
-    console.log("DoctorNA:", data.name);
     const formData = new FormData();
-    formData.append("doctorId", data.doctorId);
     formData.append("name", data.name);
     formData.append("department", data.department);
     formData.append("position", data.position);
     formData.append("description", data.description);
     formData.append("file", this.file);
-    console.log(formData);
     this._service.insertDoctor(formData).subscribe({
       next: res => {
         console.log("Success");
@@ -123,7 +80,6 @@ export class AdminDoctorListComponent implements OnInit {
     }
     this.doctor=new Doctor();
   }
-
   onDelete(id:string){
     if (confirm("Are you sure?")==true){
       this._service.deleteDoctor(id).subscribe(res => { 
@@ -140,4 +96,16 @@ export class AdminDoctorListComponent implements OnInit {
       })
     }
   }
+  get nameInput(){
+    return this.doctorForm.controls["name"]
+      }
+  get departmentInput(){
+    return this.doctorForm.controls["department"]
+      }
+  get positionInput(){
+    return this.doctorForm.controls["position"]
+      }
+  get descriptionInput(){
+    return this.doctorForm.controls["description"]
+      }
 }

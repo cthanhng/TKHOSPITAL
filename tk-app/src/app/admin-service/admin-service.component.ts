@@ -10,12 +10,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdminServiceComponent implements OnInit {
   public serviceForm = this._formBuilder.group({
-    serviceName: ['', [Validators.required, Validators.minLength(3)]],
-    price:[''],
-    department:[''],
-    description:[''],
-    serviceImage:['']
+    serviceName: ['', [Validators.required, Validators.minLength(5)]],
+    price:['',[Validators.required, Validators.minLength(5)]],
+    department:['',[Validators.required]],
+    description:['',[Validators.required, Validators.minLength(50)]],
   })
+  Departments=["Dentistry","Pediatrics","Cardiology","Neurology"]
   file: any = null;
 
   constructor(private _service: ListServiceService, private _router: Router, private _formBuilder: FormBuilder,  private _toastr: ToastrService) { }
@@ -52,17 +52,13 @@ export class AdminServiceComponent implements OnInit {
     )
   }
   onSubmit(data: any) {
-    console.log("Name:", data.name);
+    console.log("Name:", data.serviceName);
     const formData = new FormData();
-    formData.append("name", data.name);
+    formData.append("name", data.serviceName);
     formData.append("department", data.department);
     formData.append("price", data.price);
     formData.append("description", data.description);
     formData.append("file", this.file)
-    // console.log("formData",formData);
-    // for (let pair of formData.entries()){
-    //   console.log(pair[0], pair[1]);
-    // }
     this._service.insertService(formData).subscribe({
       next: res => {
         console.log("Success");
@@ -96,4 +92,16 @@ export class AdminServiceComponent implements OnInit {
       })
     }
   }
+  get nameInput(){
+    return this.serviceForm.controls["serviceName"]
+      }
+  get priceInput(){
+    return this.serviceForm.controls["price"]
+      }
+  get departmentInput(){
+    return this.serviceForm.controls["department"]
+      }
+  get descriptionInput(){
+    return this.serviceForm.controls["description"]
+      }
 }

@@ -13,10 +13,14 @@ export class AdminArticleComponent implements OnInit {
 
   articleList: any;
   errorMessage: string ='';
-  file:any
-  public doctorForm = this._formBuilder.group({
-
-  
+  file:any;
+  nowDate:any
+  public articleForm = this._formBuilder.group({
+    
+    title: ['',[Validators.required]],
+    author: ['',[Validators.required]],
+    content: ['',[Validators.required, Validators.minLength(100)]],
+    imageName: ['',[Validators.required, Validators.maxLength(15)]],
   })
   constructor(private _service: ArticleListService,private _formBuilder: FormBuilder,private _toastr: ToastrService) { }
 
@@ -37,11 +41,38 @@ export class AdminArticleComponent implements OnInit {
     {
       //console.log("File:", event.target.files[0])
       this.file=event.target.files[0];
+      this.nowDate= new Date()
       
     }
     else{
     }
   }
+  onSubmit(data: any) {
+   
+    
+    console.log("article:", data.name);
+    const formData = new FormData();
+    formData.append("title", data.title);
+    formData.append("author", data.author);
+    formData.append("content", data.content);
+    formData.append("imageName",data.imageName);
+    formData.append("file", this.file);
+    formData.append("updateAt",this.nowDate);
+    console.log(formData);
+    this._service.insertArticle(formData).subscribe({
+      next: res => {
+        console.log("Success");
+        this. getArticleList()
+        this._toastr.warning("Article Inserted Successfully","Notice:",{timeOut:2000})
+      },
+      error: err => {
+        console.log("Error", err.message)
+      }
+    })}
+   
+
+  
+  
   onReset(form?:NgForm){
     if (form){
       form.reset();
@@ -66,4 +97,16 @@ export class AdminArticleComponent implements OnInit {
       })
     }
   }
+  get titleInput(){
+    return this.articleForm.controls["title"]
+      }
+  get authorInput(){
+    return this.articleForm.controls["author"]
+      }
+  get contentInput(){
+    return this.articleForm.controls["content"]
+      }
+  get imageNameInput(){
+    return this.articleForm.controls["imageName"]
+      }
 }

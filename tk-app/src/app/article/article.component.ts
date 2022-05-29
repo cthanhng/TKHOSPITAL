@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from '../services/article.service';
+import { ArticleListService } from '../services/article-list.service';
 
 @Component({
   selector: 'app-article',
@@ -8,18 +8,21 @@ import { ArticleService } from '../services/article.service';
 })
 export class ArticleComponent implements OnInit {
 
-  articles: any;
+  articleList: any;
   errorMessage: string ='';
 
-  constructor(private _service: ArticleService) { }
+  constructor(private _service: ArticleListService) { }
 
   ngOnInit(): void {
-    this._service.getArticle().subscribe(
+    this.getArticleList()
+  }
+  getArticleList() {
+    this._service.getArticleList().subscribe(
       {
-        next: data=>this.articles= data,
-        error: err=> this.errorMessage = err,
-     }
-     )
+        next: data => this.articleList = data,
+        error: err => this.errorMessage = err,
+      }
+    )
   }
 
 }
