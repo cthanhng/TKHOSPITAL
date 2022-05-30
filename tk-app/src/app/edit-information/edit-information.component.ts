@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 })
 export class EditInformationComponent implements OnInit {
 
-  selectID:string="2"
+  selectID:string="01"
   user: any
   errMsg:any
   Nationality=["Vietnam","China","Korea","Japan","India"]

@@ -49,5 +49,6 @@ export class SignUpComponent implements OnInit {
   async onSubmit() {
     await this._userService.post(this.user).subscribe();
     alert('Success');
+location.href = 'http://localhost:4200/login'
   }
 }

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     Ward:'',
     Weight:'',
     image:'',
-    password: ''
+    password:''
   }
   constructor(private _userService: UserInformationService ) {}
 
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.user.Email == '') {
-      alert(',,,,');
+      alert('Please Enter Email');
       return;
     }
     if (this.user.password == '') {
@@ -50,8 +50,12 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this._userService.getByemail(this.user.Email).subscribe({
-      next: (data) => {
+    this._userService.getByEmail(this.user.Email).subscribe({
+      next: (data) => { 
+        console.log(data)
+        console.log(data.password)
+        console.log(this.user.password)
+       
         if (this.user.password != data.password) {
           alert('Password is not matched');
         } else {
@@ -68,7 +72,6 @@ export class LoginComponent implements OnInit {
           );
           localStorage.setItem("user", JSON.stringify(this.user));
           console.log(localStorage.getItem("user.userID"));
-  
           console.log(this.user.userID)
   //  >this.updatedItem = i;
         }

@@ -51,28 +51,28 @@ router.post('/user-informations/', async function(req, res) {
     }
 })
 
-router.patch("/user-informations/:id", async (req, res)=>{
-    try{
-        await userInfor.updateOne({userID: req.params.id},{
-            $set: {Name: req.body.Name, 
-                DateOfBirth: req.body.DateOfBirth, 
-                Phone: req.body.Phone,
-                IDNumber: req.body.IDNumber, 
-                Email: req.body.Email, 
-                Nationality:req.body.Nationality, 
-                Religion: req.body.Religion, 
-                Street: req.body.Street, 
-                Job: req.body.Job, 
-                HealthInsuranceCardNumber: req.body.HealthInsuranceCardNumber, 
-                Height: req.body.Height, 
-                Weight: req.body.Weight, 
-                City: req.body.City, 
-                Ward:req.body.Ward}})
-            res.json({status: 200, message :"success"})
-        }  
-    catch(err){
-        res.json({message: err.message})
-    }
-})
+// router.patch("/user-informations/:id", async (req, res)=>{
+//     try{
+//         await userInfor.updateOne({userID: req.params.id},{
+//             $set: {Name: req.body.Name, 
+//                 DateOfBirth: req.body.DateOfBirth, 
+//                 Phone: req.body.Phone,
+//                 IDNumber: req.body.IDNumber, 
+//                 Email: req.body.Email, 
+//                 Nationality:req.body.Nationality, 
+//                 Religion: req.body.Religion, 
+//                 Street: req.body.Street, 
+//                 Job: req.body.Job, 
+//                 HealthInsuranceCardNumber: req.body.HealthInsuranceCardNumber, 
+//                 Height: req.body.Height, 
+//                 Weight: req.body.Weight, 
+//                 City: req.body.City, 
+//                 Ward:req.body.Ward}})
+//             res.json({status: 200, message :"success"})
+//         }  
+//     catch(err){
+//         res.json({message: err.message})
+//     }
+// })
 
 module.exports=router;

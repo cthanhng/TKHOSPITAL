@@ -17,7 +17,7 @@ export class UserInformationService {
       .get<IUserInfo>(`${this.baseUrl}/user-informations/${userID}`)
       .pipe(retry(2), catchError(this.handleError));
   }
-  getByemail(email: string): Observable<IUserInfo> {
+  getByEmail(email: string): Observable<IUserInfo> {
     return this._http
       .get<IUserInfo>(`${this.baseUrl}/user-informations?Email=${email}`)
       .pipe(retry(2), catchError(this.handleError));

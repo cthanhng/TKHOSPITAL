@@ -17,9 +17,10 @@
                 <hr><br>
                
                 <div class="input-button--create">
-                    <input class="button--create" type="button" value="Create new account" onclick="register()">
+                    <input class="button--create" type="button" value="Create new account" routerLink="/signup" routerLinkActive="active" >
                 </div>
             </form>
         </div>
     </div>
 </div>
+<p>{{user | json}}</p>
