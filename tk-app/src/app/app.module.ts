@@ -11,15 +11,16 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { UniqueFilterPipe } from './pipes/uniqueFilter.pipe';
 import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { PackageServiceComponent } from './package-service/package-service.component';
 
 import { ScheduleVirtualConfirmComponent } from './schedule-virtual-confirm/schedule-virtual-confirm.component';
 import { ScheduleBasicConfirmComponent } from './schedule-basic-confirm/schedule-basic-confirm.component';
 import { ScheduleVipConfirmComponent } from './schedule-vip-confirm/schedule-vip-confirm.component';
 import { ScheduleHomedocConfirmComponent } from './schedule-homedoc-confirm/schedule-homedoc-confirm.component';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-import { PackageServiceComponent } from './package-service/package-service.component';
+
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { PackageServiceComponent } from './package-service/package-service.compo
     ScheduleVirtualConfirmComponent,
     ScheduleBasicConfirmComponent,
     ScheduleVipConfirmComponent,
-    ScheduleHomedocConfirmComponent
+    ScheduleHomedocConfirmComponent,
 
     PackageServiceComponent
 
