@@ -1,7 +1,7 @@
-<div class="boxx">
+<div class="box">
 
     <div class="edit-main">
-        <form action="">
+        <form #prodForm="ngForm" (ngSubmit)="onSubmit(prodForm)">
             <div class="edit-title">
                 <i class="fa fa-edit"></i>
                 <span>Update patient information</span><br>
@@ -10,71 +10,86 @@
             <div class="edit-form">
                 <div>Name <span>*</span></div>
                 <div>Date of Birth <span>*</span></div>
-                <div><input ng-model="patientInfor.Name" type="text" placeholder="type your name here"></div>
-                <div><input ng-model="patientInfor.DateOfBirth" type="text" name="date" id="datetimepicker" placeholder="type your date of birth here"></div>
+                <div>
+                    <input  type="text" id="name" name="name" value="{{user.Name}}" >
+                </div>
+                <div>
+                    <input  type="date" name="date" id="datetimepicker" value="{{user.DateOfBirth}}" >
+                </div>
                 <div class="edit-sextitle">Sex <span>*</span></div>
-                <div><input type="radio" ng-checked="patientInfor.Gender"  ng-true-value="Nam" ng-false-value="Nữ" name="sex" id="sex" >
+                <div>
+                    <input type="radio" name="sex" id="sex" >
                 <label for="">Female</label> 
                 </div>
-                <div><input type="radio" ng-checked="patientInfor.Gender" ng-true-value="Nữ" ng-false-value="Nam" ng-model="patientInfor.Gender" name="sex" id="sex">
+                <div>
+                    <input type="radio" name="sex" id="sex">
                 <label for="">Male</label>
                 </div>
                 <div>Phone number <span>*</span></div>
                 <div>ID number <span>*</span></div>
-                <div><input ng-model="patientInfor.Phone" type="text" name="number" id="number"></div>
-                <div><input type="text" ng-model="patientInfor.IDNumber"></div>
+                <div>
+                    <input type="text" name="number" id="number" value="{{user.Phone}}" >
+                </div>
+                <div>
+                    <input type="text"value="{{user.IDNumber}}">
+                </div>
                 <div class="edit-emailtitle">Email <span>*</span></div>
-                <div class="edit-emailbutton"><input  class="edit-input--email" ng-model="patientInfor.Email" type="email"></div>
+                <div class="edit-emailbutton">
+                    <input  class="edit-input--email"  type="email" value="{{user.Email}}">
+                </div>
                 <div>Nationality <span>*</span></div>
                 <div>religion <span>*</span></div>
                 <div>
                     <select name="nationality" id="nationality" ng-model="patientInfor.Nationality"> 
-                        <option ng-selected="patientInfor.Nationality" value="vietnam">Viet Nam</option>
-                        <option value="china">china</option>
-                        <option value="Korea">Korea</option>
-                        <option value="japan">Japan</option>
-                        <option value="india">India</option>
+                        <option value="">{{user.Nationality}}</option>
+                        <option *ngFor="let n of Nationality">{{n}}</option>
                     </select>
                 </div>
                 <div>
-                    <input type="text" ng-model="patientInfor.Religion">
+                    <input type="text" value="{{user.Religion}}">
                 </div>
                 <div>Province/City <span>*</span></div>
                 <div>Ward/Commune <span>*</span></div>
                 <div>
-                    <select name="province" id="province" ng-model="patientInfor.City">
-                        <option value="hatinh">Hà Tĩnh</option>
-                        <option value="hanoi">Hà Nội</option>
-                        <option value="saigon" ng-selected="patientInfor.City">TP HCM</option>
-                        <option value="dalat">Đà Lạt</option>
+                    <select name="city" id="city" ng-model="patientInfor.City">
+                        <option >{{user.City}}</option>
+                        <option *ngFor="let c of City">{{c}}</option>
                     </select>
                 </div>
                 <div>
-                    <select name="commune" id="commune" ng-model="patientInfor.Ward">
-                        <option value="A" ng-selected="patientInfor.Ward">Phường A</option>
-                        <option value="B">Phường B</option>
-                        <option value="C">Phường C</option>
-                        <option value="D">Phường D</option>
-                        <option value="E">Phường E</option>
+                    <select name="ward" id="ward" ng-model="patientInfor.Ward">
+                        <option >{{user.Ward}}</option>
+                        <option *ngFor="let w of Ward">{{w}}</option>
     
                     </select>
                 </div>
                 <div>Street <span>*</span></div>
                 <div>Job</div>
-                <div><input ng-model="patientInfor.Street" type="text"></div>
-                <div><input type="text" ng-model="patientInfor.Job"></div>
+                <div>
+                    <input type="text" value="{{user.Street}}">
+                </div>
+                <div>
+                    <input type="text" value="{{user.Job}}">
+                </div>
                 <div class="edit-healthtitle">Health insuarance card number <span>*</span></div>
-                <div class="healthnumber"><input class="edit-input--health" ng-model="patientInfor.HealthInsuaranceCardNumber" type="text"></div>
+                <div class="healthnumber">
+                    <input class="edit-input--health" type="text" value="{{user.HealthInsuranceCardNumber
+                    }}">
+                </div>
                 <div>Height</div>
                 <div>Weight</div>
-                <div><input type="text" ng-model="patientInfor.Height"></div>
-                <div><input ng-model="patientInfor.Weight" type="text" ></div>
+                <div>
+                    <input type="text" value="{{user.Height}}" >
+                </div>
+                <div>
+                    <input type="text" value="{{user.Weight}}" >
+                </div>
             
             </div><br>
             <div class="edit-footer">
                 
                 <div><input class="input__close" onclick="close()" type="button" value="Close"></div>
-                <div><input class="input__confirm" type="button" value="Confirm"></div>
+                <div><input class="input__confirm" type="submit" value="Confirm" ></div>
             
             </div>
         </form>

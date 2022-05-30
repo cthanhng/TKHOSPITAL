@@ -71,7 +71,7 @@ const routes: Routes = [
     path: "signup",component: SignUpComponent
   }, 
   {
-    path: "edit-information",component: EditInformationComponent
+    path: "edit-information/:id",component: EditInformationComponent
   }, 
   {
     path: "patient-portal",component: PatientPortalComponent

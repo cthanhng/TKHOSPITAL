@@ -1,18 +1,16 @@
 <div class="box">
     <div class="signup-main">
-        <form regForm="ngForm" name="sForm">
+        <form #regForm="ngForm" >
             <div class="signup-title">Register New Account</div>
-            <!-- <div class="signup-form">
+            <div class="signup-form">
                 <div>Name <span>*</span></div>
                 <div>Date of Birth <span>*</span></div>
                 <div>
-                    <input type="text" placeholder="type your name here" name="name" #name="ngModel" required > <br>
-                    <div>  Touched:{{Name.touched}} - Dirty: {{Name.dirty}} - Valid: {{Name.valid}}</div>
-                    <div> Untouched: {{Name.untouched}} - Pristine: {{Name.pristine}} - Invalid: </div>
-                    <small class="text-danger" [class.d-none]="name.valid || name.untouched"> Tên bắt buộc nhập</small>
+                    <input type="text" id="name" placeholder="type your name here" name="name" #name="ngModel" required [(ngModel)]="user.Name" > <br>
+                    <small class="text-danger" [class.d-none]="name.valid || name.untouched"> Bắt buộc nhập</small>
                 </div>
                 <div>
-                    <input type="date" name="date" id="datetimepicker"></div>
+                    <input type="date" name="date" id="datetimepicker" #date="ngModel" [(ngModel)]="user.DateOfBirth" required></div>
                 <div class="signup-sextitle">Gender <span>*</span></div>
                 <div>
                     <input type="radio" name="sex" id="sex">
@@ -25,70 +23,88 @@
                 <div>Phone number <span>*</span></div>
                 <div>ID number <span>*</span></div>
                 <div>
-                    <input type="number" name="phone" id="phone" ngModel="phone" #phone="ngModel"[(ngModel)]="user.Phone" required  [class.is-invalid]="errFlag && phone.touched" (blur)="checkPhone(phone.value)"(change)="checkPhone(phone.value)"><br>
-                    <div>  Touched:{{phone.touched}} - Dirty: {{phone.dirty}} - Valid: {{phone.valid}} -errFlag: {{errFlag}}</div>
-                    <div> Untouched: {{phone.untouched}} - Pristine: {{phone.pristine}} - Invalid: {{phone.invalid}}</div>
+                    <input type="number" name="phone" id="phone" #phone="ngModel" [(ngModel)]="user.Phone" required><br>
                     <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">  Bắt buộc nhập</small> 
-                    <small class="text-danger" *ngIf="!errFlag && phone.touched">10</small>
                 </div>
                 <div>
-                    <input type="number" id="idNum" >
+                    <input type="number" id="idNum" name="idNum" #idNum="ngModel" [(ngModel)]="user.IDNumber" required ><br>
+                    <small class="text-danger" [class.d-none]="idNum.valid || idNum.untouched">  Bắt buộc nhập</small>
                 </div>
                 <div class="signup-emailtitle">Email <span>*</span></div>
-                <div class="signup-emailbutton"><input class="signup-input--email" type="email" id="email"></div>
+                <div class="signup-emailbutton">
+                    <input class="signup-input--email" type="email" [email]="true" id="email" name="email" #email="ngModel" [(ngModel)]="user.Email" required >
+                    <div *ngIf="email.errors && email.touched">
+                        <small class="text-danger" *ngIf="email.errors['required']">Bắt buộc nhập</small>
+                        <small class="text-danger" *ngIf="email.errors['email']">Mail không hợp lệ</small>
+                    </div>
+                </div>
                 <div>Nationality <span>*</span></div>
                 <div>Religion <span>*</span></div>
                 <div>
-                    <select name="nationality" id="nationality">
-                        <option value="vietnam">Viet Nam</option>
-                        <option value="china">china</option>
-                        <option value="Korea">Korea</option>
-                        <option value="japan">Japan</option>
-                        <option value="india">India</option>
-                    </select>
+                    <select name="nationality" id="nationality" #nationality="ngModel"[(ngModel)]="user.Nationality" [class.is-invalid]="errFlag && nationality.touched"(blur)="check(nationality.value)" (change)="check(nationality.value)">
+                        <option value="none">---------------------------------------------------------------</option>
+                        <option *ngFor="let n of Nationality">{{n}}</option>
+                    </select><br>
+                    <small class="text-danger" [class.d-none]="!errFlag || nationality.untouched">Bắt buộc nhập</small>
                 </div>
                 <div>
-                    <input type="text">
+                    <input type="text" id="religion" name="religion" #religion="ngModel" [(ngModel)]="user.Religion" required><br>
+                    <small class="text-danger" [class.d-none]="religion.valid || religion.untouched">  Bắt buộc nhập</small>
                 </div>
                 <div>Province/City <span>*</span></div>
                 <div>Ward/Commune <span>*</span></div>
                 <div>
-                    <select name="province" id="province">
-                        <option value="hatinh">Hà Tĩnh</option>
-                        <option value="hanoi">Hà Nội</option>
-                        <option value="saigon">Sài Gòn</option>
-                        <option value="dalat">Đà Lạt</option>
-                    </select>
+                    <select name="city" id="city" name="city" #city="ngModel"[(ngModel)]="user.City" [class.is-invalid]="errFlag && city.touched"(blur)="check(city.value)" (change)="check(city.value)">
+                        <option value="none">---------------------------------------------------------------</option>
+                        <option *ngFor="let c of City">{{c}}</option>
+                    </select><br>
+                    <small class="text-danger" [class.d-none]="!errFlag || city.untouched">Bắt buộc nhập</small>
                 </div>
                 <div>
-                    <select name="commune" id="commune">
-                        <option value="tanloc">Tân Lộc</option>
-                        <option value="hongloc">Hồng Lộc</option>
-                        <option value="anloc">An Lộc</option>
-                    </select>
+                    <select name="ward" id="ward" name="ward"#ward="ngModel"[(ngModel)]="user.Ward" [class.is-invalid]="errFlag && ward.touched"(blur)="check(ward.value)" (change)="check(ward.value)" >
+                        <option value="none">---------------------------------------------------------------</option>
+                        <option *ngFor="let w of Ward">{{w}}</option>
+                    </select><br>
+                    <small class="text-danger" [class.d-none]="!errFlag || ward.untouched">Bắt buộc nhập</small>
                 </div>
                 <div>Street <span>*</span></div>
-                <div>Job</div>
-                <div><input type="text"></div>
-                <div><input type="text"></div>
+                <div>Job <span>*</span></div>
+                <div>
+                    <input type="text" id="street" name="street"#street="ngModel"[(ngModel)]="user.Street" required><br>
+                    <small class="text-danger" [class.d-none]="street.valid || street.untouched">  Bắt buộc nhập</small>
+                </div>
+                <div>
+                    <input type="text" id="job" name="job" #job="ngModel" [(ngModel)]="user.Job" required><br>
+                    <small class="text-danger" [class.d-none]="job.valid || job.untouched">  Bắt buộc nhập</small>
+                </div>
                 <div class="signup-healthtitle">Health insuarance card number <span>*</span></div>
-                <div class="healthnumber"><input class="signup-input--health" type="text"></div>
+                <div class="healthnumber">
+                    <input class="signup-input--health" type="text" id="health" name="health" #health="ngModel"[(ngModel)]="user.HealthInsuranceCardNumber" required><br>
+                    <small class="text-danger" [class.d-none]="health.valid || health.untouched">  Bắt buộc nhập</small>
+                </div>
                 <div>Height</div>
                 <div>Weight</div>
-                <div><input type="number" step="1"></div>
-                <div><input type="number" step="1"></div>
+                <div>
+                    <input type="number" step="10" id="height" name="height" #height="ngModel" [(ngModel)]="user.Height">
+                </div>
+                <div>
+                    <input type="number" step="5" id="weight"name="weight" #weight="ngModel" [(ngModel)]="user.Weight">
+                </div>
                 <div>Password <span>*</span></div>
                 <div>Reenter Password <span>*</span></div>
-                <div><input type="password" step="1"></div>
-                <div><input type="password" step="1"></div>
-            </div> -->
+                <div>
+                    <input type="password" id="password" name="password" #password="ngModel" [(ngModel)]="user.password" required placeholder="aloooo"><br>
+                    <small class="text-danger" [class.d-none]="password.valid || password.untouched">  Bắt buộc nhập</small>
+                </div>
+                <div><input type="password" ></div>
+            </div>
             <div class="signup-footer">
                 <div class="signup-footer__note">
                     <span>*</span>- Require field
                 </div>
                 <div class="signup-button">
                     <div>
-                        <input class="signup__button--create" (click)="onSubmit()" type="button" value="Create account">
+                        <input class="signup__button--create" (click)="onSubmit()" type="button" value="Create account" [disabled]="regForm.form.invalid || nationality.value == 'none' || city.value == 'none' || ward.value == 'none'">
                     </div>
                     <div class="signup__button--cancel">
                         <input type="button" value="Cancel">

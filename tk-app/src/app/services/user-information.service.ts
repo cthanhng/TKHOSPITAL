@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { EditUserInfo } from '../models/edit-user-info';
 import { environment } from '../models/enviroment';
 import { IUserInfo } from '../models/user_infor';
 @Injectable({
@@ -24,21 +25,14 @@ export class UserInformationService {
   handleError(err: HttpErrorResponse) {
     return throwError(() => new Error(err.message));
   }
-//   getAll() {
-//     return this._http.get<IUserInfo>(`${environment.apiUrl}/users`);
-// }
 
-//   getById(id: string) {
-//     return this._http.get<IUserInfo>(`${environment.apiUrl}/users/${id}`);
-// }
-
-  post(user: IUserInfo) {
-    const headers = new HttpHeaders().set(
-      'Content-Type',
-      'application/json; charset=utf-8'
-    );
+  post(user:IUserInfo) {
+   
     return this._http
-      .post(`${this.baseUrl}/user-informations/`, user, { headers: headers })
+      .post(`${this.baseUrl}/user-informations`, user)
       .pipe(retry(2), catchError(this.handleError));
+  }
+  update(id: string, newdata: EditUserInfo): Observable<any>{
+    return this._http.patch(`${this.baseUrl}/${id}`, newdata)
   }
 }

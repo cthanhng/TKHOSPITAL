@@ -1,0 +1,39 @@
+export class EditUserInfo{
+    
+    Name:string;
+    DateOfBirth:string; 
+    Gender:string;
+    Phone:string;
+    IDNumber:string;
+    Email:string;
+    Nationality:string;
+    Religion:string;
+    City:string;
+    Ward:string;
+    Street:string;
+    Job:string;
+    HealthInsuranceCardNumber:string;
+    Height:string;
+    Weight:string;
+    image:string;
+    password:string; 
+    constructor(){
+        this.Name="";
+    this.DateOfBirth=""; 
+    this.Gender="";
+    this.Phone="";
+    this.IDNumber="";
+    this.Email="";
+    this.Nationality="";
+    this.Religion="";
+    this.City="";
+    this.Ward="";
+    this.Street="";
+    this.Job="";
+    this.HealthInsuranceCardNumber="";
+    this.Height="";
+    this.Weight="";
+    this.image="";
+    this.password=""; 
+    }
+}

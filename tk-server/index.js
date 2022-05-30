@@ -16,18 +16,14 @@ app.use(cors());
 const db= require('./config/db/index')
 db.connect();
 
-/* const DoctorListRouter = require('./routes/doctor-list.routes')
-app.use("/", DoctorListRouter) */
-
 const ArticleListRouter = require('./routes/article-list.routes')
 app.use("/article", ArticleListRouter)
 
 const ServiceListRouter = require('./routes/services.routes')
 app.use("/service", ServiceListRouter)
+
 const DoctorListRouter = require('./routes/doctor-list.routes')
 app.use("/doctor", DoctorListRouter)
-// const ServiceRouter = require('./routes/services.routes.js');
-// app.use("/",ServiceRouter)
 
 // const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
 // app.use("/",PatientScheduleRouter)
@@ -60,6 +56,7 @@ const AdminAccountRouter = require('./routes/admin-account.routes');
 
 
 app.use("/",AdminAccountRouter )
+
 const UserAccountRouter = require('./routes/user-account.routes');
 app.use("/",UserAccountRouter )
 const UserInformationRouter= require('./routes/user-information.routes');
