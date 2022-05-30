@@ -4,7 +4,7 @@ body {
     background: #fafafa;
 }
 .img-scale{
-    width: 50px !important;
+    width: 100px !important;
     height:auto;
 
 }
@@ -15,7 +15,10 @@ p {
     line-height: 1.7em;
     color: #999;
 }
-
+.content-scale{
+    width: 400px;
+    text-wrap: break-word;
+}
 a,
 a:hover,
 a:focus {

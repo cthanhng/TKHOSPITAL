@@ -9,8 +9,8 @@
         <div class="col-lg-9">
             <div class="row">
                 <div class="col-md-4 d-flex" *ngFor="let o of ourdoctors">
-                    <div class="card mb-3">
-                        <img class="card-img-top" src="http://localhost:3000/{{o.Image}}" alt="không tải được hình">
+                    <div class="card mb-3 ">
+                        <img class="card-img-top img-resize" src="http://localhost:3000/{{o.Image}}" alt="không tải được hình">
                         <div class="card-body py-3">
                             <h5 class="mb-0">{{o.DoctorName}}</h5>
                             <span>{{o.Department}}</span>

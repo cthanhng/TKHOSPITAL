@@ -20,8 +20,8 @@ export class AdminArticleComponent implements OnInit {
     
     title: ['',[Validators.required]],
     author: ['',[Validators.required]],
-    content: ['',[Validators.required, Validators.minLength(100)]],
-    imageName: ['',[Validators.required, Validators.maxLength(15)]],
+    content: ['',[Validators.required, Validators.minLength(10)]],
+    imageName: ['',[Validators.required, Validators.maxLength(10)]],
   })
   constructor(private _service: ArticleListService,private _formBuilder: FormBuilder,private _toastr: ToastrService,private router: Router) { }
 

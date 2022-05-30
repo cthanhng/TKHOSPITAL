@@ -17,7 +17,15 @@
       position: relative;
       transform: translate3d(0, 0, 0);
     }
-  
+  .img-resize{
+    width: 300px;
+    height:auto !important;
+    padding: 0em 1em 0 1em;
+  }
+  .img-scale{
+    width: 50px !important;
+    height: auto !important;
+  }
     .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
       position: absolute;
       top: 0;

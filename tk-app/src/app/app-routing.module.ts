@@ -27,6 +27,8 @@ import { AdminArticleComponent } from './admin-article/admin-article.component';
 import { OurDoctorComponent } from './our-doctor/our-doctor.component';
 import { ArticleComponent } from './article/article.component';
 import { PackageServiceComponent } from './package-service/package-service.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentOtpComponent } from './payment-otp/payment-otp.component';
 
 
 
@@ -115,6 +117,12 @@ const routes: Routes = [
   },
   {
     path:"service/package-service",component:PackageServiceComponent
+  },
+  {
+    path:"payment",component:PaymentComponent
+  },
+  {
+    path:"payment-otp",component:PaymentOtpComponent
   }
 ];
 
@@ -148,7 +156,9 @@ export const RoutingComponents=[ServiceListComponent,
   AdminScheduleComponent,
   OurDoctorComponent,
   ArticleComponent,
-  PackageServiceComponent
+  PackageServiceComponent, 
+  PaymentComponent, 
+  PaymentOtpComponent
 ]
 
   

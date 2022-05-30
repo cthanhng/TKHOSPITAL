@@ -5,10 +5,31 @@
     /* background-image: url(../Images/background.png); */
   
 }
+.service--optionbar{
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    background-color: #B0D7E2;
+    font-size: 22px;
+    font-weight: bold;
+    color:#545859;
+    line-height: 35px;
+    flex-wrap: wrap;
+    
+}
+.service--optionbar--links{
+
+    background-color: #95BAC6;
+    margin: 0px 5px;
+    padding:0px 10px;
+    
+}
+.service--optionbar--links>a{
+    text-decoration: none;
+    color:#545859;
+}
 .ah--box{
     width: 50%;
-    
-   
     color: #545859;
     font-family: Lato;
     margin-top: 20px;
