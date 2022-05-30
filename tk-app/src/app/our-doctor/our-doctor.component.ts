@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorListService } from '../services/doctor-list.service';
 import { OurDoctorService } from '../services/our-doctor.service';
 
 @Component({
@@ -11,10 +12,10 @@ export class OurDoctorComponent implements OnInit {
   ourdoctors: any;
   errorMessage: string ='';
 
-  constructor(private _service: OurDoctorService) { }
+  constructor( private _service:DoctorListService) { }
 
   ngOnInit(): void {
-    this._service.getOurDoctor().subscribe(
+    this._service.getDoctorList().subscribe(
       {
         next: data=>this.ourdoctors= data,
         error: err=> this.errorMessage = err,

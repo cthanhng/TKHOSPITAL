@@ -33,15 +33,11 @@ app.use("/doctor", DoctorListRouter)
 // app.use("/",PatientScheduleRouter)
 
 
-const UserInfoRouter = require('./routes/user-information');
+const UserInfoRouter = require('./routes/user-information.routes');
 app.use("/", UserInfoRouter)
 
 const BookingSchedules = require('./routes/schedule-list');
 app.use("/booking-schedules/", BookingSchedules)
-
-
-const UserInfoRouter = require('./routes/user-information.routes');
-app.use("/",UserInfoRouter)
 
 const PatientScheduleRouter = require('./routes/patient-schedule');
 app.use("/", PatientScheduleRouter)

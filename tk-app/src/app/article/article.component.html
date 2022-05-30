@@ -70,10 +70,10 @@
         <h1 class="pb-4 mb-4 fw-bold border-bottom" id="d3">
           {{"List of blogs" | uppercase}}
         </h1>
-        <article class="blog-post" *ngFor="let r of articleList">
+        <article class="blog-post" *ngFor="let r of articleList; index as i">
           <h2 class="blog-post-title">{{r.Title}}</h2>
           <img class="img-scale" src="http://localhost:3000/{{r.Image}}" alt="không tải được hình">
-          <p class="blog-post-meta"><span>Mã bài post {{r.ArticleID}}</span> by <span>{{r.Author}}</span></p>
+          <p class="blog-post-meta"><span>Mã bài post {{i+1}}</span> by <span>{{r.Author}}</span></p>
           <p class="text-dark">{{r.Content}}</p> 
         </article>
       </div>
