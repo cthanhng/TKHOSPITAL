@@ -105,10 +105,10 @@
                 <div class="signup-button">
                     <div>
                         <input class="signup__button--create" (click)="onSubmit()" type="button" value="Create account" [disabled]="regForm.form.invalid || nationality.value == 'none' || city.value == 'none' || ward.value == 'none'"
-                        routerLink="login" routerLinkActive="active">
+                        routerLink="/login" routerLinkActive="active">
                     </div>
                     <div class="signup__button--cancel">
-                        <input type="button" value="Cancel">
+                        <input type="button" value="Cancel"routerLink="/homepage" routerLinkActive="active">
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@
                 <div>Password</div>
                 <input type="password" name="password" id="password" [(ngModel)]="user.password">
                 <div class="forgot-pw">
-                    <a>Forgot password?</a>
+                    <a routerLink="/forgot-password1" routerLinkActive="active">Forgot password?</a>
                 </div>
                 <div ><input class="button--login" type="submit" (click)="onSubmit()" value="Login" ></div><br>
                 <div class="text-center">
