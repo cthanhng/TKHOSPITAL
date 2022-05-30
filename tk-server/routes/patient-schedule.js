@@ -4,7 +4,15 @@ const router = express.Router();
 
 //Import models
 const patientSchedule = require('../models/patient-schedule')
-
+router.get('/patient-schedule',function(req,res){
+    patientSchedule.find({},function(err,data){
+        if(err){
+            res.json({message:err.message})
+        } else {
+            res.json(data)
+        }
+    })
+})
 
 router.get('/patient-schedule/:id', function (req, res) {
     patientSchedule.findOne({userID: req.params.id}, function (err,data) {

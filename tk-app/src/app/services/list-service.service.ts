@@ -29,11 +29,14 @@ export class ListServiceService {
       catchError(this.handleError)
     )
   }
-  uploadData(data: any){
+  insertService(data: any) {
     return this._http.post(`${baseUrl}/upload`,data)
     .pipe(
       retry(2),
       catchError(this.handleError)
     )
-}
+    }
+    deleteService(id:string){
+      return this._http.delete(`${baseUrl}/${id}`)
+    }
 }

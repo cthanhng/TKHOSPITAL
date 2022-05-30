@@ -3,13 +3,17 @@ const app = express();
 const port = 3000;
 
 
+const path= require('path');
+app.use(express.static(path.join(__dirname,'/images/doctors')))
+app.use(express.static(path.join(__dirname,'/images/article')))
+app.use(express.static(path.join(__dirname,'/images/service')))
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 const cors = require('cors');
 app.use(cors());
 
-const db = require('./config/db');
+const db= require('./config/db/index')
 db.connect();
 
 /* const DoctorListRouter = require('./routes/doctor-list.routes')
@@ -28,11 +32,16 @@ app.use("/doctor", DoctorListRouter)
 // const PatientScheduleRouter = require('./routes/patient-schedule.routes.js');
 // app.use("/",PatientScheduleRouter)
 
+
 const UserInfoRouter = require('./routes/user-information');
 app.use("/", UserInfoRouter)
 
 const BookingSchedules = require('./routes/schedule-list');
 app.use("/booking-schedules/", BookingSchedules)
+
+
+const UserInfoRouter = require('./routes/user-information.routes');
+app.use("/",UserInfoRouter)
 
 const PatientScheduleRouter = require('./routes/patient-schedule');
 app.use("/", PatientScheduleRouter)
@@ -49,9 +58,26 @@ const MedicalRecordRouter = require('./routes/medical-record');
 app.use("/", MedicalRecordRouter)
 
 const AdminAccountRouter = require('./routes/admin-account.routes');
-app.use("/", AdminAccountRouter)
 
 
+
+
+
+app.use("/",AdminAccountRouter )
+const UserAccountRouter = require('./routes/user-account.routes');
+app.use("/",UserAccountRouter )
+const UserInformationRouter= require('./routes/user-information.routes');
+app.use("/",  UserInformationRouter)
+
+/* const ArticleListRouter = require('./routes/article-list.routes')
+app.use("/", ArticleListRouter)
+
+const ServiceListRouter = require('./routes/services.routes')
+app.use("/", ServiceListRouter)
+ */
+/* const OurDoctorRouter = require('./routes/our-doctor.routes')
+app.use("/", OurDoctorRouter)
+ */
 
 
 

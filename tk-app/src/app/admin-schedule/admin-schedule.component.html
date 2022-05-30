@@ -1,1 +1,63 @@
-<p>admin-schedule works!</p>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img width="200px" src="../../assets/page-images/TK Hospital.png" alt="không tải được hình">
+        </div>
+        <hr>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="homepage" data-toggle="collapse" aria-expanded="false">{{"Home" | uppercase}}</a>
+            </li>
+            <li>
+                <a href="admin-service"><i class="bi bi-calendar2-week"></i> {{"Tracking Service" | uppercase}}</a>
+            </li>
+            <li>
+                <a href="admin-article"><i class="bi bi-envelope-heart"></i> {{"Tracking article" | uppercase}}</a>
+            </li>
+            <li>
+                <a href="admin-doctor-list"><i class="bi bi-app-indicator"></i> {{"Tracking Doctor List" | uppercase}}</a>
+            </li>
+            <li>
+                <a href="admin-schedule"><i class="bi bi-calendar-day"></i> {{"Tracking Schedule" | uppercase}}</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                    
+                        <li class="nav-item">
+                            <a class="nav-link" (click)="logOut()" >Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <p><a href="#">Homepage</a> > <a href="#">Tracking Schedule</a></p>
+        
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <th>Time</th>
+                <th>Room Number</th>
+                <th>Dentist</th>
+                <th>Patient Number</th>
+                <th>Booking Type</th>
+                <th colspan="2">Confirmation</th>
+            </tr>
+            <tr *ngFor="let d of patientSchedule">
+                <td>{{d.Time}}</td>
+                <td>{{d.RoomNumber}}</td>
+                <td>{{d.Dentist}}</td>
+                <td>{{d.Patientnumber}}</td>
+                <td>{{d.BookingType}}</td>
+                <td><a href="" class="border border-3 rounded-3 ms-2">Confirm</a>
+                <a href="" class="border border-3 rounded-3 ms-2">Cancel</a> </td>
+                
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

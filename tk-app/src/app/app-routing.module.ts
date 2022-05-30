@@ -24,7 +24,10 @@ import { ForgotPassword3Component } from './forgot-password3/forgot-password3.co
 import { AdminScheduleComponent } from './admin-schedule/admin-schedule.component';
 import { AdminDoctorListComponent } from './admin-doctor-list/admin-doctor-list.component';
 import { AdminArticleComponent } from './admin-article/admin-article.component';
-import { ScheduleVirtualConfirmComponent } from './schedule-virtual-confirm/schedule-virtual-confirm.component';
+
+import { OurDoctorComponent } from './our-doctor/our-doctor.component';
+import { ArticleComponent } from './article/article.component';
+import { PackageServiceComponent } from './package-service/package-service.component';
 
 const routes: Routes = [
   {
@@ -93,8 +96,25 @@ const routes: Routes = [
     path: "admin-service",component: AdminServiceComponent
   },
   {
-    path: "admin-schedule",component: AdminScheduleComponent
+    path: "admin-schedule",component: AdminScheduleComponent},
+    {
+      
+    path: "our-doctor",component: OurDoctorComponent
+  },{
+    path:"forgot-password1", component:ForgotPassword1Component
   },
+  {
+    path:"forgot-password2", component:ForgotPassword2Component
+  },
+  {
+    path:"forgot-password3", component:ForgotPassword3Component
+  },
+  {
+    path:"article", component:ArticleComponent
+  },
+  {
+    path:"service/package-service",component:PackageServiceComponent
+  }
 ];
 
 @NgModule({
@@ -125,5 +145,10 @@ export const RoutingComponents=[ServiceListComponent,
   VirtualDocComponent,
   HomeDocComponent,
   AdminScheduleComponent,
-  ScheduleVirtualConfirmComponent]
+
+  OurDoctorComponent,
+  ArticleComponent,
+  PackageServiceComponent
+]
+
 

@@ -1,0 +1,118 @@
+<div class="container">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between text-center">
+        <div class="col text-center justify-content-between text-center">
+          <a class="blog-header-logo text-center flex-nowrap" href="article">TK-Hospital Blog Post is here!</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <p class="p-2 link-secondary text-dark" href="#">Covid-19</p>
+        <p class="p-2 link-secondary text-dark" href="#">Surgery</p>
+        <p class="p-2 link-secondary text-dark" href="#">Diet</p>
+        <p class="p-2 link-secondary text-dark" href="#">Dentistry</p>
+        <p class="p-2 link-secondary text-dark" href="#">Food</p>
+        <p class="p-2 link-secondary text-dark" href="#">Business</p>
+        <p class="p-2 link-secondary text-dark" href="#">Mental Health</p>
+        <p class="p-2 link-secondary text-dark" href="#">Obstetrics and Gynecology</p>
+        <p class="p-2 link-secondary text-dark" href="#">Science</p>
+        <p class="p-2 link-secondary text-dark" href="#">Laboratory</p>
+        <p class="p-2 link-secondary text-dark" href="#">LifeStyle</p>
+        <p class="p-2 link-secondary text-dark" href="#">Dermatology</p>
+      </nav>
+    </div>
+  </div>
+  
+  <main class="container">
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-title">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 fst-italic hello-title">Hello! Your Blog is available..</h1>
+        <p class="lead my-3 text-dark">Enjoy the latest news with a cup of coffee, you can chill with this</p>
+        <p class="lead mb-0 fw-bold"><span class="text-dark">Continue reading...</span></p>
+      </div>
+    </div>
+  
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Hospital</strong>
+            <h3 class="mb-0" id="d1">Dentistry</h3>
+            <div class="mb-1 text-muted">May 26</div>
+            <p class="card-text mb-auto">Dentistry has been updated with 20 new doctors</p>
+            <a href="homepage" class="stretched-link text-success">Explore!</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img class="img-wrapper" src="../../assets/page-images/dentist 0.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Recruit</strong>
+            <h3 class="mb-0" id="d2">TK-Hospital's Recruitment</h3>
+            <div class="mb-1 text-muted">May 28</div>
+            <p class="mb-auto">Contact email tkhospital@gmail.com for information</p>
+            <a href="homepage" class="stretched-link text-success">Explore!</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img class="img-wrapper" src="../../assets/page-images/Austin.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row g-5">
+      <div class="col-md-8">
+        <h1 class="pb-4 mb-4 fw-bold border-bottom" id="d3">
+          {{"List of blogs" | uppercase}}
+        </h1>
+        <article class="blog-post" *ngFor="let r of articleList">
+          <h2 class="blog-post-title">{{r.Title}}</h2>
+          <img class="img-scale" src="http://localhost:3000/{{r.Image}}" alt="không tải được hình">
+          <p class="blog-post-meta"><span>Mã bài post {{r.ArticleID}}</span> by <span>{{r.Author}}</span></p>
+          <p class="text-dark">{{r.Content}}</p> 
+        </article>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="fw-bold">{{"Any questions and feedback please contact"| uppercase}} </h4>
+            <p class="mb-0">Phone Number: (+84)562 276 2773</p>
+            <p class="mb-0">Email: tkhospital@gmail.com</p>
+          </div>
+  
+          <div class="p-4">
+            <h4 class="fst-italic">Archives</h4>
+            <ol class="list-unstyled mb-0">
+              <li><a href="article">March 2021</a></li>
+              <li><a href="article">February 2021</a></li>
+              <li><a href="article">January 2021</a></li>
+              <li><a href="article">December 2020</a></li>
+              <li><a href="article">November 2020</a></li>
+              <li><a href="article">October 2020</a></li>
+              <li><a href="article">September 2020</a></li>
+              <li><a href="article">August 2020</a></li>
+              <li><a href="article">July 2020</a></li>
+              <li><a href="article">June 2020</a></li>
+              <li><a href="article">May 2020</a></li>
+              <li><a href="article">April 2020</a></li>
+            </ol>
+          </div>
+  
+          <div class="p-4">
+            <h4 class="fst-italic">Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/"><i class="bi bi-github"></i></a> GitHub</li>
+              <li><a href="https://twitter.com/"><i class="bi bi-twitter"></i></a> Twitter</li>
+              <li><a href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a> LinkedIn</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+</div>
+</main>

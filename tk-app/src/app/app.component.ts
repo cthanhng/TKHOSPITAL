@@ -11,10 +11,13 @@ export class AppComponent implements OnInit {
       let client = localStorage.getItem('client');
       if (client == null) {
         this.isAdmin = false;
+        // this.isUser=false;
         return;
+        
       }
 
       this.isAdmin = JSON.parse(client).type === 'admin';
+      // this.isUser=JSON.parse(client).type === 'user';
     });
   }
 
