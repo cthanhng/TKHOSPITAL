@@ -28,7 +28,7 @@ router.get('/user-informations/:id', function (req, res) {
         }
     })
 })
-router.get('/user-informations', function (req, res) {
+router.get('/userinformations', function (req, res) {
     userInfor.findOne({Email: req.query.Email}, function (err,data) {
         if(err) {
             res.json({message:err.message})
