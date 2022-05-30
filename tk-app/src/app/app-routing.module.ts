@@ -32,6 +32,7 @@ import { PaymentOtpComponent } from './payment-otp/payment-otp.component';
 
 
 
+
 const routes: Routes = [
   {
     path: "service",component: ServicePageComponent
@@ -158,7 +159,10 @@ export const RoutingComponents=[ServiceListComponent,
   ArticleComponent,
   PackageServiceComponent, 
   PaymentComponent, 
-  PaymentOtpComponent
+  PaymentOtpComponent,
+  AdminScheduleComponent,
+  AdminLoginComponent,
+  PackageServiceComponent
 ]
 
   
