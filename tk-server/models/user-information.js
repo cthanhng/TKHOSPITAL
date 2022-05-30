@@ -2,23 +2,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserInfoSchema = new Schema({
-    userID: {type:String, required:true},
-    Name: {type:String, required:true},
-    DateOfBirth: {type:String, required:true},
-    Gender:{type:String, required:true},
-    PhoneNumber:{type:String,required:true},
-    IDNumber:{type:String, required:true},
-    Email:{type:String, required:true},
-    Nationality:{type:String, required:true},
-    Religion:{type:String,required:true},
-    Province:{type:String, required:true},
-    Ward:{type:String,required:true},
-    Street:{type:String,required:true},
-    Job:{type:String, required:true},
-    HealthInsurance:{type:String,required:true},
-    Height:{type:String,required:true},
-    Weight:{type:String, required:true},
-    image:{type:String,required:true},
-    password:{type:String, required:true}
+userID: {type:String,  require:true},
+    Name: {type:String,  require:true},
+    DateOfBirth: {type:String,  require:true},
+    Gender:{type:String,  require:true},
+    Phone:{type:String, require:true},
+    IDNumber:{type:String,  require:true},
+    Email:{type:String,  require:true},
+    Nationality:{type:String,  require:true},
+    Religion:{type:String, require:true},
+    City:{type:String,  require:true},
+    Ward:{type:String, require:true},
+    Street:{type:String, require:true},
+    Job:{type:String,  require:true},
+    HealthInsuranceCardNumber:{type:String, require:true},
+    Height:{type:String, require:true},
+    Weight:{type:String,  require:true},
+    image:{type:String, require:true},
+    password:{type:String,  require:true}
 });
-module.exports = mongoose.model('userinformation', UserInfoSchema);///chưa đặt lại tên cho db
+module.exports = mongoose.model("Userinformations", UserInfoSchema);

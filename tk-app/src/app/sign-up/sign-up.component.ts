@@ -10,39 +10,40 @@ import { UserInformationService } from '../services/user-information.service';
 })
 export class SignUpComponent implements OnInit {
   user:IUserInfo={
-    userID: '',
-    City:'abcxd',
-    DateOfBirth:"25/12/2001",
-    Email:'thunt19406@st.uel.edu.vn',
-    Gender:'female',
-    Height:'543',
-    IDNumber:'123',
-    HealthInsuranceCardNumber:'4566',
-    Job:'student',
-    Nationality:'VN',
-    Name:'NTT',
-    Phone:'4564565',
-    Religion:'none',
-    Street:'345365',
-    Ward:'dfgfh',
-    Weight:'100',
-    image:'dgfgtrrtgrh',
-    password:'',
+    "userID": '',
+    "City":'',
+    "DateOfBirth":'',
+    "Email":'',
+    "Gender":'female',
+    "Height":'',
+    "IDNumber":'',
+    "HealthInsuranceCardNumber":'',
+    "Job":'',
+    "Nationality":'',
+    "Name":'',
+    "Phone":'',
+    "Religion":'',
+    "Street":'',
+    "Ward":'',
+    "Weight":'',
+    'image':'',
+    "password":'',
   }
+  Nationality=["Vietnam","China","Korea","Japan","India"]
+  City=["Hà Tĩnh","Hà Nội","HCM","Đà Lạt"]
+  Ward=["Phuong A","Phuong B","Phuong C"]
   errFlag = false;
 
   constructor(private _userService: UserInformationService) {}
 
   ngOnInit(): void {}
-  checkPhone(value: any): void {
-    // let s: any;
-    // s = value.split('');
-
-    // if (s.length() === 10) {
-    //   this.errFlag = false;
-    // } else {
-    //   this.errFlag = true;
-    // }
+  check(value: any): void {
+    if(value==='none'){
+      this.errFlag=true
+    }
+    else{
+      this.errFlag=false
+    }
   }
 
   async onSubmit() {
