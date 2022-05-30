@@ -3,6 +3,7 @@ import { ArticleListService } from '../services/article-list.service';
 
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-article',
@@ -22,7 +23,7 @@ export class AdminArticleComponent implements OnInit {
     content: ['',[Validators.required, Validators.minLength(100)]],
     imageName: ['',[Validators.required, Validators.maxLength(15)]],
   })
-  constructor(private _service: ArticleListService,private _formBuilder: FormBuilder,private _toastr: ToastrService) { }
+  constructor(private _service: ArticleListService,private _formBuilder: FormBuilder,private _toastr: ToastrService,private router: Router) { }
 
   ngOnInit(): void {
     this.getArticleList()
@@ -109,4 +110,8 @@ export class AdminArticleComponent implements OnInit {
   get imageNameInput(){
     return this.articleForm.controls["imageName"]
       }
+      logOut(){
+        localStorage.removeItem('client')
+         this.router.navigate(['/'])
+       }
 }

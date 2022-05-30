@@ -27,7 +27,7 @@ export class PatientPortalComponent implements OnInit {
   patientSchedule?: PatientSchedule;
   payments?: Payment;
   events: any;
-  id: string="02"
+  id: string="01"
   id_tam=window.localStorage.getItem('user')
   //  getUsers() {
   //   return Object.values(localStorage)
@@ -60,6 +60,5 @@ export class PatientPortalComponent implements OnInit {
       //       .pipe(first())
       //       .subscribe(users => this.userInfor = users);
     }
-    
 
   }

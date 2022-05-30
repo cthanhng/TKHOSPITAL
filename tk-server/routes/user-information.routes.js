@@ -28,13 +28,23 @@ router.get('/user-informations/:id', function (req, res) {
         }
     })
 })
+router.get('/user-informations', function (req, res) {
+    userInfor.findOne({Email: req.query.Email}, function (err,data) {
+        if(err) {
+            res.json({message:err.message})
+        }
+        else {
+            res.json(data)
+          
+        }
+    })
+})
 
-router.post('/user-informations', async function(req, res) {
+router.post('/user-informations/', async function(req, res) {
     let user = new userInfor(req.body);
     try{
         await user.save();
-        res.json('success');
-        console.log(user)
+        res.json('success')
     }
     catch(err){
         res.json({message:err.message});

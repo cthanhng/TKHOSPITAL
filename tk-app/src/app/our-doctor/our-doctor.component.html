@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-4 d-flex" *ngFor="let o of ourdoctors">
                     <div class="card mb-3">
-                        <img class="card-img-top" src="{{o.Image}}" alt="không tải được hình">
+                        <img class="card-img-top" src="http://localhost:3000/{{o.Image}}" alt="không tải được hình">
                         <div class="card-body py-3">
                             <h5 class="mb-0">{{o.DoctorName}}</h5>
                             <span>{{o.Department}}</span>
@@ -36,9 +36,9 @@
         <th>Position</th>
         <th>Description</th>
     </tr>
-    <tr *ngFor="let o of ourdoctors">
-        <td><img class="img-scale img-wrapper" src="{{o.Image}}"></td>
-        <td>{{o.DoctorID}}</td>
+    <tr *ngFor="let o of ourdoctors ; index as i">
+        <td><img class="img-scale img-wrapper" src="http://localhost:3000/{{o.Image}}"></td>
+        <td>{{i+1}}</td>
         <td>{{o.DoctorName}}</td>
         <td>{{o.Department}}</td>
         <td>{{o.Position}}</td>

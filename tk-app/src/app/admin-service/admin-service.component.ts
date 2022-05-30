@@ -18,7 +18,7 @@ export class AdminServiceComponent implements OnInit {
   Departments=["Dentistry","Pediatrics","Cardiology","Neurology"]
   file: any = null;
 
-  constructor(private _service: ListServiceService, private _router: Router, private _formBuilder: FormBuilder,  private _toastr: ToastrService) { }
+  constructor(private _service: ListServiceService, private _router: Router, private _formBuilder: FormBuilder,  private _toastr: ToastrService, private router: Router) { }
   serviceList: any
   errMsg: any
   selectedID: any
@@ -104,4 +104,8 @@ export class AdminServiceComponent implements OnInit {
   get descriptionInput(){
     return this.serviceForm.controls["description"]
       }
+      logOut(){
+        localStorage.removeItem('client')
+         this.router.navigate(['/'])
+       }
 }

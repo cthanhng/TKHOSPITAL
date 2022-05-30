@@ -1,0 +1,44 @@
+
+<body>
+<div class="form--container">
+        
+    <form>
+    <div class="form--container2">
+        <div class="form--row">
+            <h3 style="margin-bottom: 20px;">Confirmation For Virtual Doctor</h3>
+            <!-- <h3>{{m | json}}</h3> -->
+        </div>
+        <div class="form--row">
+            <label for="">Type of visit:</label>
+            <input type="text" name="type" id="type" class="form--input" disabled>
+        </div>
+        <div class="form--row">
+            <label for="">Connecting Way</label>
+            <input type="text" id="connect"  name="connect"  class="form--input"  disabled >
+        </div>
+        <div class="form--row">
+            <label for="">The visit will take place at:</label>
+            <input type="text" name="platform" id="platform" class="form--input" disabled >
+        </div>
+        <div class="form--row">
+            <label for="">The pharmacy will be used:</label>
+            <input type="text" name="pharmacy" id="pharmacy" class="form--input" disabled >
+        </div>
+        <div class="form--row">
+            <label for="">Pick your day</label>
+            <input class="form--input" type="text"  name="date" id="day" disabled>  
+        </div>
+        <div class="form--row">
+            <label for="">Pick your time</label>
+            <input class="form--input" type="text"  name="time" id="time" disabled > 
+        </div>
+        <hr>
+        <div class="form--row">
+            <input type="submit" id="BackToForm" class="form--button btn btn-secondary" (click)="goBack()" value="Go back">
+            <input type="submit" class="form--button btn btn-primary" id="nexttopayment" value="Confirm to Register">
+        </div>
+    </div>
+</form>
+</div>
+    
+</body>
