@@ -100,6 +100,7 @@ margin-top: 10px;
     display: flex;
     flex-wrap: nowrap;
     overflow-y:auto;
+    width: 1100px;
    text-align: center;
    justify-content: space-around;
     margin: 50px 0px 0px;
